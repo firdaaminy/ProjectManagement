@@ -13,6 +13,12 @@ public abstract class Person {
     private long id;
     private double salary;
     
+    public Person(String name, long id, double salary){
+        this.name=name;
+        this.id=id;
+        this.salary=salary;
+    }
+    
     public void setName(String name){
         this.name=name;
     }
