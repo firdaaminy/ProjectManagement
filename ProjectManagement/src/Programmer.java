@@ -16,10 +16,5 @@ public class Programmer extends Person{
         super(name, id, salary);
     }
     
-    @Override
-    public String getName(){
-        return name;
-    }
-    
     
 }
