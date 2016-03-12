@@ -9,12 +9,8 @@
  * @author Iwan Ma'ruf
  */
 public class Programmer extends Person{
-   
-    private String name;
     
     public Programmer(String name, long id, double salary){
         super(name, id, salary);
     }
-    
-    
 }

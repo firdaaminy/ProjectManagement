@@ -12,6 +12,8 @@ public class Project {
     private int projectId;
     private String projectName;
     private String projectClient;
+    private Programmer[] programmers;
+    private Task[] task;
     
     public Project(int projectId, String projectName, String projectClient){
         this.projectId=projectId;
@@ -45,5 +47,17 @@ public class Project {
     
     public void setClient(String projectClient){
         this.projectClient=projectClient;
+    }
+    
+    public Programmer[] getProgrammers(){
+        return programmers;
+    }
+    
+    public Task[] getTask(){
+        return task;
+    }
+    
+    public Task getTask(int id){
+        return task[id];
     }
 }
