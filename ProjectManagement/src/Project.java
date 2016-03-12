@@ -18,6 +18,10 @@ public class Project {
         this.projectName=projectName;
         this.projectClient=projectClient;
     }
+
+    public Project() {
+        System.out.println("Placeholder");
+    }
     
     public int getId(){
         return projectId;
