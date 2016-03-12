@@ -13,7 +13,7 @@ public class Project {
     private String projectName;
     private String projectClient;
     private Programmer[] programmers;
-    private Task[] task;
+    private Task[] tasks;
     
     public Project(int projectId, String projectName, String projectClient){
         this.projectId=projectId;
@@ -54,10 +54,10 @@ public class Project {
     }
     
     public Task[] getTask(){
-        return task;
+        return tasks;
     }
     
     public Task getTask(int id){
-        return task[id];
+        return tasks[id];
     }
 }
