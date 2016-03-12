@@ -26,10 +26,10 @@ public class Project {
         this.projectId=projectId;
         this.projectName=projectName;
         this.projectClient=projectClient;
-    }
-
-    public Project() {
-        System.out.println("Placeholder");
+        programmers = new Programmer[100];
+        tasks = new Task[100];
+        numOfProgrammers = 0;
+        numOfTasks = 0;
     }
     
     public int getId(){
@@ -62,6 +62,7 @@ public class Project {
     
     public void addProgrammer(Programmer programmer) {
     	if(programmer != null) {
+    		System.out.println("DEBUG Project.addProgrammer: "+ programmer.getName());
     		programmers[numOfProgrammers] = programmer;
     		numOfProgrammers++;
     	}

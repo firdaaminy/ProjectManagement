@@ -3,14 +3,14 @@ package id.kelompok2.projectmanagement.data;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
 
-public class EmployeeData {
+public class Company {
 
 	private Programmer[] programmers;
 	private ProjectManager[] projectManagers;
 	
 	private int programmerCount, projManCount;
 	
-	public EmployeeData() {
+	public Company() {
 		programmers = new Programmer[100];
 		projectManagers = new ProjectManager[100];
 		programmerCount = 0;
@@ -20,6 +20,7 @@ public class EmployeeData {
 	public void addProgrammer(Programmer programmer) {
 		programmers[programmerCount] = programmer;
 		programmerCount++;
+		System.out.println("DEBUG Company.addProgrammer: "+ programmerCount);
 	}
 	
 	public void addProjectManager(ProjectManager projMan) {
@@ -27,9 +28,22 @@ public class EmployeeData {
 		projManCount++;
 	}
 	
+	public ProjectManager[] getProjectManagers() {
+		return projectManagers;
+	}
+	
+	public Programmer[] getProgrammers() {
+		return programmers;
+	}	
+	
 	public Programmer findProgrammer(long id) {
-		for(Programmer pro: programmers) {
-			if(pro.getId() == id) return pro;
+		System.out.println("DEBUG Company.java: "+ id);
+		System.out.println("DEBUG Company.java: "+programmerCount);
+		for(int i = 0; i < programmerCount; i++) {
+			if(programmers[i].getId() == id) {
+				System.out.println("DEBUG: Company.java: "+ programmers[i].getName());
+				return programmers[i];
+			}
 		}
 		return null;
 	}

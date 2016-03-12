@@ -10,7 +10,9 @@ Firda Aminy
 
 package id.kelompok2.projectmanagement.employees;
 
-abstract class Person {
+import id.kelompok2.projectmanagement.data.Company;
+
+abstract class Person extends Company {
 	protected String name;
 	protected long id;
 	protected double salary;

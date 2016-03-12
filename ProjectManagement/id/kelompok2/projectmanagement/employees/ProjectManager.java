@@ -1,6 +1,6 @@
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.data.EmployeeData;
+import id.kelompok2.projectmanagement.data.Company;
 import id.kelompok2.projectmanagement.projects.Project;
 
 public class ProjectManager extends Person {
@@ -14,7 +14,6 @@ public class ProjectManager extends Person {
 		super(name, id, salary);
 		projects = new Project[100];
 		currentProject = 0;
-		new EmployeeData().addProjectManager(this);
 	}
 
 	public Project[] getProjects() {
@@ -30,15 +29,19 @@ public class ProjectManager extends Person {
 		currentProject++;
 	}
 	
-	public void assignProject(long programmerId, int projectId) {
+	public void assignProject(Company company, long programmerId, int projectId) {
 		for(Project proj: projects) {
-			if(proj.getId() == projectId) {
-				Programmer programmer = new EmployeeData().findProgrammer(programmerId);
-				if(programmer != null) {
-					proj.addProgrammer(programmer);
+			if(proj != null) {
+				if(proj.getId() == projectId) {
+					System.out.println("DEBUG ProjectManager.assignProject: "+ programmerId);
+					Programmer programmer = company.findProgrammer(programmerId);
+					System.out.println("DEBUG ProjectManager.assignProject: "+ programmer.getName());
+					if(programmer != null) {
+						System.out.println(programmer.getName());
+						proj.addProgrammer(programmer);
+					}
+					return;
 				}
-				else System.out.println("ID programmer yang anda masukkan salah!");
-				return;
 			}
 		}
 		System.out.println("ID project yang anda masukkan salah!");
@@ -47,7 +50,7 @@ public class ProjectManager extends Person {
 	public void unAssignProject(long programmerId, int projectId) {
 		for(Project proj: projects) {
 			if(proj.getId() == projectId) {
-				Programmer programmer = new EmployeeData().findProgrammer(programmerId);
+				Programmer programmer = findProgrammer(programmerId);
 				if(programmer != null) {
 					proj.removeProgrammer(programmer);
 				}
