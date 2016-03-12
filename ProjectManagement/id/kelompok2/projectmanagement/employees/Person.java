@@ -1,4 +1,4 @@
-package id.geraldy.projectmanagement.employees;
+package id.kelompok2.projectmanagement.employees;
 
 abstract class Person {
 	protected String name;

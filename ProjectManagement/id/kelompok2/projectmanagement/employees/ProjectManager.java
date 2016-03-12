@@ -1,6 +1,6 @@
-package id.geraldy.projectmanagement.employees;
+package id.kelompok2.projectmanagement.employees;
 
-import id.geraldy.projectmanagement.projects.Project;
+import id.kelompok2.projectmanagement.projects.Project;
 
 public class ProjectManager extends Person {
 	
