@@ -1,3 +1,8 @@
+/*
+
+b
+*/
+
 package id.kelompok2.projectmanagement.employees;
 
 abstract class Person {
