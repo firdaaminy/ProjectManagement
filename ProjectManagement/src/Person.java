@@ -19,6 +19,11 @@ public abstract class Person {
         this.salary=salary;
     }
     
+    public Person(String name, long id){
+        this.name=name;
+        this.id=id;
+    }
+    
     public void setName(String name){
         this.name=name;
     }
