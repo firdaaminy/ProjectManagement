@@ -19,6 +19,9 @@ public class Project {
     private Programmer[] programmers;
     private Task[] tasks;
     
+    private int numOfProgrammers;
+    private int numOfTasks;
+    
     public Project(int projectId, String projectName, String projectClient){
         this.projectId=projectId;
         this.projectName=projectName;
@@ -57,11 +60,38 @@ public class Project {
         return programmers;
     }
     
+    public void addProgrammer(Programmer programmer) {
+    	if(programmer != null) {
+    		programmers[numOfProgrammers] = programmer;
+    		numOfProgrammers++;
+    	}
+    }
+
+    public void removeProgrammer(Programmer programmer) {
+    	if(programmer != null) {
+    		for(int i = 0; i < numOfProgrammers; i++) {
+    			if(programmer.getId() == programmers[i].getId()) {
+    				programmers[i] = null;
+    				for(int j = i; j < numOfProgrammers; j++) {
+    					programmers[j] = programmers[j+1];
+    				}
+    				programmers[numOfProgrammers] = null;
+    				numOfProgrammers--;
+				}
+    		}
+    	}
+    }
+    
     public Task[] getTask(){
         return tasks;
     }
     
     public Task getTask(int id){
         return tasks[id];
+    }
+    
+    public void addTask(String name, int taskId) {
+    	tasks[numOfTasks] = new Task(name, taskId);
+    	numOfTasks++;
     }
 }

@@ -6,13 +6,16 @@
 
 package id.kelompok2.projectmanagement.employees;
 
+import id.kelompok2.projectmanagement.data.EmployeeData;
+
 /**
  *
  * @author Iwan Ma'ruf
  */
 public class Programmer extends Person{
-    
+    	
     public Programmer(String name, long id, double salary){
         super(name, id, salary);
+        new EmployeeData().addProgrammer(this);
     }
 }
