@@ -1,3 +1,13 @@
+/*
+
+KELOMPOK 2
+Adam Geraldy
+Abby Setyo
+Firda Aminy
+
+
+*/
+
 package id.kelompok2.projectmanagement.employees;
 
 abstract class Person {
