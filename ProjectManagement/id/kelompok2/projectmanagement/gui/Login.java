@@ -1,6 +1,6 @@
 //WIP
 
-package id.kelompok2.projectmanager.gui;
+package id.kelompok2.projectmanagement.gui;
 
 import java.awt.EventQueue;
 
