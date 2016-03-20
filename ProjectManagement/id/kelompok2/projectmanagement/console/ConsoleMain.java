@@ -9,8 +9,8 @@ public class ConsoleMain {
 		Company company = new Company();
 		System.out.println("Testing...");
 		company.addProgrammer(new Programmer("Firda", 1333333, 10000000));
-		company.addProjectManager(new ProjectManager("Mada", 1301140381, 1000000));
-		company.addProgrammer(new Programmer("Adam3", 1301031, 10285281));
+		company.addProjectManager(new ProjectManager("Aminy", 1301140381, 1000000));
+		company.addProgrammer(new Programmer("Maruf", 1301031, 10285281));
 		
 		company.findProjectManager(1301140381);
 		
