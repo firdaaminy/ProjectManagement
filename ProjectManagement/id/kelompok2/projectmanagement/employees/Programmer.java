@@ -19,7 +19,7 @@ public class Programmer extends Person{
         super(name, id, salary);
     }
     
-    public Project[] getOngoingProjects(Company company) {
+    public Project[] getOngoingProjects(Company company) { //munculin project yang lagi di kerjain 
     	Project[] arrayProject = new Project[100];
     	int counter = 0;
     	for(ProjectManager pMan: company.getProjectManagers()) {

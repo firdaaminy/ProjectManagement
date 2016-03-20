@@ -18,8 +18,10 @@ public class ConsoleMain {
 		Programmer programmer = company.findProgrammer(1301031);
 		System.out.println("DEBUG MAIN: "+ programmer.getName());
 		projMan.createProject(1, "Tubes", "Telkom");
+		projMan.createProject(2, "Tubes 2", "Telkom");
 		System.out.println("DEBUG MAIN: "+ projMan.getProject(0).getName());
 		projMan.assignProject(company, 1301031, 1);
-		System.out.println(company.findProgrammer(1301031).getOngoingProjects(company)[0].getName());
+                projMan.assignProject(company, 1301031, 2);
+		System.out.println(company.findProgrammer(1301031).getOngoingProjects(company)[1].getName());//
 	}
 }
