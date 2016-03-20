@@ -8,7 +8,7 @@ public class ConsoleMain {
 	public static void main(String[] args) {
 		Company company = new Company();
 		System.out.println("Testing...");
-		company.addProgrammer(new Programmer("Adam", 1333333, 10000000));
+		company.addProgrammer(new Programmer("Firda", 1333333, 10000000));
 		company.addProjectManager(new ProjectManager("Mada", 1301140381, 1000000));
 		company.addProgrammer(new Programmer("Adam3", 1301031, 10285281));
 		
