@@ -156,12 +156,7 @@ public class Project {
     }
 
     public void removeProgrammer(Programmer programmer) {
-    	ListIterator listIterator = programmers.listIterator();
-		while(listIterator <> programmer){
-			listIterator.next();
-		}
-		listIterator.remove();
-		numOfProgrammers--;
+    	programmers.remove(programmer);
     }
     
     public ArrayList<Task> getTask(){

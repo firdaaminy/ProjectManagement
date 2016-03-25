@@ -83,17 +83,15 @@ import java.util.ListIterator;
 */
 public class ProjectManager extends Person {
 	private ArrayList<Project> projects;
-	private int currentProject;
 	
 	private double salary;
 
 	public ProjectManager(String name, long id, double salary) {
 		super(name, id, salary);
 		projects = new ArrayList<>();
-		currentProject = 0;
 	}
 
-	public ArrayList getProjects() {
+	public ArrayList<Project> getProjects() {
 		return projects;
 	}
 
@@ -103,7 +101,6 @@ public class ProjectManager extends Person {
 
 	public void createProject(int projectId, String projectName, String projectClient) {
 		projects.add(new Project(projectId, projectName, projectClient));
-		currentProject++;
 	}
 	
 	public void assignProject(Company company, long programmerId, int projectId) {
@@ -135,13 +132,8 @@ public class ProjectManager extends Person {
 		}
 	}
 	
-	public void deleteProject(Project project) {
-		ListIterator listIterator = projects.listIterator();
-		while(listIterator <> project){
-			listIterator.next();
-		}
-		listIterator.remove();
-		currentProject--;
+	public void deleteProject(Project project){
+            projects.remove(project);
     } 
 
 	public double getSalary() {

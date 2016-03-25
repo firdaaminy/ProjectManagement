@@ -79,7 +79,6 @@ public class Company {
 	
 	public void addProjectManager(ProjectManager projMan) {
 		projectManagers.add(projMan);
-		projManCount++;
 	}
 	
 	public ArrayList<ProjectManager> getProjectManagers() {
