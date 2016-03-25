@@ -103,6 +103,23 @@ public class ProjectManager extends Person {
 		projects.add(new Project(projectId, projectName, projectClient));
 	}
 	
+        public int findProject(Project project){
+            int id=0;
+            boolean ketemu=false;
+            for(int i=0; i<projects.size();i++){
+                if (projects.get(i)==project){
+                    ketemu=true;
+                    id=i;
+                }
+            }
+            if(ketemu==true){
+                return id;
+            }
+            else{
+                return -1;
+            }
+        }
+        
 	public void assignProject(Company company, long programmerId, int projectId) {
 		boolean found=false;
 		Programmer programmer = company.findProgrammer(programmerId);
