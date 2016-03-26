@@ -33,7 +33,7 @@ public class Task implements Serializable {
 		this.taskId = taskId;
 	}
 
-	public boolean getStatuS() {
+	public boolean getStatus() {
 		return done;
 	}
 

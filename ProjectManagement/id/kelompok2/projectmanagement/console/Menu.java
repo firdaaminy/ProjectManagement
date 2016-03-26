@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  *
@@ -57,6 +58,20 @@ public class Menu {
     		}
     	}
     	else if(Driver.getUser() instanceof ProjectManager) {
+    		
+    		System.out.println("*********************************************************");
+            System.out.println("*+++>                  ON-BOARD                     <+++*");
+            System.out.println("*=======================================================*");
+            System.out.println("*          Everybody is on board with ON-BOARD          *");
+            System.out.println("*        The easiest way to manage your projects        *");
+            System.out.println("*                   NO FUSS, NO RUSH                    *");
+            System.out.println("*=======================================================*");
+            System.out.println("*               1. Start a new project                  *");
+            System.out.println("*               2. Show all projects          			*");
+            System.out.println("*               3. Create your team an account          *");
+            System.out.println("*               4. Show available programmers           *");
+            System.out.println("*               5. Log-out                              *");
+            System.out.println("*********************************************************");
     		System.out.println("1. Create Project");
     		System.out.println("2. See Projects");
     		System.out.println("3. Hire A Programmer");
@@ -74,6 +89,9 @@ public class Menu {
 	    				break;
 	    			case 4:
 	    				showProgrammers();
+	    				break;
+	    			case 5:
+	    				ConsoleMain.app.serialize();
 	    				break;
     			}
     		} catch(NumberFormatException | IOException e) {
@@ -126,26 +144,57 @@ public class Menu {
 			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda"))) {
 				case 1:
 					proj.addTask(inputPilihan("Masukkan nama task"), 
-							Integer.parseInt(inputPilihan("Masukkan ID Task")));
+						Integer.parseInt(inputPilihan("Masukkan ID Task")));
 					break;
 				case 2:
-					Programmer prog = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer"));
+					Programmer prog = getProgrammer(inputPilihan("Enter programmer's ID/Name"));
 					if(prog != null) {
 						projMan.assignProject(prog, proj.getId());
 					}
-					else System.out.println("ID/Nama yang anda masukkan salah!");
+					else System.out.println("The ID/Name you entered was invalid!");
 					break;
 				case 3:
-					Programmer uProg = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer"));
+					Programmer uProg = getProgrammer(inputPilihan("Enter programmer's ID/Name"));
 					if(uProg != null) {
 						projMan.unassignProject(uProg, proj.getId());
 					}
+					else System.out.println("The ID/Name you entered was invalid!");
 					break;
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
+
+
+	/* Made by Firda Aminy, to be used for Sprint 3.
+	 * 
+	 * 
+	 * Signed,
+	 * Adam.
+	 * 
+	 * 
+    public void checkProgress(int login){
+        double tampung=0;
+        double total=0;
+        ArrayList<Project> proyek=new ArrayList<>();
+        proyek=daftarManajerProyek.get(login).getProjects();
+        
+        for (int i=0; i<proyek.size();i++){
+            System.out.println((i+1)+". Nama project: "+proyek.get(i).getName());
+        }
+        System.out.println("Masukkan nomor proyek yang anda ingin check: ");
+        int id=in.nextInt();
+        
+        for(int i=0;i<proyek.get(id).getTasks().size();i++){
+            if(proyek.get(id).getTasks().get(i).getStatus()==true){
+                tampung=tampung+proyek.get(id).getTasks().get(i).getKesulitan();
+                total=total+proyek.get(id).getTasks().get(i).getKesulitan();
+            }
+            total=total+proyek.get(id).getTasks().get(i).getKesulitan();
+        }
+        System.out.println("Progress dari project adalah: "+(tampung/total*100)+"%");
+    }*/
 
 	private Programmer getProgrammer(String inputPilihan) {
 		boolean number = true;
@@ -178,15 +227,18 @@ public class Menu {
 
 	private void createProject() {
     	try {
-			String projectName = inputPilihan("Masukkan nama project");
-	    	int projectId = Integer.parseInt(inputPilihan("Masukkan ID project"));
-	    	String projectClient = inputPilihan("Masukkan Client project");
+            System.out.println("*********************************************************");
+            System.out.println("*   Starting a new project is easy with these 3 steps   *");
+            System.out.println("*********************************************************");
+			String projectName = inputPilihan("What's the name of your project?");
+	    	int projectId = Integer.parseInt(inputPilihan("What's the ID of your project?"));
+	    	String projectClient = inputPilihan("Who's your client for this project?");
 	    	if(!projectExists(projectId)) {
 		    	ProjectManager projMan = (ProjectManager) Driver.getUser();
 		    	projMan.createProject(projectId, projectName, projectClient);
 	    	}
 	    	else {
-	    		System.out.println("ID yang anda masukkan sudah digunakan!");
+	    		System.out.println("The ID you entered is already in-use!");
 	    	}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -218,10 +270,13 @@ public class Menu {
 
 	public void createProgrammer() {
 		try {
-			String namaProgrammer = inputPilihan("Masukkan nama programmer");
-			String idProgrammer = inputPilihan("Masukkan ID programmer");
-			String gajiProgrammer = inputPilihan("Masukkan gaji programmer");
-			String passwordProgrammer = inputPilihan("Masukkan password untuk programmer");
+            System.out.println("*********************************************************");
+            System.out.println("*     Create an account for each of your programmers    *");
+            System.out.println("*********************************************************");
+			String namaProgrammer = inputPilihan("Enter programmer's name");
+			String idProgrammer = inputPilihan("Enter programmer's ID");
+			String gajiProgrammer = inputPilihan("Enter programmer's salary");
+			String passwordProgrammer = inputPilihan("Enter programmer's default password");
 			if(getProgrammer(namaProgrammer) == null && getProgrammer(idProgrammer) == null) {
 				ConsoleMain.app.addProgrammer(new Programmer(namaProgrammer, Integer.parseInt(idProgrammer), Double.parseDouble(gajiProgrammer), passwordProgrammer));
 //				ConsoleMain.app.serialize();
@@ -230,8 +285,4 @@ public class Menu {
 			e.printStackTrace();
 		}
 	}
-    
-/*    public static void main(String[] main) throws IOException {
-        inputPilihan();
-    }*/
 }
