@@ -10,11 +10,7 @@ Firda Aminy
 
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.console.ConsoleMain;
-import id.kelompok2.projectmanagement.projects.Project;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public abstract class Person implements Serializable {
 	/**

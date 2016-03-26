@@ -1,6 +1,5 @@
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.data.App;
 import id.kelompok2.projectmanagement.projects.Project;
 
 import java.io.BufferedWriter;
@@ -8,7 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class ProjectManager extends Person {
 	/**
@@ -18,16 +16,10 @@ public class ProjectManager extends Person {
     private ArrayList<Project> projects;
 	
     private double salary;
-    private static App app;
 
     public ProjectManager(String name, long id, double salary, String password) {
             super(name, id, salary, password);
             projects = new ArrayList<>();
-            app = null;
-    }
-
-    public static void setApp(App app) {
-        ProjectManager.app = app;
     }
 
     public ArrayList<Project> getProjects() {
@@ -83,17 +75,11 @@ public class ProjectManager extends Person {
         Project project = findProject(projectId);
         project.addProgrammer(programmer);
     }
-
-/*    public void unAssignProject(long programmerId, int projectId) {
-            for(Project proj: projects) {
-                    if(proj.getId() == projectId) {
-                            Programmer programmer = findProgrammer(programmerId);
-                            if(programmer != null) {
-                                    proj.removeProgrammer(programmer);
-                            }
-                    }
-            }
-    }*/
+    
+    public void unassignProject(Programmer programmer, int projectId) {
+    	Project project = findProject(projectId);
+    	project.removeProgrammer(programmer);
+    }
 
     public void deleteProject(Project project){
         projects.remove(project);

@@ -1,14 +1,11 @@
 package id.kelompok2.projectmanagement.data;
 
-import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
-import id.kelompok2.projectmanagement.projects.Project;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,18 +22,13 @@ public class App implements Serializable {
 	private static final long serialVersionUID = -1L;
 	private List<ProjectManager> projMans;
     private List<Programmer> programmers;
-//    private static Person user;
     
     public App() {
         projMans = new ArrayList<>();
         programmers = new ArrayList<>();
-        projectInit();
-//        user = null;
-        Programmer.setApp(this);
-        ProjectManager.setApp(this);
     }
     
-    private void projectInit() {
+    public void projectInit() {
     	String projectMan, projectName, projectClient;
     	int projectId;
     	try(BufferedReader br = new BufferedReader(new FileReader("Projects.txt"))) {
@@ -47,6 +39,7 @@ public class App implements Serializable {
     	    	projectName = lineVals[2];
     	    	projectClient = lineVals[3];
     	    	ProjectManager projMan = (ProjectManager) findUser(projectMan);
+    	    	System.out.println("DEBUGINIT: "+ projMan.getName());
     	    	projMan.recreateProject(projectId, projectName, projectClient);
     	    }
     	} catch (IOException e) {
@@ -54,14 +47,6 @@ public class App implements Serializable {
 		}
 	}
 
-	/*   public static void setUser(Person person) {
-    	user = person;
-    }
-    
-    public static Person getUser() {
-    	return user;
-    }
-    */
     public void addProgrammer(Programmer programmer) {
         programmers.add(programmer);
     }

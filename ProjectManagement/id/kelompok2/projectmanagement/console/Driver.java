@@ -5,26 +5,11 @@
  */
 package id.kelompok2.projectmanagement.console;
 
-import id.kelompok2.projectmanagement.data.App;
 import id.kelompok2.projectmanagement.employees.Person;
-import id.kelompok2.projectmanagement.employees.Programmer;
-import id.kelompok2.projectmanagement.employees.ProjectManager;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.Console;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -37,7 +22,6 @@ public class Driver {
     
 	public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Console console = System.console();
 
         System.out.println("Project Management Application");
         System.out.println("You need to login to proceed!");

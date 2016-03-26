@@ -4,7 +4,7 @@ public class Task {
 	private String taskName;
 	private int taskId;
 	private boolean done=false;
-        private double kesulitan;
+    private double kesulitan;
 
 	public Task(String taskName, int taskId) {
 		this.taskName = taskName;
