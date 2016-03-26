@@ -72,10 +72,6 @@ public class Menu {
             System.out.println("*               4. Show available programmers           *");
             System.out.println("*               5. Log-out                              *");
             System.out.println("*********************************************************");
-    		System.out.println("1. Create Project");
-    		System.out.println("2. See Projects");
-    		System.out.println("3. Hire A Programmer");
-    		System.out.println("4. See Programmers");
     		try {
     			switch(Integer.parseInt(inputPilihan("Pilih menu"))) {
 	    			case 1:
