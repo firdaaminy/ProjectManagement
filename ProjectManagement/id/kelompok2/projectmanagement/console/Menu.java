@@ -14,7 +14,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 /**
  *
@@ -77,7 +76,7 @@ public class Menu {
             System.out.println("*               5. Log-out                              *");
             System.out.println("*********************************************************");
     		try {
-    			switch(Integer.parseInt(inputPilihan("Pilih menu"))) {
+    			switch(Integer.parseInt(inputPilihan("Choose menu"))) {
 	    			case 1:
 	    				createProject();
 	    				break;
@@ -133,7 +132,7 @@ public class Menu {
     		}
     	}
     	try {
-    		int projId = Integer.parseInt(inputPilihan("Masukkan Project ID (0 untuk kembali)"));
+    		int projId = Integer.parseInt(inputPilihan("Enter project's ID (enter 0 to return to main menu)"));
     		if(projectExists(projId)) {
     			showMenuProject(projId);
     		}
@@ -158,11 +157,11 @@ public class Menu {
 		System.out.println("3. Assign Programmer To Project");
 		System.out.println("4. Remove Programmer From Project");
 		try {
-			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda"))) {
+			switch(Integer.parseInt(inputPilihan("Choose menu"))) {
 				case 1:
-					proj.addTask(inputPilihan("Masukkan nama task"), 
-						Integer.parseInt(inputPilihan("Masukkan ID Task")), 
-						Double.parseDouble(inputPilihan("Masukkan tingkat kesulitan (angka)")));
+					proj.addTask(inputPilihan("Enter task's name "), 
+						Integer.parseInt(inputPilihan("Enter task's ID ")),
+						Double.parseDouble(inputPilihan("Enter task's difficulty (number)")));
 					ConsoleMain.app.serialize();
 					break;
 				case 2:
