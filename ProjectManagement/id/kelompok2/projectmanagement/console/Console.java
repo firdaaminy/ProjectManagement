@@ -12,13 +12,8 @@ import java.util.Scanner;
  * @author Iwan Ma'ruf
  */
 public class Console {
-    private Application app;
     private Scanner sInt;
     private Scanner sStr;
-    
-    public Console(Application app){
-        this.app=app;
-    }
     
     public void mainMenu(){
         Scanner inputInteger=new Scanner(System.in);

@@ -6,15 +6,22 @@
 
 package id.kelompok2.projectmanagement.projects;
 
+import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.employees.Programmer;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Iwan Ma'ruf
  */
-public class Project {
-    private int projectId;
+public class Project implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1L;
+	private int projectId;
     private String projectName;
     private String projectClient;
     private ArrayList<Programmer> programmers;
@@ -58,8 +65,8 @@ public class Project {
     
     public void addProgrammer(Programmer programmer) {
     	if(programmer != null) {
-    		System.out.println("DEBUG Project.addProgrammer: "+ programmer.getName());
     		programmers.add(programmer);
+    		ConsoleMain.app.serialize();
     	}
     }
 

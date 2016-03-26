@@ -22,7 +22,6 @@ public class ConsoleMain {
 //        System.out.println(adam2.getOngoingProjects().get(0).getName());
     	App app = new App();
     	app = app.deSerialize();
-        app.projectInit();
     	ConsoleMain.app = app;
     	new Driver().run();
     }

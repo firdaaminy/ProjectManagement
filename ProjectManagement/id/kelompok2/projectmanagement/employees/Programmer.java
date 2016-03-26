@@ -6,32 +6,29 @@
 
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.data.App;
+import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.projects.Project;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Iwan Ma'ruf
  */
-public class Programmer extends Person {
+public class Programmer extends Person implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1L;
-    private static App app;
     
     public Programmer(String name, long id, double salary, String password){
         super(name, id, salary, password);
     }
     
-    public static void setApp(App app) {
-        Programmer.app = app;
-    }
-    
     public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
     	ArrayList<Project> arrayProject = new ArrayList<>();
-    	for(ProjectManager pMan: app.getProjectManagers()) {
+    	for(ProjectManager pMan: ConsoleMain.app.getProjectManagers()) {
     		if(pMan != null) {
     			for(Project proj: pMan.getProjects()) {
     				if(proj != null) {

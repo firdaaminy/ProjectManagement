@@ -39,7 +39,6 @@ public class App implements Serializable {
     	    	projectName = lineVals[2];
     	    	projectClient = lineVals[3];
     	    	ProjectManager projMan = (ProjectManager) findUser(projectMan);
-    	    	System.out.println("DEBUGINIT: "+ projMan.getName());
     	    	projMan.recreateProject(projectId, projectName, projectClient);
     	    }
     	} catch (IOException e) {
@@ -49,25 +48,31 @@ public class App implements Serializable {
 
     public void addProgrammer(Programmer programmer) {
         programmers.add(programmer);
+        this.serialize();
     }
     
     public void addProjectManager(ProjectManager projectManager) {
         projMans.add(projectManager);
+        this.serialize();
     }
     
     public void removeProgrammer(Programmer programmer) {
         programmers.remove(programmer);
+        this.serialize();
     }
     
     public void removeProjectManager(ProjectManager projectManager) {
         programmers.remove(projectManager);
+        this.serialize();
     }
     
     public List<ProjectManager> getProjectManagers() {
+        this.serialize();
         return projMans;
     }
     
     public List<Programmer> getProgrammers() {
+        this.serialize();
     	return programmers;
     }
     

@@ -41,7 +41,10 @@ public class Menu {
         	try {
     			switch(Integer.parseInt(inputPilihan("Pilih menu"))) {
     				case 1:
-    					programmer.getOngoingProjects();
+    					int i = 0;
+    					for(Project p: programmer.getOngoingProjects()) {
+    						System.out.println((i+1)+". "+ p.getName());
+    					}
     					break;
     				case 2:
     					System.out.println("Username: "+ programmer.getName());
@@ -69,6 +72,9 @@ public class Menu {
 	    			case 3:
 	    				createProgrammer();
 	    				break;
+	    			case 4:
+	    				showProgrammers();
+	    				break;
     			}
     		} catch(NumberFormatException | IOException e) {
     			e.printStackTrace();
@@ -76,7 +82,15 @@ public class Menu {
     	}
     }
     
-    private void printProjects() {
+    private void showProgrammers() {
+    	int i = 0;
+    	for(Programmer p: ConsoleMain.app.getProgrammers()) {
+    		System.out.println((i+1) +". "+ p.getName() +" ("+ p.getId() +")");
+    		i++;
+    	}
+	}
+
+	private void printProjects() {
     	System.out.println("PROJECTS OF "+ Driver.getUser().getName().toUpperCase());
     	ProjectManager projMan = (ProjectManager) Driver.getUser();
     	for(Project proj: projMan.getProjects()) {
@@ -85,7 +99,7 @@ public class Menu {
     		}
     	}
     	try {
-    		int projId = Integer.parseInt(inputPilihan("Masukkan Project ID (0 untuk kembali): "));
+    		int projId = Integer.parseInt(inputPilihan("Masukkan Project ID (0 untuk kembali)"));
     		if(projectExists(projId)) {
     			showMenuProject(projId);
     		}
@@ -109,20 +123,20 @@ public class Menu {
 		System.out.println("2. Assign Programmer To Project");
 		System.out.println("3. Remove Programmer From Project");
 		try {
-			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda: "))) {
+			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda"))) {
 				case 1:
-					proj.addTask(inputPilihan("Masukkan nama task: "), 
-							Integer.parseInt(inputPilihan("Masukkan ID Task: ")));
+					proj.addTask(inputPilihan("Masukkan nama task"), 
+							Integer.parseInt(inputPilihan("Masukkan ID Task")));
 					break;
 				case 2:
-					Programmer prog = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer: "));
+					Programmer prog = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer"));
 					if(prog != null) {
 						projMan.assignProject(prog, proj.getId());
 					}
 					else System.out.println("ID/Nama yang anda masukkan salah!");
 					break;
 				case 3:
-					Programmer uProg = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer: "));
+					Programmer uProg = getProgrammer(inputPilihan("Masukkan ID/Nama Programmer"));
 					if(uProg != null) {
 						projMan.unassignProject(uProg, proj.getId());
 					}
@@ -204,12 +218,13 @@ public class Menu {
 
 	public void createProgrammer() {
 		try {
-			String namaProgrammer = inputPilihan("Masukkan nama programmer: ");
-			String idProgrammer = inputPilihan("Masukkan ID programmer: ");
-			String gajiProgrammer = inputPilihan("Masukkan gaji programmer: ");
-			String passwordProgrammer = inputPilihan("Masukkan password untuk programmer: ");
+			String namaProgrammer = inputPilihan("Masukkan nama programmer");
+			String idProgrammer = inputPilihan("Masukkan ID programmer");
+			String gajiProgrammer = inputPilihan("Masukkan gaji programmer");
+			String passwordProgrammer = inputPilihan("Masukkan password untuk programmer");
 			if(getProgrammer(namaProgrammer) == null && getProgrammer(idProgrammer) == null) {
-				ConsoleMain.app.getProgrammers().add(new Programmer(namaProgrammer, Integer.parseInt(idProgrammer), Double.parseDouble(gajiProgrammer), passwordProgrammer));
+				ConsoleMain.app.addProgrammer(new Programmer(namaProgrammer, Integer.parseInt(idProgrammer), Double.parseDouble(gajiProgrammer), passwordProgrammer));
+//				ConsoleMain.app.serialize();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

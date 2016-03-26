@@ -1,6 +1,12 @@
 package id.kelompok2.projectmanagement.projects;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1L;
 	private String taskName;
 	private int taskId;
 	private boolean done=false;
