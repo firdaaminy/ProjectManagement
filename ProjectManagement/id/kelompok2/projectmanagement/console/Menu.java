@@ -67,13 +67,13 @@ public class Menu {
             System.out.println("*                   NO FUSS, NO RUSH                    *");
             System.out.println("*=======================================================*");
             System.out.println("*               1. Start a new project                  *");
-            System.out.println("*               2. Show all projects          			*");
+            System.out.println("*               2. Show all projects          		*");
             System.out.println("*               3. Create your team an account          *");
             System.out.println("*               4. Show available programmers           *");
             System.out.println("*               5. Log-out                              *");
             System.out.println("*********************************************************");
     		try {
-    			switch(Integer.parseInt(inputPilihan("Pilih menu"))) {
+    			switch(Integer.parseInt(inputPilihan("Choose menu: "))) {
 	    			case 1:
 	    				createProject();
 	    				break;
@@ -105,7 +105,7 @@ public class Menu {
 	}
 
 	private void printProjects() {
-    	System.out.println("PROJECTS OF "+ Driver.getUser().getName().toUpperCase());
+    	System.out.println("PROJECT OF "+ Driver.getUser().getName().toUpperCase());
     	ProjectManager projMan = (ProjectManager) Driver.getUser();
     	for(Project proj: projMan.getProjects()) {
     		if(proj != null) {
@@ -113,7 +113,7 @@ public class Menu {
     		}
     	}
     	try {
-    		int projId = Integer.parseInt(inputPilihan("Masukkan Project ID (0 untuk kembali)"));
+    		int projId = Integer.parseInt(inputPilihan("Enter project's ID (enter 0 to return to main menu)"));
     		if(projectExists(projId)) {
     			showMenuProject(projId);
     		}
@@ -137,10 +137,10 @@ public class Menu {
 		System.out.println("2. Assign Programmer To Project");
 		System.out.println("3. Remove Programmer From Project");
 		try {
-			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda"))) {
+			switch(Integer.parseInt(inputPilihan("Choose menu: "))) {
 				case 1:
-					proj.addTask(inputPilihan("Masukkan nama task"), 
-						Integer.parseInt(inputPilihan("Masukkan ID Task")));
+					proj.addTask(inputPilihan("Enter task's name "), 
+						Integer.parseInt(inputPilihan("Enter task's ID ")));
 					break;
 				case 2:
 					Programmer prog = getProgrammer(inputPilihan("Enter programmer's ID/Name"));
