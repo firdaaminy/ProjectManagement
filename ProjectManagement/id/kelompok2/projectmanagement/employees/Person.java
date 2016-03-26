@@ -12,7 +12,7 @@ package id.kelompok2.projectmanagement.employees;
 
 import id.kelompok2.projectmanagement.data.Company;
 
-abstract class Person extends Company {
+public abstract class Person extends Company {
 	protected String name;
 	protected long id;
 	protected double salary;

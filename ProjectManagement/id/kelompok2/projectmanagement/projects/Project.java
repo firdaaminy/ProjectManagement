@@ -159,7 +159,7 @@ public class Project {
     	programmers.remove(programmer);
     }
     
-    public ArrayList<Task> getTask(){
+    public ArrayList<Task> getTasks(){
         return tasks;
     }
     

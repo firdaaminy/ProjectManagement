@@ -1,4 +1,4 @@
-package id.kelompok2.projectmanagement.console;
+package id.kelompok2.projectmanagement.data;
 
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -19,7 +19,6 @@ import java.util.Scanner;
 public class Application {
     private ArrayList<ProjectManager> daftarManajerProyek=new ArrayList<>();
     private ArrayList<Programmer> daftarProgrammer=new ArrayList<>();
-    private ArrayList<Programmer> programmers=new ArrayList<>();
     Scanner in = new Scanner(System.in);
     
     public void addManajerProyek(ProjectManager projMan){
@@ -31,7 +30,7 @@ public class Application {
     }
     
     public Programmer getProgrammer(int id) {
-	return programmers.get(id);
+	return daftarProgrammer.get(id);
     }
     
     public void deleteProgrammer(int id){
@@ -61,12 +60,12 @@ public class Application {
         int id=in.nextInt();
         
         
-        for(int i=0;i<proyek.get(id).getTask().size();i++){
-            if(proyek.get(id).getTask().get(i).getStatuS()==true){
-                tampung=tampung+proyek.get(id).getTask().get(i).getKesulitan();
-                total=total+proyek.get(id).getTask().get(i).getKesulitan();
+        for(int i=0;i<proyek.get(id).getTasks().size();i++){
+            if(proyek.get(id).getTasks().get(i).getStatuS()==true){
+                tampung=tampung+proyek.get(id).getTasks().get(i).getKesulitan();
+                total=total+proyek.get(id).getTasks().get(i).getKesulitan();
             }
-            total=total+proyek.get(id).getTask().get(i).getKesulitan();
+            total=total+proyek.get(id).getTasks().get(i).getKesulitan();
         }
         System.out.println("Progress dari project adalah: "+(tampung/total*100)+"%");
     }

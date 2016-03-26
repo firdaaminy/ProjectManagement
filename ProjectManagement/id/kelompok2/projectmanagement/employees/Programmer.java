@@ -6,6 +6,7 @@
 
 package id.kelompok2.projectmanagement.employees;
 
+import id.kelompok2.projectmanagement.data.App;
 import id.kelompok2.projectmanagement.data.Company;
 import id.kelompok2.projectmanagement.projects.Project;
 import java.util.ArrayList;
@@ -44,16 +45,21 @@ import java.util.ArrayList;
 }
 */
 public class Programmer extends Person{
-    	
+    private static App app;
+    
     public Programmer(String name, long id, double salary){
         super(name, id, salary);
     }
     
-    public ArrayList<Project> getOngoingProjects(Company company) { //munculin project yang lagi di kerjain 
+    public static void setApp(App app) {
+        Programmer.app = app;
+    }
+    
+    public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
     	//Project[] arrayProject = new Project[100];
-		ArrayList<Project> arrayProject = new ArrayList<>();
+	ArrayList<Project> arrayProject = new ArrayList<>();
     	int counter = 0;
-    	for(ProjectManager pMan: company.getProjectManagers()) {
+    	for(ProjectManager pMan: app.getProjectManagers()) {
     		if(pMan != null) {
     			for(Project proj: pMan.getProjects()) {
     				if(proj != null) {

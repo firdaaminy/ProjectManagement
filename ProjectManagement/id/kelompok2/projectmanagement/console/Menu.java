@@ -5,6 +5,7 @@
  */
 package id.kelompok2.projectmanagement.console;
 
+import id.kelompok2.projectmanagement.employees.Person;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class Menu {
         System.out.println("Masukkan username: ");
         System.out.println("Masukkan password: ");
         if(username.equals("ASD") && password.equals("DSA")) {
-            user = 
+            
         }
     }
     
