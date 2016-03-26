@@ -10,26 +10,41 @@ Firda Aminy
 
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.data.Company;
+import id.kelompok2.projectmanagement.console.ConsoleMain;
+import id.kelompok2.projectmanagement.projects.Project;
 
-public abstract class Person extends Company {
-	protected String name;
-	protected long id;
-	protected double salary;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public abstract class Person implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1L;
+	private String name;
+	private long id;
+	private double salary;
+	public String password;
 	
-	public Person(String name, long id) {
+	public Person(String name, long id, String password) {
 		this.name = name;
 		this.id = id;
+		this.password = password;
 	}
 	
-	public Person(String name, long id, double salary) {
+	public Person(String name, long id, double salary, String password) {
 		this.name = name;
 		this.id = id;
 		this.salary = salary;
+		this.password = password;
 	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 	
 	public long getId() {
@@ -42,6 +57,10 @@ public abstract class Person extends Company {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public void setId(long id) {

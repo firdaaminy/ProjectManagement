@@ -1,7 +1,6 @@
 package id.kelompok2.projectmanagement.employees;
 
 import id.kelompok2.projectmanagement.data.App;
-import id.kelompok2.projectmanagement.data.Company;
 import id.kelompok2.projectmanagement.projects.Project;
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -12,8 +11,8 @@ public class ProjectManager extends Person {
     private double salary;
     private static App app;
 
-    public ProjectManager(String name, long id, double salary) {
-            super(name, id, salary);
+    public ProjectManager(String name, long id, double salary, String password) {
+            super(name, id, salary, password);
             projects = new ArrayList<>();
             app = null;
     }
@@ -67,7 +66,7 @@ public class ProjectManager extends Person {
         project.addProgrammer(programmer);
     }
 
-    public void unAssignProject(long programmerId, int projectId) {
+/*    public void unAssignProject(long programmerId, int projectId) {
             for(Project proj: projects) {
                     if(proj.getId() == projectId) {
                             Programmer programmer = findProgrammer(programmerId);
@@ -76,7 +75,7 @@ public class ProjectManager extends Person {
                             }
                     }
             }
-    }
+    }*/
 
     public void deleteProject(Project project){
         projects.remove(project);
@@ -91,4 +90,5 @@ public class ProjectManager extends Person {
     public void setSalary(double Salary) {
             salary = Salary;
     }
+
 }

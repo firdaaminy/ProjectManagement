@@ -7,7 +7,6 @@
 package id.kelompok2.projectmanagement.employees;
 
 import id.kelompok2.projectmanagement.data.App;
-import id.kelompok2.projectmanagement.data.Company;
 import id.kelompok2.projectmanagement.projects.Project;
 import java.util.ArrayList;
 
@@ -15,40 +14,15 @@ import java.util.ArrayList;
  *
  * @author Iwan Ma'ruf
  */
-/*public class Programmer extends Person{
-    	
-    public Programmer(String name, long id, double salary){
-        super(name, id, salary);
-    }
-    
-    public Project[] getOngoingProjects(Company company) {  
-    	Project[] arrayProject = new Project[100];
-    	int counter = 0;
-    	for(ProjectManager pMan: company.getProjectManagers()) {
-    		if(pMan != null) {
-    			for(Project proj: pMan.getProjects()) {
-    				if(proj != null) {
-    					for(Programmer programmer: proj.getProgrammers()) {
-    						if(programmer != null) {
-    							if(programmer == this) {
-    								arrayProject[counter] = proj;
-    								counter++;
-    							}
-    						}
-    					}
-    				}
-    			}
-    		}
-    	}
-    	return arrayProject;
-    }
-}
-*/
-public class Programmer extends Person{
+public class Programmer extends Person {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1L;
     private static App app;
     
-    public Programmer(String name, long id, double salary){
-        super(name, id, salary);
+    public Programmer(String name, long id, double salary, String password){
+        super(name, id, salary, password);
     }
     
     public static void setApp(App app) {
@@ -58,7 +32,6 @@ public class Programmer extends Person{
     public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
     	//Project[] arrayProject = new Project[100];
 	ArrayList<Project> arrayProject = new ArrayList<>();
-    	int counter = 0;
     	for(ProjectManager pMan: app.getProjectManagers()) {
     		if(pMan != null) {
     			for(Project proj: pMan.getProjects()) {

@@ -35,11 +35,11 @@ public class Task {
 		this.done = done;
 	}
         
-        public double getKesulitan(){
-            return kesulitan;
-        }
-        
-        public void setKesulitan(double kesulitan){
-            this.kesulitan=kesulitan;
-        }
+    public double getKesulitan(){
+        return kesulitan;
+    }
+    
+    public void setKesulitan(double kesulitan){
+        this.kesulitan=kesulitan;
+    }
 }

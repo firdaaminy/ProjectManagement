@@ -5,7 +5,11 @@
  */
 package id.kelompok2.projectmanagement.console;
 
+import id.kelompok2.projectmanagement.data.App;
 import id.kelompok2.projectmanagement.employees.Person;
+import id.kelompok2.projectmanagement.employees.Programmer;
+import id.kelompok2.projectmanagement.employees.ProjectManager;
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.Console;
@@ -26,14 +30,16 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Febby
+ * @author Adam
  */
 public class Driver {
-    private Person user;
+    private static Person user;
     
     public static void main(String[] args) {
+	}
+
+	public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter pw = new PrintWriter(new BufferedOutputStream(System.out));
         Console console = System.console();
 
         System.out.println("Project Management Application");
@@ -42,34 +48,31 @@ public class Driver {
             System.out.print("Username: ");
             String username = br.readLine();
             System.out.print("Password: ");
-            if(console != null) {
-                char[] password = null;
-                password = console.readPassword();
-                System.out.println(password);
-            }
-            else {
-                String password = null;
-                password = br.readLine();
-                System.out.println(password);
-                userLogin(username, password);
-            }
+            String password = null;
+            password = br.readLine();
+            userLogin(username, password);
         } catch (IOException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+	}
     
-    private static void userLogin(String username, String password) throws IOException {
-        List<String> lines = new ArrayList<>();
-        lines.add(username);
-        lines.add(password);
-        Path file = Paths.get(username+".txt");
-        File f = new File(file.toString());
-        if(f.exists()) {
-            Files.readAllLines(file);
-            if(password.equals(lines.get(1))) {
-                Programmer programmer = new Programmer()
-            }
-        }
-        else System.out.println("Wrong username!");
-    }
+	public void userLogin(String username, String password) {
+		Person person = ConsoleMain.app.findUser(username);
+		if(person == null) {
+			System.out.println("Username yang anda masukkan salah!");
+		}
+		else {
+			String pass = person.getPassword();
+			if(password.toString().equalsIgnoreCase(pass)) {
+				System.out.println("Password benar!");
+				user = person;
+				new Menu().run();
+			}
+			else System.out.println("Password salah!");
+		}
+	}
+	
+	public static Person getUser() {
+		return user;
+	}
 }

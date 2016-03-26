@@ -17,24 +17,24 @@ import java.util.Scanner;
  * @author Iwan Ma'ruf
  */
 public class Application {
-    private ArrayList<ProjectManager> daftarManajerProyek=new ArrayList<>();
-    private ArrayList<Programmer> daftarProgrammer=new ArrayList<>();
+    private static ArrayList<ProjectManager> daftarManajerProyek=new ArrayList<>();
+    private static ArrayList<Programmer> daftarProgrammer=new ArrayList<>();
     Scanner in = new Scanner(System.in);
     
-    public void addManajerProyek(ProjectManager projMan){
+    public static void addManajerProyek(ProjectManager projMan){
         daftarManajerProyek.add(projMan);
     }
     
-    public void addProgrammer(Programmer programmer){
+    public static void addProgrammer(Programmer programmer){
         daftarProgrammer.add(programmer);
     }
     
-    public Programmer getProgrammer(int id) {
-	return daftarProgrammer.get(id);
+    public static Programmer getProgrammer(int id) {
+    	return daftarProgrammer.get(id);
     }
     
-    public void deleteProgrammer(int id){
-        
+    public static void deleteProgrammer(Programmer programmer){
+        daftarProgrammer.remove(programmer);
     }
     
     public void startProject (int login){
@@ -58,7 +58,6 @@ public class Application {
         }
         System.out.println("Masukkan nomor proyek yang anda ingin check: ");
         int id=in.nextInt();
-        
         
         for(int i=0;i<proyek.get(id).getTasks().size();i++){
             if(proyek.get(id).getTasks().get(i).getStatuS()==true){
