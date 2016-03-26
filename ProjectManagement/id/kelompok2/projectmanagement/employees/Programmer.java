@@ -30,8 +30,7 @@ public class Programmer extends Person {
     }
     
     public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
-    	//Project[] arrayProject = new Project[100];
-	ArrayList<Project> arrayProject = new ArrayList<>();
+    	ArrayList<Project> arrayProject = new ArrayList<>();
     	for(ProjectManager pMan: app.getProjectManagers()) {
     		if(pMan != null) {
     			for(Project proj: pMan.getProjects()) {

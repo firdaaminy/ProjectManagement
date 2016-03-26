@@ -2,10 +2,19 @@ package id.kelompok2.projectmanagement.employees;
 
 import id.kelompok2.projectmanagement.data.App;
 import id.kelompok2.projectmanagement.projects.Project;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class ProjectManager extends Person {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1L;
     private ArrayList<Project> projects;
 	
     private double salary;
@@ -31,6 +40,15 @@ public class ProjectManager extends Person {
 
     public void createProject(int projectId, String projectName, String projectClient) {
             projects.add(new Project(projectId, projectName, projectClient));
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Projects.txt", true)))) {
+            	out.println(this.getName()+" "+projectId+" "+projectName+" "+projectClient);
+            } catch (IOException e) {
+				e.printStackTrace();
+			}
+    }
+    
+    public void recreateProject(int projectId, String projectName, String projectClient) {
+    	projects.add(new Project(projectId, projectName, projectClient));
     }
 
     public int findProject(Project project){

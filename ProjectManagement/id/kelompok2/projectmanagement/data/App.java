@@ -4,10 +4,13 @@ import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
+import id.kelompok2.projectmanagement.projects.Project;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -27,12 +30,31 @@ public class App implements Serializable {
     public App() {
         projMans = new ArrayList<>();
         programmers = new ArrayList<>();
+        projectInit();
 //        user = null;
         Programmer.setApp(this);
         ProjectManager.setApp(this);
     }
     
- /*   public static void setUser(Person person) {
+    private void projectInit() {
+    	String projectMan, projectName, projectClient;
+    	int projectId;
+    	try(BufferedReader br = new BufferedReader(new FileReader("Projects.txt"))) {
+    	    for(String line; (line = br.readLine()) != null; ) {
+    	    	String[] lineVals = line.split(" ");
+    	    	projectMan = lineVals[0];
+    	    	projectId = Integer.parseInt(lineVals[1]);
+    	    	projectName = lineVals[2];
+    	    	projectClient = lineVals[3];
+    	    	ProjectManager projMan = (ProjectManager) findUser(projectMan);
+    	    	projMan.recreateProject(projectId, projectName, projectClient);
+    	    }
+    	} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/*   public static void setUser(Person person) {
     	user = person;
     }
     

@@ -35,9 +35,6 @@ import java.util.logging.Logger;
 public class Driver {
     private static Person user;
     
-    public static void main(String[] args) {
-	}
-
 	public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Console console = System.console();
