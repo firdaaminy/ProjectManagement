@@ -8,6 +8,7 @@ package id.kelompok2.projectmanagement.console;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
 import id.kelompok2.projectmanagement.projects.Project;
+import id.kelompok2.projectmanagement.projects.Task;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,10 +43,13 @@ public class Menu {
         	try {
     			switch(Integer.parseInt(inputPilihan("Pilih menu"))) {
     				case 1:
-    					int i = 0;
     					for(Project p: programmer.getOngoingProjects()) {
-    						System.out.println((i+1)+". "+ p.getName());
+    						System.out.println(p.getId()+". "+ p.getName());
+    						for(Task task: p.getTasks()) {
+    							System.out.println("\t"+task.getId()+". "+ task.getName());
+    						}
     					}
+						setTaskDone(Integer.parseInt(inputPilihan("Masukkan ID Task yang sudah selesai (0 untuk kembali)")));
     					break;
     				case 2:
     					System.out.println("Username: "+ programmer.getName());
@@ -88,6 +92,7 @@ public class Menu {
 	    				break;
 	    			case 5:
 	    				ConsoleMain.app.serialize();
+	    				System.exit(0);
 	    				break;
     			}
     		} catch(NumberFormatException | IOException e) {
@@ -96,7 +101,22 @@ public class Menu {
     	}
     }
     
-    private void showProgrammers() {
+    private void setTaskDone(int taskId) {
+    	if(Driver.getUser() instanceof Programmer) {
+    		Programmer programmer = (Programmer) Driver.getUser();
+    		for(Project project: programmer.getOngoingProjects()) {
+    			for(Task task: project.getTasks()) {
+        			if(task.getId() == taskId) {
+        				task.setStatus(true);
+        				ConsoleMain.app.serialize();
+        				return;
+        			}    				
+    			}
+    		}
+    	}
+	}
+
+	private void showProgrammers() {
     	int i = 0;
     	for(Programmer p: ConsoleMain.app.getProgrammers()) {
     		System.out.println((i+1) +". "+ p.getName() +" ("+ p.getId() +")");
@@ -109,7 +129,7 @@ public class Menu {
     	ProjectManager projMan = (ProjectManager) Driver.getUser();
     	for(Project proj: projMan.getProjects()) {
     		if(proj != null) {
-    			System.out.println(proj.getId()+". "+ proj.getName());
+    			System.out.println(proj.getId()+". "+ proj.getName() +" ("+ checkProgress(proj) +"% done)");
     		}
     	}
     	try {
@@ -134,22 +154,33 @@ public class Menu {
 		}
 		System.out.println("============ MENU ===============");
 		System.out.println("1. Create Task");
-		System.out.println("2. Assign Programmer To Project");
-		System.out.println("3. Remove Programmer From Project");
+		System.out.println("2. Show Tasks");
+		System.out.println("3. Assign Programmer To Project");
+		System.out.println("4. Remove Programmer From Project");
 		try {
 			switch(Integer.parseInt(inputPilihan("Masukkan pilihan anda"))) {
 				case 1:
 					proj.addTask(inputPilihan("Masukkan nama task"), 
-						Integer.parseInt(inputPilihan("Masukkan ID Task")));
+						Integer.parseInt(inputPilihan("Masukkan ID Task")), 
+						Double.parseDouble(inputPilihan("Masukkan tingkat kesulitan (angka)")));
+					ConsoleMain.app.serialize();
 					break;
 				case 2:
+					for(Task task: proj.getTasks()) {
+						if(!task.getStatus()) {
+							System.out.println(task.getId() +". "+ task.getName() +" ("+ 
+									(task.getKesulitan()/proj.getTotalDifficulty()*100)+"%)");
+						}
+					}
+					break;
+				case 3:
 					Programmer prog = getProgrammer(inputPilihan("Enter programmer's ID/Name"));
 					if(prog != null) {
 						projMan.assignProject(prog, proj.getId());
 					}
 					else System.out.println("The ID/Name you entered was invalid!");
 					break;
-				case 3:
+				case 4:
 					Programmer uProg = getProgrammer(inputPilihan("Enter programmer's ID/Name"));
 					if(uProg != null) {
 						projMan.unassignProject(uProg, proj.getId());
@@ -161,36 +192,17 @@ public class Menu {
 			e.printStackTrace();
 		}
 	}
-
-
-	/* Made by Firda Aminy, to be used for Sprint 3.
-	 * 
-	 * 
-	 * Signed,
-	 * Adam.
-	 * 
-	 * 
-    public void checkProgress(int login){
-        double tampung=0;
-        double total=0;
-        ArrayList<Project> proyek=new ArrayList<>();
-        proyek=daftarManajerProyek.get(login).getProjects();
-        
-        for (int i=0; i<proyek.size();i++){
-            System.out.println((i+1)+". Nama project: "+proyek.get(i).getName());
-        }
-        System.out.println("Masukkan nomor proyek yang anda ingin check: ");
-        int id=in.nextInt();
-        
-        for(int i=0;i<proyek.get(id).getTasks().size();i++){
-            if(proyek.get(id).getTasks().get(i).getStatus()==true){
-                tampung=tampung+proyek.get(id).getTasks().get(i).getKesulitan();
-                total=total+proyek.get(id).getTasks().get(i).getKesulitan();
-            }
-            total=total+proyek.get(id).getTasks().get(i).getKesulitan();
-        }
-        System.out.println("Progress dari project adalah: "+(tampung/total*100)+"%");
-    }*/
+	
+	public double checkProgress(Project project) {
+		double tampung = 0, total = 0;
+		for(Task task: project.getTasks()) {
+			if(task.getStatus()) {
+				tampung += task.getKesulitan();
+			}
+			total += task.getKesulitan();
+		}
+		return (tampung/total*100);
+	}
 
 	private Programmer getProgrammer(String inputPilihan) {
 		boolean number = true;
@@ -240,7 +252,7 @@ public class Menu {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private boolean projectExists(int projectId) {
     	int pId;
     	boolean exists = false;
@@ -275,7 +287,6 @@ public class Menu {
 			String passwordProgrammer = inputPilihan("Enter programmer's default password");
 			if(getProgrammer(namaProgrammer) == null && getProgrammer(idProgrammer) == null) {
 				ConsoleMain.app.addProgrammer(new Programmer(namaProgrammer, Integer.parseInt(idProgrammer), Double.parseDouble(gajiProgrammer), passwordProgrammer));
-//				ConsoleMain.app.serialize();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

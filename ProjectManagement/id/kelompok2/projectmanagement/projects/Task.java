@@ -12,9 +12,10 @@ public class Task implements Serializable {
 	private boolean done=false;
     private double kesulitan;
 
-	public Task(String taskName, int taskId) {
+	public Task(String taskName, int taskId, double kesulitan) {
 		this.taskName = taskName;
 		this.taskId = taskId;
+		this.kesulitan = kesulitan;
 	}
 
 	public String getName() {

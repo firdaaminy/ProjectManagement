@@ -82,7 +82,15 @@ public class Project implements Serializable {
         return tasks.get(id);
     }
     
-    public void addTask(String name, int taskId) {
-    	tasks.add(new Task(name, taskId));
+    public void addTask(String name, int taskId, double kesulitan) {
+    	tasks.add(new Task(name, taskId, kesulitan));
+    }
+    
+    public double getTotalDifficulty() {
+    	double total = 0;
+    	for(Task task: tasks) {
+    		total += task.getKesulitan();
+    	}
+    	return total;
     }
 }
