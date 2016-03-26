@@ -1,9 +1,10 @@
 package id.kelompok2.projectmanagement.projects;
 
 public class Task {
-	String taskName;
-	int taskId;
-	boolean done;
+	private String taskName;
+	private int taskId;
+	private boolean done=false;
+        private double kesulitan;
 
 	public Task(String taskName, int taskId) {
 		this.taskName = taskName;
@@ -33,4 +34,12 @@ public class Task {
 	public void setStatus(boolean done) {
 		this.done = done;
 	}
+        
+        public double getKesulitan(){
+            return kesulitan;
+        }
+        
+        public void setKesulitan(double kesulitan){
+            this.kesulitan=kesulitan;
+        }
 }
