@@ -48,6 +48,7 @@ public class CobaCobaLogin extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -185,10 +186,13 @@ public class CobaCobaLogin extends javax.swing.JFrame {
         jTextField3.setText("Day");
         getContentPane().add(jTextField3);
         jTextField3.setBounds(570, 440, 90, 30);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\office_desk_background_by_chocotemplates.jpg")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1370, 874);
+        jLabel1.setBounds(0, 0, 1370, 0);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BackgroundLogin.jpg"))); // NOI18N
+        jLabel7.setText("a");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 1010, 870);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,6 +240,7 @@ public class CobaCobaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -256,6 +261,7 @@ public class CobaCobaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
