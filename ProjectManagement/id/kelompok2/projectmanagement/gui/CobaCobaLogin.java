@@ -153,7 +153,7 @@ public class CobaCobaLogin extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("By clicking Sign Up, you agree to our Terms");
+        jLabel5.setText("By clicking Sign In, you agree to our Terms");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(620, 580, 320, 20);
 
