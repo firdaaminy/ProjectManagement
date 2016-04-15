@@ -67,15 +67,16 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         setSize(new java.awt.Dimension(1000, 687));
         getContentPane().setLayout(null);
 
+        lblTitle.setBackground(new java.awt.Color(255, 255, 153));
         lblTitle.setFont(new java.awt.Font("Sitka Text", 0, 45)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setForeground(new java.awt.Color(255, 255, 153));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("ON-BOARD");
         getContentPane().add(lblTitle);
-        lblTitle.setBounds(280, 0, 247, 70);
+        lblTitle.setBounds(160, 0, 247, 70);
 
         lblMotto.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        lblMotto.setForeground(new java.awt.Color(255, 255, 255));
+        lblMotto.setForeground(new java.awt.Color(255, 255, 153));
         lblMotto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMotto.setText("Nobody's left behind with ON-BOARD");
         getContentPane().add(lblMotto);
@@ -389,7 +390,8 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
 
     @Override
     public void addListener(ActionListener e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        btnLogin.addActionListener(e);
+        btnSignUp.addActionListener(e);
     }
 
 }
