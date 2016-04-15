@@ -70,7 +70,7 @@ public class Menu {
             System.out.println("*                   NO FUSS, NO RUSH                    *");
             System.out.println("*=======================================================*");
             System.out.println("*               1. Start a new project                  *");
-            System.out.println("*               2. Show all projects          			*");
+            System.out.println("*               2. Show all projects          		*");
             System.out.println("*               3. Create your team an account          *");
             System.out.println("*               4. Show available programmers           *");
             System.out.println("*               5. Log-out                              *");
