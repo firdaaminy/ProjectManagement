@@ -15,23 +15,23 @@ import javax.swing.JButton;
 public class NewProgrammer extends javax.swing.JFrame implements View {
 
     public JButton getjButton1() {
-        return jButton1;
+        return jbCancel;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return jbCreate;
     }
     public String getProgrammerName(){
-        return jTextField1.getText();
+        return jxProgrammerName.getText();
     }
     public int getProgrammerId(){
-        return Integer.parseInt(jTextField2.getText());
+        return Integer.parseInt(jxProgrammerId.getText());
     }
     public double getProgrammerSalary(){
-        return Double.parseDouble(jTextField3.getText());
+        return Double.parseDouble(jxProgrammerSalary.getText());
     }
     public String getProgrammerPassword(){
-        return jTextField4.getText();
+        return jxProgrammerPassword.getText();
     }
 
     /**
@@ -51,13 +51,13 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jxProgrammerName = new javax.swing.JTextField();
+        jxProgrammerId = new javax.swing.JTextField();
+        jxProgrammerSalary = new javax.swing.JTextField();
+        jxProgrammerPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbCancel = new javax.swing.JButton();
+        jbCreate = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -68,45 +68,45 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        jbManager = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
+        jbNewMember = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        jbNewProject = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        jbYourProject = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
+        jbYourTeam = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Enter your programmer's name");
+        jxProgrammerName.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jxProgrammerName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxProgrammerName.setText("Enter your programmer's name");
 
-        jTextField2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Enter your programmer's ID");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jxProgrammerId.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jxProgrammerId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxProgrammerId.setText("Enter your programmer's ID");
+        jxProgrammerId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jxProgrammerIdActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Enter your programmer's salary");
+        jxProgrammerSalary.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jxProgrammerSalary.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxProgrammerSalary.setText("Enter your programmer's salary");
 
-        jTextField4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Enter your programmer's default password");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jxProgrammerPassword.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jxProgrammerPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxProgrammerPassword.setText("Enter your programmer's default password");
+        jxProgrammerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jxProgrammerPasswordActionPerformed(evt);
             }
         });
 
@@ -115,11 +115,11 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("\"Coming together is a beginning. Keeping together is progress. Working together is success.\"");
 
-        jButton1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton1.setText("Cancel");
+        jbCancel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jbCancel.setText("Cancel");
 
-        jButton2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton2.setText("Create");
+        jbCreate.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jbCreate.setText("Create");
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 102));
@@ -149,16 +149,16 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
                                 .addGap(68, 68, 68)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jxProgrammerSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jxProgrammerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                                        .addComponent(jxProgrammerId, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jxProgrammerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(146, 146, 146)
-                                .addComponent(jButton1)
+                                .addComponent(jbCancel)
                                 .addGap(100, 100, 100)
-                                .addComponent(jButton2)))
+                                .addComponent(jbCreate)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -168,17 +168,17 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxProgrammerName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxProgrammerId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxProgrammerSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxProgrammerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jbCancel)
+                    .addComponent(jbCreate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,7 +259,7 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbManager, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -274,7 +274,7 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addContainerGap())
@@ -282,7 +282,7 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jbNewMember.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -310,20 +310,20 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbYourProject, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbNewMember, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbNewProject, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbYourTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -334,18 +334,18 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
                 .addGap(34, 34, 34)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
+                    .addComponent(jbNewProject))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jbYourProject, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton10)
+                    .addComponent(jbYourTeam)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
         );
@@ -389,13 +389,13 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jxProgrammerIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxProgrammerIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jxProgrammerIdActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jxProgrammerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxProgrammerPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jxProgrammerPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,17 +433,10 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -457,15 +450,31 @@ public class NewProgrammer extends javax.swing.JFrame implements View {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton jbCancel;
+    private javax.swing.JButton jbCreate;
+    private javax.swing.JButton jbManager;
+    private javax.swing.JButton jbNewMember;
+    private javax.swing.JButton jbNewProject;
+    private javax.swing.JButton jbYourProject;
+    private javax.swing.JButton jbYourTeam;
+    private javax.swing.JTextField jxProgrammerId;
+    private javax.swing.JTextField jxProgrammerName;
+    private javax.swing.JTextField jxProgrammerPassword;
+    private javax.swing.JTextField jxProgrammerSalary;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void addListener(ActionListener e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jbCancel.addActionListener(e);
+        jbCreate.addActionListener(e);
+        jbManager.addActionListener(e);
+        jbNewMember.addActionListener(e);
+        jbNewProject.addActionListener(e);
+        jbYourProject.addActionListener(e);
+        jbYourTeam.addActionListener(e);
+       
     }
+    
+    
 }

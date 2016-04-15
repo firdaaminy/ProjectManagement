@@ -30,14 +30,14 @@ public class Notification extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        jxNotif2 = new javax.swing.JTextField();
+        jxNotif1 = new javax.swing.JTextField();
+        jxNotif3 = new javax.swing.JTextField();
+        jxNotif4 = new javax.swing.JTextField();
+        jxNotif5 = new javax.swing.JTextField();
+        jxNotif6 = new javax.swing.JTextField();
+        jxNotif7 = new javax.swing.JTextField();
+        jxNotif8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,37 +67,37 @@ public class Notification extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTextField3.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField3.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField3.setText("Project Telah selesai.");
+        jxNotif2.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif2.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif2.setText("Project Telah selesai.");
 
-        jTextField4.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField4.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField4.setText("Project telah anda dapatkan,segera cek disini!");
+        jxNotif1.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif1.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif1.setText("Project telah anda dapatkan,segera cek disini!");
 
-        jTextField2.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField2.setText("Project di remove oleh ANDITIO");
+        jxNotif3.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif3.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif3.setText("Project di remove oleh ANDITIO");
 
-        jTextField5.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField5.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField5.setText("Programmer has sent the message");
+        jxNotif4.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif4.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif4.setText("Programmer has sent the message");
 
-        jTextField6.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField6.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField6.setText("Budi Minta uang jajan.");
+        jxNotif5.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif5.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif5.setText("Budi Minta uang jajan.");
 
-        jTextField7.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField7.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField7.setText("BUdi juga minta permen.");
+        jxNotif6.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif6.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif6.setText("BUdi juga minta permen.");
 
-        jTextField8.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField8.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField8.setText("hoooaaaaamm mantap gan");
+        jxNotif7.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif7.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif7.setText("hoooaaaaamm mantap gan");
 
-        jTextField9.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField9.setForeground(new java.awt.Color(255, 255, 153));
-        jTextField9.setText("jTextField9");
+        jxNotif8.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif8.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif8.setText("jTextField9");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -106,42 +106,42 @@ public class Notification extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
-                    .addComponent(jTextField2))
+                    .addComponent(jxNotif2)
+                    .addComponent(jxNotif8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif4, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                    .addComponent(jxNotif3))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                    .addComponent(jxNotif1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxNotif8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jxNotif1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(419, Short.MAX_VALUE)))
         );
 
@@ -210,13 +210,46 @@ public class Notification extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jxNotif1;
+    private javax.swing.JTextField jxNotif2;
+    private javax.swing.JTextField jxNotif3;
+    private javax.swing.JTextField jxNotif4;
+    private javax.swing.JTextField jxNotif5;
+    private javax.swing.JTextField jxNotif6;
+    private javax.swing.JTextField jxNotif7;
+    private javax.swing.JTextField jxNotif8;
     // End of variables declaration//GEN-END:variables
+    public void setNotif1(String a){
+        jxNotif1.setText(a);
+        
+    }
+    public void setNotif2(String a){
+        jxNotif2.setText(a);
+        
+    }
+    public void setNotif3(String a){
+        jxNotif3.setText(a);
+        
+    }
+    public void setNotif4(String a){
+        jxNotif4.setText(a);
+        
+    }
+    public void setNotif5(String a){
+        jxNotif5.setText(a);
+        
+    }
+    public void setNotif6(String a){
+        jxNotif6.setText(a);
+    }
+    public void setNotif7(String a){
+        jxNotif7.setText(a);
+        
+    }
+    public void setNotif8(String a){
+        jxNotif8.setText(a);
+        
+    }
 }
+
+
