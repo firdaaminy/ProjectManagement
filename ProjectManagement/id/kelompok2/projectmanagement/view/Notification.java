@@ -5,6 +5,8 @@
  */
 package id.kelompok2.projectmanagement.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Iwan Ma'ruf
@@ -147,4 +149,9 @@ public class Notification extends javax.swing.JFrame implements View{
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addListener(ActionListener e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

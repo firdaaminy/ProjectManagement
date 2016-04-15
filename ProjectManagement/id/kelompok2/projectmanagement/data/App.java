@@ -2,7 +2,8 @@ package id.kelompok2.projectmanagement.data;
 
 import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.console.Menu;
-import id.kelompok2.projectmanagement.controller.Database;
+import id.kelompok2.projectmanagement.controller.ControllerLogin;
+import Database.Database;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -16,129 +17,123 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class App implements Serializable {
-	/**
-	 * 
-	 */
+
+    /**
+     *
+     */
     private static final long serialVersionUID = -1L;
     private List<ProjectManager> projMans;
     private List<Programmer> programmers;
     private Database database;
     
+private id.kelompok2.projectmanagement.controller.ControllerLogin cl;
+            
     public App() {
         projMans = new ArrayList<>();
         programmers = new ArrayList<>();
     }
-    
+
     public void projectInit() {
-    	String projectMan, projectName, projectClient;
-    	int projectId;
-    	try(BufferedReader br = new BufferedReader(new FileReader("Projects.txt"))) {
-    	    for(String line; (line = br.readLine()) != null; ) {
-    	    	String[] lineVals = line.split(" ");
-    	    	projectMan = lineVals[0];
-    	    	projectId = Integer.parseInt(lineVals[1]);
-    	    	projectName = lineVals[2];
-    	    	projectClient = lineVals[3];
-    	    	ProjectManager projMan = (ProjectManager) findUser(projectMan);
-    	    	projMan.recreateProject(projectId, projectName, projectClient);
-    	    }
-    	} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+        String projectMan, projectName, projectClient;
+        int projectId;
+        try (BufferedReader br = new BufferedReader(new FileReader("Projects.txt"))) {
+            for (String line; (line = br.readLine()) != null;) {
+                String[] lineVals = line.split(" ");
+                projectMan = lineVals[0];
+                projectId = Integer.parseInt(lineVals[1]);
+                projectName = lineVals[2];
+                projectClient = lineVals[3];
+                ProjectManager projMan = (ProjectManager) findUser(projectMan);
+                projMan.recreateProject(projectId, projectName, projectClient);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void addProgrammer(Programmer programmer) {
         programmers.add(programmer);
         this.serialize();
     }
-    
+
     public void addProjectManager(ProjectManager projectManager) {
         projMans.add(projectManager);
         this.serialize();
     }
-    
+
     public void removeProgrammer(Programmer programmer) {
         programmers.remove(programmer);
         this.serialize();
     }
-    
+
     public void removeProjectManager(ProjectManager projectManager) {
         programmers.remove(projectManager);
         this.serialize();
     }
-    
+
     public List<ProjectManager> getProjectManagers() {
         this.serialize();
         return projMans;
     }
-    
+
     public List<Programmer> getProgrammers() {
         this.serialize();
-    	return programmers;
+        return programmers;
     }
-    
+
     public void serialize() {
-    	FileOutputStream fileOut;
-		try {
-			fileOut = new FileOutputStream("App.txt");
-	    	ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-	    	objectOut.writeObject(this);
-	    	objectOut.flush();
-	    	objectOut.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        FileOutputStream fileOut;
+        try {
+            fileOut = new FileOutputStream("App.txt");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(this);
+            objectOut.flush();
+            objectOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    
+
     public App deSerialize() {
-    	FileInputStream fileIn;
-    	App app;
-		try {
-			fileIn = new FileInputStream("App.txt");
-	    	ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-	    	app = (App) objectIn.readObject();
-	    	objectIn.close();
-	    	return app;
-		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
+        FileInputStream fileIn;
+        App app;
+        try {
+            fileIn = new FileInputStream("App.txt");
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+            app = (App) objectIn.readObject();
+            objectIn.close();
+            return app;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
+
+    public Person findUser(String username) {
+        for (Person p : programmers) {
+            if (p != null) {
+                if (p.getName().equalsIgnoreCase(username)) {
+                    return p;
+                }
+            }
+        }
+        for (Person p : projMans) {
+            if (p != null) {
+                if (p.getName().equalsIgnoreCase(username)) {
+                    return p;
+                }
+            }
+        }
+        return null;
+    }
+
     
-	public Person findUser(String username) {
-		for(Person p: programmers) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		for(Person p: projMans) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		return null;
-	}
-        
-        public void userLogin(String username, String password) {
-		Person person = ConsoleMain.app.findUser(username);
-		if(person == null) {
-			System.out.println("Wrong username!");
-		}
-		else {
-                        String uname="select * from user where username="+username+";";
-                        ResultSet result1=database.getData(uname);
-                        String pass="select * from user where password= "+password+";";
-                        ResultSet result2=database.getData(pass);
-                        ProjectManager proMan=new ProjectManager();
-			
-		}
-	}
 }

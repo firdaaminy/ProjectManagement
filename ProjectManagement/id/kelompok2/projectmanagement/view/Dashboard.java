@@ -113,10 +113,8 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Search project, team member, and more on ON-BOARD");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bell.png"))); // NOI18N
         jButton1.setBorder(null);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/social.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,10 +122,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/business.png"))); // NOI18N
         jButton2.setBorder(null);
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,8 +202,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Project Manager");
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (3).png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -240,7 +233,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people.png"))); // NOI18N
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -248,22 +240,16 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel2.setLabelFor(jButton5);
         jLabel2.setText("New team member");
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sign.png"))); // NOI18N
-
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 153));
         jLabel3.setLabelFor(jButton6);
         jLabel3.setText("New project");
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/three.png"))); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 153));
         jLabel5.setLabelFor(jButton7);
         jLabel5.setText("Your project(s)");
-
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/networking.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 153));
@@ -354,8 +340,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel10.setLabelFor(jButton9);
         jLabel10.setText("Attach file(s)");
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interface.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -407,7 +391,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
         );
 
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/business (2).png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

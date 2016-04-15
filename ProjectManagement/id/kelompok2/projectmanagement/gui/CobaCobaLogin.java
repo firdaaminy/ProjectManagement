@@ -29,6 +29,14 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     public JButton getBtnSignUp() {
         return btnSignUp;
     }
+    public String getUser(){
+        return usernameLogin.getText();
+    }
+    public String getPass(){
+        return passwordLogin.getText();
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,20 +71,17 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 687));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1015, 728));
         setSize(new java.awt.Dimension(1000, 687));
         getContentPane().setLayout(null);
 
         lblTitle.setBackground(new java.awt.Color(255, 255, 153));
         lblTitle.setFont(new java.awt.Font("Sitka Text", 0, 45)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 255, 153));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("ON-BOARD");
         getContentPane().add(lblTitle);
         lblTitle.setBounds(160, 0, 247, 70);
 
         lblMotto.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        lblMotto.setForeground(new java.awt.Color(255, 255, 153));
         lblMotto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMotto.setText("Nobody's left behind with ON-BOARD");
         getContentPane().add(lblMotto);
@@ -106,7 +111,6 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         btnLogin.setBounds(850, 40, 113, 30);
 
         lblSignUp.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        lblSignUp.setForeground(new java.awt.Color(255, 255, 255));
         lblSignUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSignUp.setText("OR SIGN UP FOR FREE");
         getContentPane().add(lblSignUp);
@@ -254,7 +258,6 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         getContentPane().add(dayField);
         dayField.setBounds(570, 400, 90, 30);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BackgroundLogin.jpg"))); // NOI18N
         background.setText("jLabel1");
         background.setMaximumSize(new java.awt.Dimension(1010, 680));
         background.setMinimumSize(new java.awt.Dimension(1010, 680));
@@ -392,6 +395,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     public void addListener(ActionListener e) {
         btnLogin.addActionListener(e);
         btnSignUp.addActionListener(e);
+        
     }
 
 }

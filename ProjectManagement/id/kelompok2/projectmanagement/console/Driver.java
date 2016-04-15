@@ -18,9 +18,10 @@ import java.util.logging.Logger;
  * @author Adam
  */
 public class Driver {
+
     private static Person user;
-    
-	public void run() {
+
+    public void run() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Project Management Application");
@@ -35,25 +36,25 @@ public class Driver {
         } catch (IOException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
-	}
-    
-	public void userLogin(String username, String password) {
-		Person person = ConsoleMain.app.findUser(username);
-		if(person == null) {
-			System.out.println("Username yang anda masukkan salah!");
-		}
-		else {
-			String pass = person.getPassword();
-			if(password.toString().equalsIgnoreCase(pass)) {
-				System.out.println("Password benar!");
-				user = person;
-				new Menu().run();
-			}
-			else System.out.println("Password salah!");
-		}
-	}
-	
-	public static Person getUser() {
-		return user;
-	}
+    }
+
+    public void userLogin(String username, String password) {
+        Person person = ConsoleMain.app.findUser(username);
+        if (person == null) {
+            System.out.println("Username yang anda masukkan salah!");
+        } else {
+            String pass = person.getPassword();
+            if (password.toString().equalsIgnoreCase(pass)) {
+                System.out.println("Password benar!");
+                user = person;
+                new Menu().run();
+            } else {
+                System.out.println("Password salah!");
+            }
+        }
+    }
+
+    public static Person getUser() {
+        return user;
+    }
 }
