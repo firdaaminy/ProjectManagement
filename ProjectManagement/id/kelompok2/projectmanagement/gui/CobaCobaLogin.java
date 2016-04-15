@@ -39,6 +39,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lblTitle = new javax.swing.JLabel();
         lblMotto = new javax.swing.JLabel();
         usernameLogin = new javax.swing.JTextField();
@@ -62,7 +63,6 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 687));
-        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1015, 728));
         setSize(new java.awt.Dimension(1000, 687));
         getContentPane().setLayout(null);
@@ -201,12 +201,14 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         getContentPane().add(passwordSignUp);
         passwordSignUp.setBounds(570, 330, 400, 30);
 
+        buttonGroup1.add(fmlCheckBox);
         fmlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         fmlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         fmlCheckBox.setText("Female");
         getContentPane().add(fmlCheckBox);
         fmlCheckBox.setBounds(640, 470, 110, 31);
 
+        buttonGroup1.add(mlCheckBox);
         mlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         mlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         mlCheckBox.setText("Male");
@@ -368,6 +370,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     private javax.swing.JLabel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSignUp;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField dayField;
     private javax.swing.JTextField firstName;
     private javax.swing.JCheckBox fmlCheckBox;
