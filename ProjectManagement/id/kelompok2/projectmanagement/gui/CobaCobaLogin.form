@@ -260,7 +260,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="By clicking Sign Up, you agree to our Terms"/>
+        <Property name="text" type="java.lang.String" value="By clicking Sign In, you agree to our Terms"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -306,7 +306,6 @@
           <Font name="Sitka Text" size="36" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sign Up"/>
-        <Property name="actionCommand" type="java.lang.String" value="Sign Up"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
