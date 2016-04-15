@@ -216,7 +216,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\bell.png"/>
+              <Image iconType="3" name="/bell.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -226,7 +226,7 @@
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\social.png"/>
+              <Image iconType="3" name="/social.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -239,7 +239,7 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\business.png"/>
+              <Image iconType="3" name="/business.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -249,7 +249,7 @@
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\graphic.png"/>
+              <Image iconType="3" name="/graphic.png"/>
             </Property>
           </Properties>
         </Component>
@@ -373,7 +373,7 @@
         <Component class="javax.swing.JButton" name="jButton13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\people (3).png"/>
+              <Image iconType="3" name="/people (3).png"/>
             </Property>
           </Properties>
         </Component>
@@ -452,7 +452,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\people.png"/>
+              <Image iconType="3" name="/people.png"/>
             </Property>
           </Properties>
         </Component>
@@ -476,7 +476,7 @@
         <Component class="javax.swing.JButton" name="jButton6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\sign.png"/>
+              <Image iconType="3" name="/sign.png"/>
             </Property>
           </Properties>
         </Component>
@@ -500,7 +500,7 @@
         <Component class="javax.swing.JButton" name="jButton7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\three.png"/>
+              <Image iconType="3" name="/three.png"/>
             </Property>
           </Properties>
         </Component>
@@ -521,7 +521,7 @@
         <Component class="javax.swing.JButton" name="jButton8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\networking.png"/>
+              <Image iconType="3" name="/networking.png"/>
             </Property>
           </Properties>
         </Component>
@@ -596,11 +596,13 @@
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButton9" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
@@ -699,7 +701,7 @@
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\interface.png"/>
+              <Image iconType="3" name="/interface.png"/>
             </Property>
           </Properties>
         </Component>
@@ -711,7 +713,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Iwan Ma&apos;ruf\Downloads\business (2).png"/>
+          <Image iconType="3" name="/business (2).png"/>
         </Property>
       </Properties>
     </Component>

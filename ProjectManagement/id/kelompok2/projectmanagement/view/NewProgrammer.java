@@ -9,7 +9,7 @@ package id.kelompok2.projectmanagement.view;
  *
  * @author Iwan Ma'ruf
  */
-public class NewProgrammer extends javax.swing.JFrame {
+public class NewProgrammer extends javax.swing.JFrame implements View{
 
     /**
      * Creates new form NewProgrammer
@@ -155,19 +155,19 @@ public class NewProgrammer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\graphic.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic.png"))); // NOI18N
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\business.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/business.png"))); // NOI18N
         jButton3.setBorder(null);
 
         jTextField5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField5.setText("Search project, team member, and more on ON-BOARD");
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\bell.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bell.png"))); // NOI18N
         jButton5.setBorder(null);
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\social.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/social.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +220,7 @@ public class NewProgrammer extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
         jLabel4.setText("Hello, Adam Geraldy");
 
-        jButton13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people (3).png")); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (3).png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 153));
@@ -257,27 +257,27 @@ public class NewProgrammer extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people.png"))); // NOI18N
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 153));
         jLabel6.setText("New team member");
 
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\sign.png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sign.png"))); // NOI18N
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 153));
         jLabel7.setText("New project");
 
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\three.png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/three.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 153));
         jLabel8.setText("Your project(s)");
 
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\networking.png")); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/networking.png"))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 153));

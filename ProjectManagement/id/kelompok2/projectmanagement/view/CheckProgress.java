@@ -9,7 +9,7 @@ package id.kelompok2.projectmanagement.view;
  *
  * @author Iwan Ma'ruf
  */
-public class CheckProgress extends javax.swing.JFrame {
+public class CheckProgress extends javax.swing.JFrame implements View{
 
     /**
      * Creates new form CheckProgress

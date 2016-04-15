@@ -1,5 +1,8 @@
 package id.kelompok2.projectmanagement.data;
 
+import id.kelompok2.projectmanagement.console.ConsoleMain;
+import id.kelompok2.projectmanagement.console.Menu;
+import id.kelompok2.projectmanagement.controller.Database;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -12,6 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +23,10 @@ public class App implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1L;
-	private List<ProjectManager> projMans;
+    private static final long serialVersionUID = -1L;
+    private List<ProjectManager> projMans;
     private List<Programmer> programmers;
+    private Database database;
     
     public App() {
         projMans = new ArrayList<>();
@@ -120,5 +125,20 @@ public class App implements Serializable {
 			}
 		}
 		return null;
+	}
+        
+        public void userLogin(String username, String password) {
+		Person person = ConsoleMain.app.findUser(username);
+		if(person == null) {
+			System.out.println("Wrong username!");
+		}
+		else {
+                        String uname="select * from user where username="+username+";";
+                        ResultSet result1=database.getData(uname);
+                        String pass="select * from user where password= "+password+";";
+                        ResultSet result2=database.getData(pass);
+                        ProjectManager proMan=new ProjectManager();
+			
+		}
 	}
 }
