@@ -5,13 +5,15 @@
  */
 package id.kelompok2.projectmanagement.gui;
 
+import id.kelompok2.projectmanagement.view.View;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
  *
  * @author Iwan Ma'ruf
  */
-public class CobaCobaLogin extends javax.swing.JFrame {
+public class CobaCobaLogin extends javax.swing.JFrame implements View {
 
     /**
      * Creates new form CobaCobaLogin
@@ -214,7 +216,7 @@ public class CobaCobaLogin extends javax.swing.JFrame {
         lblTerms.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         lblTerms.setForeground(new java.awt.Color(255, 255, 255));
         lblTerms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTerms.setText("By clicking Sign Up, you agree to our Terms");
+        lblTerms.setText("By clicking Sign In, you agree to our Terms");
         getContentPane().add(lblTerms);
         lblTerms.setBounds(620, 540, 320, 20);
 
@@ -234,7 +236,6 @@ public class CobaCobaLogin extends javax.swing.JFrame {
 
         btnSignUp.setFont(new java.awt.Font("Sitka Text", 0, 36)); // NOI18N
         btnSignUp.setText("Sign Up");
-        btnSignUp.setActionCommand("Sign Up");
         getContentPane().add(btnSignUp);
         btnSignUp.setBounds(680, 590, 210, 70);
 
@@ -385,4 +386,10 @@ public class CobaCobaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField usernameSignUp;
     private javax.swing.JTextField yearField;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addListener(ActionListener e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
