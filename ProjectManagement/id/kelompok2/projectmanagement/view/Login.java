@@ -59,14 +59,14 @@ public class Login extends javax.swing.JFrame implements View {
         usernameSignUp = new javax.swing.JTextField();
         passwordLogin = new javax.swing.JPasswordField();
         passwordSignUp = new javax.swing.JPasswordField();
-        fmlCheckBox = new javax.swing.JCheckBox();
-        mlCheckBox = new javax.swing.JCheckBox();
         lblTerms = new javax.swing.JLabel();
         lblPolicy = new javax.swing.JLabel();
         monthField = new javax.swing.JTextField();
         btnSignUp = new javax.swing.JButton();
         yearField = new javax.swing.JTextField();
         dayField = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -209,20 +209,6 @@ public class Login extends javax.swing.JFrame implements View {
         getContentPane().add(passwordSignUp);
         passwordSignUp.setBounds(570, 310, 400, 30);
 
-        buttonGroup1.add(fmlCheckBox);
-        fmlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        fmlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
-        fmlCheckBox.setText("Female");
-        getContentPane().add(fmlCheckBox);
-        fmlCheckBox.setBounds(640, 450, 110, 31);
-
-        buttonGroup1.add(mlCheckBox);
-        mlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        mlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
-        mlCheckBox.setText("Male");
-        getContentPane().add(mlCheckBox);
-        mlCheckBox.setBounds(820, 450, 110, 31);
-
         lblTerms.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         lblTerms.setForeground(new java.awt.Color(255, 255, 255));
         lblTerms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -262,6 +248,18 @@ public class Login extends javax.swing.JFrame implements View {
         dayField.setToolTipText("Date of birth");
         getContentPane().add(dayField);
         dayField.setBounds(570, 380, 90, 30);
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jRadioButton1.setText("Male");
+        getContentPane().add(jRadioButton1);
+        jRadioButton1.setBounds(650, 460, 67, 31);
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jRadioButton2.setText("Female");
+        getContentPane().add(jRadioButton2);
+        jRadioButton2.setBounds(810, 460, 85, 31);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/BackgroundLogin.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1010, 680));
@@ -383,7 +381,8 @@ public class Login extends javax.swing.JFrame implements View {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField dayField;
     private javax.swing.JTextField firstName;
-    private javax.swing.JCheckBox fmlCheckBox;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField lastName;
     private javax.swing.JLabel lblMotto;
     private javax.swing.JLabel lblPolicy;
@@ -391,7 +390,6 @@ public class Login extends javax.swing.JFrame implements View {
     private javax.swing.JLabel lblTerms;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField mailField;
-    private javax.swing.JCheckBox mlCheckBox;
     private javax.swing.JTextField monthField;
     private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JPasswordField passwordSignUp;
