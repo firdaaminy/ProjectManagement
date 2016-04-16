@@ -8,6 +8,7 @@ package id.kelompok2.projectmanagement.gui;
 import id.kelompok2.projectmanagement.view.View;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -35,6 +36,14 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     public String getPass(){
         return passwordLogin.getText();
     }
+
+    public JRadioButton getBtnFemale() {
+        return btnMale;
+    }
+
+    public JRadioButton getBtnMale() {
+        return btnMale;
+    }
     
     
 
@@ -48,6 +57,9 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         lblTitle = new javax.swing.JLabel();
         lblMotto = new javax.swing.JLabel();
         usernameLogin = new javax.swing.JTextField();
@@ -59,14 +71,14 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         usernameSignUp = new javax.swing.JTextField();
         passwordLogin = new javax.swing.JPasswordField();
         passwordSignUp = new javax.swing.JPasswordField();
-        fmlCheckBox = new javax.swing.JCheckBox();
-        mlCheckBox = new javax.swing.JCheckBox();
         lblTerms = new javax.swing.JLabel();
         lblPolicy = new javax.swing.JLabel();
         monthField = new javax.swing.JTextField();
         btnSignUp = new javax.swing.JButton();
         yearField = new javax.swing.JTextField();
         dayField = new javax.swing.JTextField();
+        btnMale = new javax.swing.JRadioButton();
+        btnFemale = new javax.swing.JRadioButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -207,29 +219,13 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         getContentPane().add(passwordSignUp);
         passwordSignUp.setBounds(570, 330, 400, 30);
 
-        buttonGroup1.add(fmlCheckBox);
-        fmlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        fmlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
-        fmlCheckBox.setText("Female");
-        getContentPane().add(fmlCheckBox);
-        fmlCheckBox.setBounds(640, 470, 110, 31);
-
-        buttonGroup1.add(mlCheckBox);
-        mlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        mlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
-        mlCheckBox.setText("Male");
-        getContentPane().add(mlCheckBox);
-        mlCheckBox.setBounds(820, 470, 110, 31);
-
         lblTerms.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lblTerms.setForeground(new java.awt.Color(255, 255, 255));
         lblTerms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTerms.setText("By clicking Sign In, you agree to our Terms");
         getContentPane().add(lblTerms);
         lblTerms.setBounds(620, 540, 320, 20);
 
         lblPolicy.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lblPolicy.setForeground(new java.awt.Color(255, 255, 255));
         lblPolicy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPolicy.setText(" and that you have read our Data Policy");
         getContentPane().add(lblPolicy);
@@ -260,6 +256,18 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         dayField.setToolTipText("Date of birth");
         getContentPane().add(dayField);
         dayField.setBounds(570, 400, 90, 30);
+
+        buttonGroup4.add(btnMale);
+        btnMale.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        btnMale.setText("Male");
+        getContentPane().add(btnMale);
+        btnMale.setBounds(670, 460, 60, 25);
+
+        buttonGroup4.add(btnFemale);
+        btnFemale.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        btnFemale.setText("Female");
+        getContentPane().add(btnFemale);
+        btnFemale.setBounds(820, 460, 70, 25);
 
         background.setText("jLabel1");
         background.setMaximumSize(new java.awt.Dimension(1010, 680));
@@ -373,12 +381,16 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JRadioButton btnFemale;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JRadioButton btnMale;
     private javax.swing.JButton btnSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JTextField dayField;
     private javax.swing.JTextField firstName;
-    private javax.swing.JCheckBox fmlCheckBox;
     private javax.swing.JTextField lastName;
     private javax.swing.JLabel lblMotto;
     private javax.swing.JLabel lblPolicy;
@@ -386,7 +398,6 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     private javax.swing.JLabel lblTerms;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField mailField;
-    private javax.swing.JCheckBox mlCheckBox;
     private javax.swing.JTextField monthField;
     private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JPasswordField passwordSignUp;
@@ -399,7 +410,8 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
     public void addListener(ActionListener e) {
         btnLogin.addActionListener(e);
         btnSignUp.addActionListener(e);
-        
+        btnMale.addActionListener(e);
+        btnMale.addActionListener(e);
     }
 
 }
