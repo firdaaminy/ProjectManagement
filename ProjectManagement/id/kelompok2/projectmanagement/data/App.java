@@ -1,7 +1,6 @@
 package id.kelompok2.projectmanagement.data;
 
-import id.kelompok2.projectmanagement.console.ConsoleMain;
-import Database.Database;
+import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -10,8 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 public class App implements Serializable {

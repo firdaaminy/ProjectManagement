@@ -5,7 +5,7 @@
  */
 package id.kelompok2.projectmanagement.data;
 
-import Database.Database;
+import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.controller.ControllerLogin;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,13 +19,21 @@ import java.util.logging.Logger;
 public class Application {
     private Database database;
     
+    public Application() {
+        try {
+            database = new Database();
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void userLogin(String username, String password) {
         try {
             ResultSet resultset=null;
             String uname = "select (username,password) from user where username= '" + username + "'";
             
             try {
-                resultset = database.getData(uname);
+                resultset = Database.getData(uname);
             } catch (Exception ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             }

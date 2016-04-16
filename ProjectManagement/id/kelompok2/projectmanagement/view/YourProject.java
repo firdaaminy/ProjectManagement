@@ -521,4 +521,9 @@ public void setTxProjectName2(String a){
 public void setTxProjectProgress2(String a){
     txtProjectProgress.setText(a);
 }
+
+    @Override
+    public void addListener(ActionListener e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

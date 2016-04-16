@@ -6,17 +6,11 @@
 
 package id.kelompok2.projectmanagement.employees;
 
-import id.kelompok2.projectmanagement.console.ConsoleMain;
-import id.kelompok2.projectmanagement.projects.Project;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-
 /**
  *
  * @author Iwan Ma'ruf
  */
-public class Programmer extends Person implements Serializable {
+public class Programmer extends Person {
 	/**
 	 * 
 	 */
@@ -26,24 +20,24 @@ public class Programmer extends Person implements Serializable {
         super(name, id, salary, password);
     }
     
-    public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
-    	ArrayList<Project> arrayProject = new ArrayList<>();
-    	for(ProjectManager pMan: ConsoleMain.app.getProjectManagers()) {
-    		if(pMan != null) {
-    			for(Project proj: pMan.getProjects()) {
-    				if(proj != null) {
-    					for(Programmer programmer: proj.getProgrammers()) {
-    						if(programmer != null) {
-    							if(programmer == this) {
-    								arrayProject.add(proj);
-    							}
-    						}
-    					}
-    				}
-    			}
-    		}
-    	}
-    	return arrayProject;
-    }
+//    public ArrayList<Project> getOngoingProjects() { //munculin project yang lagi di kerjain 
+//    	ArrayList<Project> arrayProject = new ArrayList<>();
+//    	for(ProjectManager pMan: ConsoleMain.app.getProjectManagers()) {
+//    		if(pMan != null) {
+//    			for(Project proj: pMan.getProjects()) {
+//    				if(proj != null) {
+//    					for(Programmer programmer: proj.getProgrammers()) {
+//    						if(programmer != null) {
+//    							if(programmer == this) {
+//    								arrayProject.add(proj);
+//    							}
+//    						}
+//    					}
+//    				}
+//    			}
+//    		}
+//    	}
+//    	return arrayProject;
+//    }
 }
 

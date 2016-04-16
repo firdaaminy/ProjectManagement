@@ -10,14 +10,7 @@ Firda Aminy
 
 package id.kelompok2.projectmanagement.employees;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.TableGenerator;
-
-public abstract class Person implements Serializable {
+public abstract class Person {
 	/**
 	 * 
 	 */

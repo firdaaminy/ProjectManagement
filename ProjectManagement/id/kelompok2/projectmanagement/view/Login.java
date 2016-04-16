@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package id.kelompok2.projectmanagement.gui;
+package id.kelompok2.projectmanagement.view;
 
 import id.kelompok2.projectmanagement.view.View;
 import java.awt.event.ActionListener;
@@ -13,12 +13,12 @@ import javax.swing.JButton;
  *
  * @author Iwan Ma'ruf
  */
-public class CobaCobaLogin extends javax.swing.JFrame implements View {
+public class Login extends javax.swing.JFrame implements View {
 
     /**
      * Creates new form CobaCobaLogin
      */
-    public CobaCobaLogin() {
+    public Login() {
         initComponents();
     }
 
@@ -71,18 +71,19 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 687));
-        setPreferredSize(new java.awt.Dimension(1015, 728));
         setSize(new java.awt.Dimension(1000, 687));
         getContentPane().setLayout(null);
 
         lblTitle.setBackground(new java.awt.Color(255, 255, 153));
         lblTitle.setFont(new java.awt.Font("Sitka Text", 0, 45)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("ON-BOARD");
         getContentPane().add(lblTitle);
         lblTitle.setBounds(160, 0, 247, 70);
 
         lblMotto.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        lblMotto.setForeground(new java.awt.Color(255, 255, 255));
         lblMotto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMotto.setText("Nobody's left behind with ON-BOARD");
         getContentPane().add(lblMotto);
@@ -112,10 +113,11 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         btnLogin.setBounds(850, 40, 113, 30);
 
         lblSignUp.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        lblSignUp.setForeground(new java.awt.Color(255, 255, 255));
         lblSignUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSignUp.setText("OR SIGN UP FOR FREE");
         getContentPane().add(lblSignUp);
-        lblSignUp.setBounds(620, 110, 320, 30);
+        lblSignUp.setBounds(620, 90, 320, 30);
 
         firstName.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         firstName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -135,7 +137,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
             }
         });
         getContentPane().add(firstName);
-        firstName.setBounds(570, 150, 200, 30);
+        firstName.setBounds(570, 130, 200, 30);
 
         lastName.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         lastName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -150,7 +152,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
             }
         });
         getContentPane().add(lastName);
-        lastName.setBounds(780, 150, 190, 30);
+        lastName.setBounds(780, 130, 190, 30);
 
         mailField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         mailField.setText("Email");
@@ -164,7 +166,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
             }
         });
         getContentPane().add(mailField);
-        mailField.setBounds(570, 210, 400, 30);
+        mailField.setBounds(570, 190, 400, 30);
 
         usernameSignUp.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         usernameSignUp.setText("Username");
@@ -178,7 +180,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
             }
         });
         getContentPane().add(usernameSignUp);
-        usernameSignUp.setBounds(570, 270, 400, 30);
+        usernameSignUp.setBounds(570, 250, 400, 30);
 
         passwordLogin.setText("Password");
         passwordLogin.setToolTipText("Password");
@@ -205,63 +207,63 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
             }
         });
         getContentPane().add(passwordSignUp);
-        passwordSignUp.setBounds(570, 330, 400, 30);
+        passwordSignUp.setBounds(570, 310, 400, 30);
 
         buttonGroup1.add(fmlCheckBox);
         fmlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         fmlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         fmlCheckBox.setText("Female");
         getContentPane().add(fmlCheckBox);
-        fmlCheckBox.setBounds(640, 470, 110, 31);
+        fmlCheckBox.setBounds(640, 450, 110, 31);
 
         buttonGroup1.add(mlCheckBox);
         mlCheckBox.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         mlCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         mlCheckBox.setText("Male");
         getContentPane().add(mlCheckBox);
-        mlCheckBox.setBounds(820, 470, 110, 31);
+        mlCheckBox.setBounds(820, 450, 110, 31);
 
         lblTerms.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         lblTerms.setForeground(new java.awt.Color(255, 255, 255));
         lblTerms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTerms.setText("By clicking Sign In, you agree to our Terms");
         getContentPane().add(lblTerms);
-        lblTerms.setBounds(620, 540, 320, 20);
+        lblTerms.setBounds(620, 520, 320, 20);
 
         lblPolicy.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         lblPolicy.setForeground(new java.awt.Color(255, 255, 255));
         lblPolicy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPolicy.setText(" and that you have read our Data Policy");
         getContentPane().add(lblPolicy);
-        lblPolicy.setBounds(640, 560, 280, 30);
+        lblPolicy.setBounds(640, 540, 280, 30);
 
         monthField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         monthField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         monthField.setText("Month");
         monthField.setToolTipText("Month of birth");
         getContentPane().add(monthField);
-        monthField.setBounds(730, 400, 90, 30);
+        monthField.setBounds(730, 380, 90, 30);
 
         btnSignUp.setFont(new java.awt.Font("Sitka Text", 0, 36)); // NOI18N
         btnSignUp.setText("Sign Up");
         getContentPane().add(btnSignUp);
-        btnSignUp.setBounds(680, 590, 210, 70);
+        btnSignUp.setBounds(680, 570, 210, 70);
 
         yearField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         yearField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         yearField.setText("Year");
         yearField.setToolTipText("Year of birth");
         getContentPane().add(yearField);
-        yearField.setBounds(880, 400, 90, 30);
+        yearField.setBounds(880, 380, 90, 30);
 
         dayField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         dayField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         dayField.setText("Day");
         dayField.setToolTipText("Date of birth");
         getContentPane().add(dayField);
-        dayField.setBounds(570, 400, 90, 30);
+        dayField.setBounds(570, 380, 90, 30);
 
-        background.setText("jLabel1");
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/BackgroundLogin.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1010, 680));
         background.setMinimumSize(new java.awt.Dimension(1010, 680));
         background.setPreferredSize(new java.awt.Dimension(1010, 680));
@@ -352,8 +354,11 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CobaCobaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>
@@ -362,7 +367,7 @@ public class CobaCobaLogin extends javax.swing.JFrame implements View {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CobaCobaLogin window = new CobaCobaLogin();
+                Login window = new Login();
                 window.setVisible(true);
                 window.setSize(new java.awt.Dimension(1000, 687));
                 window.setLocationRelativeTo(null);

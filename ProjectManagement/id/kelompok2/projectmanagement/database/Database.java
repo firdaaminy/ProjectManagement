@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Database;
+package id.kelompok2.projectmanagement.database;
 
 import java.sql.*;
 
@@ -27,7 +27,7 @@ public class Database {
         return rst;
     }
     
-    public void query(String SQLString) throws Exception{
+    public void updateQuery(String SQLString) throws Exception{
         statement.executeUpdate(SQLString);
     }
     

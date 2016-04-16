@@ -8,7 +8,7 @@ package id.kelompok2.projectmanagement.controller;
 import id.kelompok2.projectmanagement.data.Application;
 import id.kelompok2.projectmanagement.view.Dashboard;
 import id.kelompok2.projectmanagement.view.View;
-import id.kelompok2.projectmanagement.gui.CobaCobaLogin;
+import id.kelompok2.projectmanagement.view.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,7 +22,7 @@ public class ControllerLogin implements ActionListener {
     
     public ControllerLogin(){
         app=new Application();
-        CobaCobaLogin login = new CobaCobaLogin();
+        Login login = new Login();
         login.setVisible(true);
         login.addListener(this);
         view = login;
@@ -38,8 +38,8 @@ public class ControllerLogin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object a = e.getSource();
-        if (view instanceof CobaCobaLogin){
-            CobaCobaLogin login = (CobaCobaLogin) view;
+        if (view instanceof Login){
+            Login login = (Login) view;
             if (a.equals(login.getBtnLogin())){
                 app.userLogin(login.getUser(), login.getPass());
                 login.dispose();

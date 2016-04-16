@@ -252,6 +252,11 @@ public class Notification extends javax.swing.JFrame implements View{
         jxNotif8.setText(a);
         
     }
+
+    @Override
+    public void addListener(ActionListener e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
 

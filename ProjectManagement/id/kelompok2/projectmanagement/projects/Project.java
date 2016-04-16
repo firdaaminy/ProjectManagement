@@ -6,7 +6,6 @@
 
 package id.kelompok2.projectmanagement.projects;
 
-import id.kelompok2.projectmanagement.console.ConsoleMain;
 import id.kelompok2.projectmanagement.employees.Programmer;
 
 import java.io.Serializable;
@@ -66,7 +65,6 @@ public class Project implements Serializable {
     public void addProgrammer(Programmer programmer) {
     	if(programmer != null) {
     		programmers.add(programmer);
-    		ConsoleMain.app.serialize();
     	}
     }
 

@@ -5,9 +5,9 @@
  */
 package id.kelompok2.projectmanagement.controller;
 
-import id.kelompok2.projectmanagement.gui.CobaCobaLogin;
+import id.kelompok2.projectmanagement.view.Login;
 import id.kelompok2.projectmanagement.view.Dashboard;
-import id.kelompok2.projectmanagement.view.NewProgrammer;
+import id.kelompok2.projectmanagement.view.AddProgrammer;
 import id.kelompok2.projectmanagement.view.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,10 +19,10 @@ import static sun.security.jgss.GSSUtil.login;
  */
 public class ControllerAddProgrammer implements ActionListener {
     private View view;
-    private NewProgrammer login;
+    private AddProgrammer login;
      
     public ControllerAddProgrammer(){
-        login = new NewProgrammer();
+        login = new AddProgrammer();
         login.setVisible(true);
         login.addListener(this);
         view = login;
@@ -39,10 +39,10 @@ public class ControllerAddProgrammer implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         Object a = e.getSource();
-        if (e.equals(login.getjButton1())){
+        if (e.equals(login.getJbCancel())){
         
         }
-        else if (e.equals((login.getjButton2()))){
+        else if (e.equals((login.getJbCreate()))){
             
         }
     }
