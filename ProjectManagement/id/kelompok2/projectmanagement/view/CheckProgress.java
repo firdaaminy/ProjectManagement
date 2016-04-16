@@ -5,6 +5,8 @@
  */
 package id.kelompok2.projectmanagement.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Iwan Ma'ruf
@@ -30,21 +32,21 @@ public class CheckProgress extends javax.swing.JFrame implements View{
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnPhoto = new javax.swing.JButton();
+        txInfo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtProjectNameProgress = new javax.swing.JTextField();
         txtProjectDeadlineProgress = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtProjectProgress = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnPhoto2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txProjectNameProgress2 = new javax.swing.JTextField();
+        txProjectDeadlineProgress2 = new javax.swing.JTextField();
+        txProjectProgress2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,11 +76,10 @@ public class CheckProgress extends javax.swing.JFrame implements View{
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\business (3).png")); // NOI18N
-
-        jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("You can search your project by its ID or name");
+        txInfo.setEditable(false);
+        txInfo.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        txInfo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txInfo.setText("You can search your project by its ID or name");
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 153));
@@ -94,8 +95,6 @@ public class CheckProgress extends javax.swing.JFrame implements View{
 
         txtProjectProgress.setText("//ini pake presentase, dari rumus");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\business (3).png")); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 153));
         jLabel5.setText("Name:");
@@ -108,7 +107,7 @@ public class CheckProgress extends javax.swing.JFrame implements View{
         jLabel7.setForeground(new java.awt.Color(255, 255, 153));
         jLabel7.setText("Progress:");
 
-        jTextField4.setText("//ini pake presentase, dari rumus");
+        txProjectProgress2.setText("//ini pake presentase, dari rumus");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -118,7 +117,7 @@ public class CheckProgress extends javax.swing.JFrame implements View{
                 .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -134,10 +133,10 @@ public class CheckProgress extends javax.swing.JFrame implements View{
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtProjectProgress)
-                                    .addComponent(jTextField2)))))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txProjectNameProgress2)))))
+                    .addComponent(txInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPhoto2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5)
@@ -145,15 +144,15 @@ public class CheckProgress extends javax.swing.JFrame implements View{
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4))))
+                            .addComponent(txProjectDeadlineProgress2)
+                            .addComponent(txProjectProgress2))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -168,22 +167,22 @@ public class CheckProgress extends javax.swing.JFrame implements View{
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(txtProjectProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPhoto2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txProjectNameProgress2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txProjectDeadlineProgress2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txProjectProgress2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(211, Short.MAX_VALUE))
         );
 
@@ -213,6 +212,11 @@ public class CheckProgress extends javax.swing.JFrame implements View{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void addListener(ActionListener a){
+        btnPhoto.addActionListener(a);
+        btnPhoto2.addActionListener(a);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -249,8 +253,8 @@ public class CheckProgress extends javax.swing.JFrame implements View{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnPhoto;
+    private javax.swing.JButton btnPhoto2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -260,12 +264,40 @@ public class CheckProgress extends javax.swing.JFrame implements View{
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txInfo;
+    private javax.swing.JTextField txProjectDeadlineProgress2;
+    private javax.swing.JTextField txProjectNameProgress2;
+    private javax.swing.JTextField txProjectProgress2;
     private javax.swing.JTextField txtProjectDeadlineProgress;
     private javax.swing.JTextField txtProjectNameProgress;
     private javax.swing.JTextField txtProjectProgress;
     // End of variables declaration//GEN-END:variables
+
+    public Object getBtnPhoto(){
+        return btnPhoto;
+    }
+    public Object getBtnPhoto2(){
+        return btnPhoto2;
+    }
+    public Object getTxInfo(){
+        return txInfo.getText();
+    }
+    public Object getTxProjectDeadlineProgress2(){
+        return txProjectDeadlineProgress2.getText();
+    }
+    public Object getTxProjectNameProgress2(){
+        return txProjectNameProgress2.getText();
+    }
+    public Object getTxProjectProgress2(){
+        return txProjectProgress2.getText();
+    }
+    public Object getTxtProjectDeadlineProgress(){
+        return txtProjectDeadlineProgress.getText();
+    }
+    public Object getTxtProjectNameProgress(){
+        return txtProjectNameProgress.getText();
+    }
+    public Object getTxtProjectProgress(){
+        return txtProjectProgress.getText();
+    }
 }

@@ -30,7 +30,14 @@ public class Notification extends javax.swing.JFrame implements View{
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jxNotif2 = new javax.swing.JTextField();
+        jxNotif1 = new javax.swing.JTextField();
+        jxNotif3 = new javax.swing.JTextField();
+        jxNotif4 = new javax.swing.JTextField();
+        jxNotif5 = new javax.swing.JTextField();
+        jxNotif6 = new javax.swing.JTextField();
+        jxNotif7 = new javax.swing.JTextField();
+        jxNotif8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,8 +67,37 @@ public class Notification extends javax.swing.JFrame implements View{
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setText("Notif apa ya? Ga kepikiran nih");
+        jxNotif2.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif2.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif2.setText("Project Telah selesai.");
+
+        jxNotif1.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif1.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif1.setText("Project telah anda dapatkan,segera cek disini!");
+
+        jxNotif3.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif3.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif3.setText("Project di remove oleh ANDITIO");
+
+        jxNotif4.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif4.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif4.setText("Programmer has sent the message");
+
+        jxNotif5.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif5.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif5.setText("Budi Minta uang jajan.");
+
+        jxNotif6.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif6.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif6.setText("BUdi juga minta permen.");
+
+        jxNotif7.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif7.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif7.setText("hoooaaaaamm mantap gan");
+
+        jxNotif8.setBackground(new java.awt.Color(0, 0, 0));
+        jxNotif8.setForeground(new java.awt.Color(255, 255, 153));
+        jxNotif8.setText("jTextField9");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -69,37 +105,66 @@ public class Notification extends javax.swing.JFrame implements View{
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jxNotif2)
+                    .addComponent(jxNotif8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jxNotif4, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                    .addComponent(jxNotif3))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jxNotif1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(83, 83, 83)
+                .addComponent(jxNotif2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jxNotif8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(21, 21, 21)
+                    .addComponent(jxNotif1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(419, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -145,6 +210,46 @@ public class Notification extends javax.swing.JFrame implements View{
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jxNotif1;
+    private javax.swing.JTextField jxNotif2;
+    private javax.swing.JTextField jxNotif3;
+    private javax.swing.JTextField jxNotif4;
+    private javax.swing.JTextField jxNotif5;
+    private javax.swing.JTextField jxNotif6;
+    private javax.swing.JTextField jxNotif7;
+    private javax.swing.JTextField jxNotif8;
     // End of variables declaration//GEN-END:variables
+    public void setNotif1(String a){
+        jxNotif1.setText(a);
+        
+    }
+    public void setNotif2(String a){
+        jxNotif2.setText(a);
+        
+    }
+    public void setNotif3(String a){
+        jxNotif3.setText(a);
+        
+    }
+    public void setNotif4(String a){
+        jxNotif4.setText(a);
+        
+    }
+    public void setNotif5(String a){
+        jxNotif5.setText(a);
+        
+    }
+    public void setNotif6(String a){
+        jxNotif6.setText(a);
+    }
+    public void setNotif7(String a){
+        jxNotif7.setText(a);
+        
+    }
+    public void setNotif8(String a){
+        jxNotif8.setText(a);
+        
+    }
 }
+
+

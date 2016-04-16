@@ -103,8 +103,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jTextField5" max="32767" attributes="0"/>
-                      <Component id="jTextField4" max="32767" attributes="0"/>
+                      <Component id="txHistory2" max="32767" attributes="0"/>
+                      <Component id="txHistory" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -114,10 +114,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel11" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txHistory" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField5" min="-2" pref="76" max="-2" attributes="0"/>
+                  <Component id="txHistory2" min="-2" pref="76" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -136,15 +136,18 @@
             <Property name="text" type="java.lang.String" value="Done projects"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txHistory">
           <Properties>
             <Property name="text" type="java.lang.String" value="Semacam history project mana aja yang udah dikerjain dan uda beres"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="txHistory2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Itu gambar calendar di sebelah buat ngatur deadline"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txHistory2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -311,7 +314,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="jButton13" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="txPhotoManager" min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -324,7 +327,7 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton13" pref="48" max="32767" attributes="0"/>
+                  <Component id="txPhotoManager" pref="48" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -356,7 +359,7 @@
             <Property name="text" type="java.lang.String" value="Project Manager"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton13">
+        <Component class="javax.swing.JButton" name="txPhotoManager">
         </Component>
       </SubComponents>
     </Container>
@@ -374,7 +377,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jButton7" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="jbYourProject" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel5" max="32767" attributes="0"/>
                       </Group>
@@ -384,7 +387,7 @@
                           <Component id="jLabel2" pref="123" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton6" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="newProject" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel3" max="32767" attributes="0"/>
                       </Group>
@@ -408,12 +411,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                      <Component id="newProject" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton7" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbYourProject" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -451,7 +454,7 @@
             <Property name="text" type="java.lang.String" value="New team member"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="newProject">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -465,12 +468,12 @@
               <Color blue="99" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jButton6"/>
+              <ComponentRef name="newProject"/>
             </Property>
             <Property name="text" type="java.lang.String" value="New project"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="jbYourProject">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -481,7 +484,7 @@
               <Color blue="99" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jButton7"/>
+              <ComponentRef name="jbYourProject"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Your project(s)"/>
           </Properties>
@@ -521,13 +524,13 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton9" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jbAttachfile" min="-2" pref="33" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbCancel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbSend" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -537,8 +540,8 @@
                   </Group>
                   <EmptySpace min="14" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextField2" max="32767" attributes="0"/>
-                      <Component id="jComboBox1" pref="285" max="32767" attributes="0"/>
+                      <Component id="txDetails" max="32767" attributes="0"/>
+                      <Component id="jcSendto" pref="285" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -551,23 +554,23 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txDetails" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcSendto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton9" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="jbAttachfile" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbSend" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace pref="34" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -593,7 +596,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jTextField2"/>
+              <ComponentRef name="txDetails"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Type the task details here"/>
           </Properties>
@@ -607,12 +610,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jComboBox1"/>
+              <ComponentRef name="jcSendto"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Send to"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="jcSendto">
           <Properties>
             <Property name="editable" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -621,7 +624,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton10">
+        <Component class="javax.swing.JButton" name="jbCancel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Text" size="12" style="0"/>
@@ -629,7 +632,7 @@
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
+        <Component class="javax.swing.JButton" name="jbSend">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Text" size="12" style="0"/>
@@ -637,14 +640,14 @@
             <Property name="text" type="java.lang.String" value="Send"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txDetails">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Text" size="11" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txDetailsActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
@@ -656,12 +659,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jButton9"/>
+              <ComponentRef name="jbAttachfile"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Attach file(s)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="jbAttachfile">
         </Component>
       </SubComponents>
     </Container>

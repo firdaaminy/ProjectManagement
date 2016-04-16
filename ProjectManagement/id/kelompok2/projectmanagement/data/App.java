@@ -1,27 +1,17 @@
 package id.kelompok2.projectmanagement.data;
 
 import id.kelompok2.projectmanagement.console.ConsoleMain;
-import id.kelompok2.projectmanagement.console.Menu;
 import Database.Database;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 public class App implements Serializable {
     /**
     * 
@@ -50,88 +40,63 @@ public class App implements Serializable {
     	    	projMan.recreateProject(projectId, projectName, projectClient);
     	    }
     	} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+            e.printStackTrace();
+        }
+    }
 
     public void addProgrammer(Programmer programmer) {
         programmers.add(programmer);
-        this.serialize();
     }
     
     public void addProjectManager(ProjectManager projectManager) {
         projMans.add(projectManager);
-        this.serialize();
     }
     
     public void removeProgrammer(Programmer programmer) {
         programmers.remove(programmer);
-        this.serialize();
     }
     
     public void removeProjectManager(ProjectManager projectManager) {
-        programmers.remove(projectManager);
-        this.serialize();
+        projMans.remove(projectManager);
     }
     
     public List<ProjectManager> getProjectManagers() {
-        this.serialize();
         return projMans;
     }
     
     public List<Programmer> getProgrammers() {
-        this.serialize();
     	return programmers;
     }
     
-    public void serialize() {
-        for(ProjectManager pMan: projMans) {
-            em.getTransaction().begin();
-            em.persist(pMan);
-            em.getTransaction().commit();
+    public Person findUser(String username) {
+        for(Person p: programmers) {
+            if(p != null) {
+                if(p.getName().equalsIgnoreCase(username)) {
+                        return p;
+                }
+            }
         }
-        for(Programmer prog: programmers) {
-            em.getTransaction().begin();
-            em.persist(prog);
-            em.getTransaction().commit();
+        for(Person p: projMans) {
+            if(p != null) {
+                if(p.getName().equalsIgnoreCase(username)) {
+                        return p;
+                }
+            }
         }
-    }
-    
-    public App deSerialize() {
-        em.getTransaction().begin();
         return null;
     }
-    
-	public Person findUser(String username) {
-		for(Person p: programmers) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		for(Person p: projMans) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		return null;
-	}
-        
-        public void userLogin(String username, String password) {
-		Person person = ConsoleMain.app.findUser(username);
-		if(person == null) {
-			System.out.println("Wrong username!");
-		}
-		else {
-                        String uname="select * from user where username="+username+";";
-                        ResultSet result1=database.getData(uname);
-                        String pass="select * from user where password= "+password+";";
-                        ResultSet result2=database.getData(pass);
-                        ProjectManager proMan=new ProjectManager();
-			
-		}
-	}
+
+//    public void userLogin(String username, String password) {
+//        Person person = ConsoleMain.app.findUser(username);
+//        if(person == null) {
+//            System.out.println("Wrong username!");
+//        }
+//        else {
+//            String uname="select * from user where username="+username+";";
+//            ResultSet result1=database.getData(uname);
+//            String pass="select * from user where password= "+password+";";
+//            ResultSet result2=database.getData(pass);
+//            ProjectManager proMan=new ProjectManager();
+//        }
+//    }
 }

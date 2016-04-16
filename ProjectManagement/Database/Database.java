@@ -12,17 +12,17 @@ import java.sql.*;
  * @author Iwan Ma'ruf
  */
 public class Database {
-    Connection koneksi;
-    Statement statement;
-    ResultSet rst;
+    private static Connection koneksi;
+    private static Statement statement;
+    private static ResultSet rst;
     
     public Database() throws Exception{
-        Class.forName("org.gjt.mm.mysql.Driver");
-        this.koneksi=DriverManager.getConnection("jdbc:mysql://aktif.id:3306/aktifid_tubes","aktifid_tubes","HidupTelkom");
-        this.statement=koneksi.createStatement();
+        Class.forName("com.mysql.jdbc.Driver");
+        koneksi=DriverManager.getConnection("jdbc:mysql://aktif.id:3306/aktifid_tubes","aktifid_tubes","HidupTelkom");
+        statement=koneksi.createStatement();
     }
     
-    public ResultSet getData(String SQLString) throws Exception{
+    public static ResultSet getData(String SQLString) throws Exception{
         rst=statement.executeQuery(SQLString);
         return rst;
     }

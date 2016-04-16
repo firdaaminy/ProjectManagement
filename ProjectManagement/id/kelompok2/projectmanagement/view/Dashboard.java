@@ -21,6 +21,11 @@ public class Dashboard extends javax.swing.JFrame implements View {
     }
     
     public void addListener(ActionListener e){
+        jbAttachfile.addActionListener(e);
+        jbCancel.addActionListener(e);
+        jButton5.addActionListener(e);
+        jbSend.addActionListener(e);
+        jbYourProject.addActionListener(e);
         
     }
     
@@ -35,8 +40,8 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txHistory = new javax.swing.JTextField();
+        txHistory2 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -49,13 +54,13 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        txPhotoManager = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        newProject = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        jbYourProject = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -63,12 +68,12 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        jcSendto = new javax.swing.JComboBox();
+        jbCancel = new javax.swing.JButton();
+        jbSend = new javax.swing.JButton();
+        txDetails = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        jbAttachfile = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,9 +85,14 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Done projects");
 
-        jTextField4.setText("Semacam history project mana aja yang udah dikerjain dan uda beres");
+        txHistory.setText("Semacam history project mana aja yang udah dikerjain dan uda beres");
 
-        jTextField5.setText("Itu gambar calendar di sebelah buat ngatur deadline");
+        txHistory2.setText("Itu gambar calendar di sebelah buat ngatur deadline");
+        txHistory2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txHistory2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,18 +102,18 @@ public class Dashboard extends javax.swing.JFrame implements View {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField5)
-                    .addComponent(jTextField4))
+                    .addComponent(txHistory2)
+                    .addComponent(txHistory))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txHistory2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 76, Short.MAX_VALUE))
         );
 
@@ -215,7 +225,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                             .addComponent(jLabel1)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txPhotoManager, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -224,7 +234,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(txPhotoManager, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addContainerGap())
@@ -243,12 +253,12 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 153));
-        jLabel3.setLabelFor(jButton6);
+        jLabel3.setLabelFor(newProject);
         jLabel3.setText("New project");
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 153));
-        jLabel5.setLabelFor(jButton7);
+        jLabel5.setLabelFor(jbYourProject);
         jLabel5.setText("Your project(s)");
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -264,7 +274,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbYourProject, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -272,7 +282,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(newProject, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -290,11 +300,11 @@ public class Dashboard extends javax.swing.JFrame implements View {
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
+                    .addComponent(newProject)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbYourProject, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -311,33 +321,33 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setLabelFor(jTextField2);
+        jLabel8.setLabelFor(txDetails);
         jLabel8.setText("Type the task details here");
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setLabelFor(jComboBox1);
+        jLabel9.setLabelFor(jcSendto);
         jLabel9.setText("Send to");
 
-        jComboBox1.setEditable(true);
-        jComboBox1.setToolTipText("");
+        jcSendto.setEditable(true);
+        jcSendto.setToolTipText("");
 
-        jButton10.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton10.setText("Cancel");
+        jbCancel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jbCancel.setText("Cancel");
 
-        jButton11.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton11.setText("Send");
+        jbSend.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jbSend.setText("Send");
 
-        jTextField2.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txDetails.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
+        txDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txDetailsActionPerformed(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setLabelFor(jButton9);
+        jLabel10.setLabelFor(jbAttachfile);
         jLabel10.setText("Attach file(s)");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -350,13 +360,13 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbAttachfile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton10)
+                .addComponent(jbCancel)
                 .addGap(76, 76, 76)
-                .addComponent(jButton11)
+                .addComponent(jbSend)
                 .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,8 +374,8 @@ public class Dashboard extends javax.swing.JFrame implements View {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jComboBox1, 0, 285, Short.MAX_VALUE)))
+                    .addComponent(txDetails)
+                    .addComponent(jcSendto, 0, 285, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,19 +385,19 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcSendto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbAttachfile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton10)
-                        .addComponent(jButton11)
+                        .addComponent(jbCancel)
+                        .addComponent(jbSend)
                         .addComponent(jLabel10)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
@@ -450,9 +460,13 @@ public class Dashboard extends javax.swing.JFrame implements View {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDetailsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txDetailsActionPerformed
+
+    private void txHistory2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHistory2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txHistory2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,19 +505,12 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -523,11 +530,47 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton jbAttachfile;
+    private javax.swing.JButton jbCancel;
+    private javax.swing.JButton jbSend;
+    private javax.swing.JButton jbYourProject;
+    private javax.swing.JComboBox jcSendto;
+    private javax.swing.JButton newProject;
+    private javax.swing.JTextField txDetails;
+    private javax.swing.JTextField txHistory;
+    private javax.swing.JTextField txHistory2;
+    private javax.swing.JButton txPhotoManager;
     // End of variables declaration//GEN-END:variables
 
-    
+    public Object getBtnNewProject(){
+        return newProject;
+    }
+    public Object getBtnAttachfile(){
+        return jbAttachfile;
+    }
+    public Object getBtnCancel(){
+        return jbCancel;
+    }
+    public Object getBtnNewmember(){
+        return jButton5;
+    }
+    public Object getBtnSend(){
+        return jbSend;
+    }
+    public Object getYourproject(){
+        return jbYourProject;
+    }
+    public Object getDetails(){
+        return txDetails.getText();
+    }
+    public Object getHistory(){
+        return txHistory.getText();
+    }
+    public Object getHistory2(){
+        return txHistory2.getText();
+    }
+    public Object getPhotoManager(){
+        return txPhotoManager;
+    }
 }
