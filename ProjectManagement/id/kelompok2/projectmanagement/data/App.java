@@ -14,14 +14,19 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class App implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1L;
-	private List<ProjectManager> projMans;
+    /**
+    * 
+    */
+    private static final long serialVersionUID = -1L;
+    private List<ProjectManager> projMans;
     private List<Programmer> programmers;
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectManagerPU");
+    EntityManager em = emf.createEntityManager();
     
     public App() {
         projMans = new ArrayList<>();
@@ -77,48 +82,38 @@ public class App implements Serializable {
     }
     
     public void serialize() {
-    	FileOutputStream fileOut;
-		try {
-			fileOut = new FileOutputStream("App.txt");
-	    	ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-	    	objectOut.writeObject(this);
-	    	objectOut.flush();
-	    	objectOut.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        for(ProjectManager pMan: projMans) {
+            em.getTransaction().begin();
+            em.persist(pMan);
+            em.getTransaction().commit();
+        }
+        for(Programmer prog: programmers) {
+            em.getTransaction().begin();
+            em.persist(prog);
+            em.getTransaction().commit();
+        }
     }
     
     public App deSerialize() {
-    	FileInputStream fileIn;
-    	App app;
-		try {
-			fileIn = new FileInputStream("App.txt");
-	    	ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-	    	app = (App) objectIn.readObject();
-	    	objectIn.close();
-	    	return app;
-		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
+        em.getTransaction().begin();
+        return null;
     }
     
-	public Person findUser(String username) {
-		for(Person p: programmers) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		for(Person p: projMans) {
-			if(p != null) {
-				if(p.getName().equalsIgnoreCase(username)) {
-					return p;
-				}
-			}
-		}
-		return null;
-	}
+    public Person findUser(String username) {
+            for(Person p: programmers) {
+                    if(p != null) {
+                            if(p.getName().equalsIgnoreCase(username)) {
+                                    return p;
+                            }
+                    }
+            }
+            for(Person p: projMans) {
+                    if(p != null) {
+                            if(p.getName().equalsIgnoreCase(username)) {
+                                    return p;
+                            }
+                    }
+            }
+            return null;
+    }
 }
