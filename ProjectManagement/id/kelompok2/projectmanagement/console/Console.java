@@ -12,9 +12,6 @@ import java.util.Scanner;
  * @author Iwan Ma'ruf
  */
 public class Console {
-    private Scanner sInt;
-    private Scanner sStr;
-    
     public void mainMenu(){
         Scanner inputInteger=new Scanner(System.in);
         int pil=0;

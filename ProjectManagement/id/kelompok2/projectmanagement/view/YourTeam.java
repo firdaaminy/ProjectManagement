@@ -9,7 +9,7 @@ package id.kelompok2.projectmanagement.view;
  *
  * @author Iwan Ma'ruf
  */
-public class YourTeam extends javax.swing.JFrame {
+public class YourTeam extends javax.swing.JFrame implements View{
 
     /**
      * Creates new form YourMember
@@ -65,19 +65,19 @@ public class YourTeam extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\graphic.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic.png"))); // NOI18N
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\business.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/business.png"))); // NOI18N
         jButton2.setBorder(null);
 
         jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Search project, team member, and more on ON-BOARD");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\bell.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bell.png"))); // NOI18N
         jButton1.setBorder(null);
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\social.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/social.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +130,7 @@ public class YourTeam extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 153));
         jLabel1.setText("Hello, Adam Geraldy");
 
-        jButton13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people (3).png")); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (3).png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
@@ -171,26 +171,26 @@ public class YourTeam extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 153));
         jLabel2.setText("New team member");
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people.png"))); // NOI18N
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 153));
         jLabel3.setText("New project");
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\sign.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sign.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 153));
         jLabel5.setText("Your project(s)");
 
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\three.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/three.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 153));
         jLabel6.setText("Your team");
 
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\networking.png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/networking.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -232,7 +232,7 @@ public class YourTeam extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton8)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -250,7 +250,7 @@ public class YourTeam extends javax.swing.JFrame {
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("Search your member by his/her ID or name");
 
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people (4).png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (4).png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 153));
@@ -264,7 +264,7 @@ public class YourTeam extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 153));
         jLabel10.setText("Programmer");
 
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\people (3).png")); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (3).png"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 153));
@@ -272,11 +272,9 @@ public class YourTeam extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 153));
-        jLabel12.setText("666");
 
         jLabel13.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 153));
-        jLabel13.setText("Total slacker");
 
         jLabel14.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 102));
@@ -349,7 +347,7 @@ public class YourTeam extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(10, 10, 10)
                         .addComponent(jLabel10)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 138, Short.MAX_VALUE))
                     .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(105, 105, 105)
                 .addComponent(jLabel15)
