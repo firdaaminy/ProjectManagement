@@ -5,6 +5,8 @@
  */
 package id.kelompok2.projectmanagement.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Iwan Ma'ruf
@@ -60,19 +62,14 @@ public class NewProject extends javax.swing.JFrame implements View{
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic.png"))); // NOI18N
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/business.png"))); // NOI18N
         jButton2.setBorder(null);
 
         jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Search project, team member, and more on ON-BOARD");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bell.png"))); // NOI18N
         jButton1.setBorder(null);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/social.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,8 +118,6 @@ public class NewProject extends javax.swing.JFrame implements View{
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people (3).png"))); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("Hello, Adam Geraldy");
@@ -168,9 +163,6 @@ public class NewProject extends javax.swing.JFrame implements View{
         jLabel2.setText("New team member");
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people.png"))); // NOI18N
-
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Iwan Ma'ruf\\Downloads\\sign.png")); // NOI18N
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -180,10 +172,6 @@ public class NewProject extends javax.swing.JFrame implements View{
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 204));
         jLabel5.setText("Your project(s)");
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/three.png"))); // NOI18N
-
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/networking.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 204));
@@ -225,7 +213,7 @@ public class NewProject extends javax.swing.JFrame implements View{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton6)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -429,4 +417,11 @@ public class NewProject extends javax.swing.JFrame implements View{
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addListener(ActionListener e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

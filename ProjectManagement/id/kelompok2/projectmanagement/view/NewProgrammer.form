@@ -445,7 +445,7 @@
                       <Component id="jLabel7" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="jbNewProject" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="96" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel8" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="jbYourProject" alignment="1" min="-2" max="-2" attributes="0"/>

@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 public class App implements Serializable {
@@ -22,11 +23,13 @@ public class App implements Serializable {
     private List<Programmer> programmers;
     private Database database;
     
+private id.kelompok2.projectmanagement.controller.ControllerLogin cl;
+            
     public App() {
         projMans = new ArrayList<>();
         programmers = new ArrayList<>();
     }
-    
+
     public void projectInit() {
     	String projectMan, projectName, projectClient;
     	int projectId;
@@ -48,23 +51,23 @@ public class App implements Serializable {
     public void addProgrammer(Programmer programmer) {
         programmers.add(programmer);
     }
-    
+
     public void addProjectManager(ProjectManager projectManager) {
         projMans.add(projectManager);
     }
-    
+
     public void removeProgrammer(Programmer programmer) {
         programmers.remove(programmer);
     }
-    
+
     public void removeProjectManager(ProjectManager projectManager) {
         projMans.remove(projectManager);
     }
-    
+
     public List<ProjectManager> getProjectManagers() {
         return projMans;
     }
-    
+
     public List<Programmer> getProgrammers() {
     	return programmers;
     }
