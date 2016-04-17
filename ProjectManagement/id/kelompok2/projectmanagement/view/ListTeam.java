@@ -52,6 +52,8 @@ public class ListTeam extends javax.swing.JPanel implements View {
         tableMember = new javax.swing.JTable();
         BtnSearchYT = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 153));
+
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Your team members");

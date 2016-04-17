@@ -42,6 +42,7 @@ public class Home extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jbAttachfile = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel11.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
@@ -80,6 +81,7 @@ public class Home extends javax.swing.JPanel {
                 .addGap(0, 76, Short.MAX_VALUE))
         );
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 153));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N

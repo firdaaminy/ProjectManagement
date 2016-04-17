@@ -29,7 +29,6 @@ public class ProgressCheck extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        txInfo = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btnPhoto = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -38,11 +37,9 @@ public class ProgressCheck extends javax.swing.JPanel {
         jProgressBar1 = new javax.swing.JProgressBar();
         txProgressDeadline = new javax.swing.JTextField();
         txProgressName = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
-        txInfo.setEditable(false);
-        txInfo.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        txInfo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txInfo.setText("You can search your project by its ID or name");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel4.setText("Deadline:");
@@ -63,7 +60,7 @@ public class ProgressCheck extends javax.swing.JPanel {
                 .addGap(157, 157, 157)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txProgressDeadline)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txProgressName))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,6 +104,10 @@ public class ProgressCheck extends javax.swing.JPanel {
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
 
+        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("You can search your project by its ID or name");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -114,15 +115,15 @@ public class ProgressCheck extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txInfo)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(369, Short.MAX_VALUE))
@@ -135,7 +136,7 @@ public class ProgressCheck extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -147,6 +148,7 @@ public class ProgressCheck extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPhoto;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -154,7 +156,6 @@ public class ProgressCheck extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txInfo;
     private javax.swing.JTextField txProgressDeadline;
     private javax.swing.JTextField txProgressName;
     // End of variables declaration//GEN-END:variables
