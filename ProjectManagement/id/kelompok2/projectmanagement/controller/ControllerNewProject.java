@@ -35,7 +35,6 @@ public class ControllerNewProject implements ActionListener {
             }
         }
         dash = cd;
-        
     }
     
     @Override

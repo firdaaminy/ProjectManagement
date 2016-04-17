@@ -32,6 +32,8 @@ public class ControllerDashboard implements ActionListener {
         view = dashboard;
         new ControllerAddProgrammer(this);
         new ControllerNewProject(this);
+        new ControllerYourProject(this);
+        new ControllerYourTeam(this);
         this.app = app;
     }
     
