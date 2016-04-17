@@ -70,7 +70,7 @@ public class EditProfile extends javax.swing.JPanel {
         jLabel6.setText("Enter your new password");
 
         jButton1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jButton1.setText("Discard");
+        jButton1.setText("Cancel");
 
         jButton2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jButton2.setText("Save");

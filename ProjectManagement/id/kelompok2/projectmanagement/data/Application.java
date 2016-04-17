@@ -52,8 +52,8 @@ public class Application {
                                 temp);
                     }
                     user.setFullName(resultSet.getString("fullName"));
-                    ControllerDashboard dash = new ControllerDashboard(this);
                     login.dispose();
+                    ControllerDashboard dash = new ControllerDashboard(this);
                 }
             }
         } catch (Exception ex) {
