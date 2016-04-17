@@ -39,6 +39,8 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 153));
+
         jxProgrammerName.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jxProgrammerName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jxProgrammerName.setText("Enter your programmer's name");

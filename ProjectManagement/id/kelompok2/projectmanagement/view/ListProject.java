@@ -39,6 +39,8 @@ public class ListProject extends javax.swing.JPanel implements View {
         tableProjects = new javax.swing.JTable();
         btnSearchYP = new javax.swing.JButton();
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
+
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         txSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txSearch.setText("You can search your project by its client or name...");
@@ -61,16 +63,7 @@ public class ListProject extends javax.swing.JPanel implements View {
 
         tableProjects.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Project Name", "Project Client", "Number of programmer(s)", "Done/Undone"

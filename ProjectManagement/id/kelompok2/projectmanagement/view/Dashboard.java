@@ -64,13 +64,14 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel5 = new javax.swing.JLabel();
         btnYourTeam = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setForeground(new java.awt.Color(255, 255, 153));
 
         jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -131,6 +132,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addGap(13, 13, 13))))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setMaximumSize(new java.awt.Dimension(161, 105));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -162,6 +164,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         greetingLabel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
@@ -202,6 +205,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addContainerGap())
         );
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnNewMember.setBackground(new java.awt.Color(255, 255, 255));
@@ -278,8 +282,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(34, 34, 34))
         );
 
-        jButton12.setBackground(new java.awt.Color(0, 0, 0));
-
+        contentPanel.setBackground(new java.awt.Color(255, 255, 153));
         contentPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         contentPanel.setLayout(new java.awt.CardLayout());
 
@@ -298,9 +301,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton12)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -311,15 +312,11 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                        .addGap(54, 54, 54)
-                        .addComponent(jButton12)
-                        .addGap(202, 202, 202))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -399,7 +396,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JButton btnYourTeam;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel greetingLabel;
-    private javax.swing.JButton jButton12;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
