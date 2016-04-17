@@ -110,6 +110,8 @@ public class Home extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
         jLabel10.setText("Attach file(s)");
 
+        jbAttachfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/interface.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(

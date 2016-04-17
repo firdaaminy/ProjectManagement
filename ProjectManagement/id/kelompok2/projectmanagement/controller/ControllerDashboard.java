@@ -24,17 +24,23 @@ public class ControllerDashboard implements ActionListener {
     private Dashboard dashboard;
     private Application app;
     
+    // Controllers
+    private ControllerAddProgrammer cAddProg;
+    private ControllerNewProject cNewProj;
+    private ControllerYourProject cYourProj;
+    private ControllerYourTeam cYourTeam;
+    
     public ControllerDashboard(Application app) {
         dashboard = new Dashboard();
         dashboard.setVisible(true);
         dashboard.addListener(this);
         dashboard.setGreetingLabel(Application.getFullName());
         view = dashboard;
-        new ControllerAddProgrammer(this);
-        new ControllerNewProject(this);
-        new ControllerYourProject(this);
-        new ControllerYourTeam(this);
         this.app = app;
+        cAddProg = new ControllerAddProgrammer(this);
+        cNewProj = new ControllerNewProject(this);
+        cYourProj = new ControllerYourProject(this);
+        cYourTeam = new ControllerYourTeam(this);
     }
     
     public Application getApplication() {
@@ -65,6 +71,7 @@ public class ControllerDashboard implements ActionListener {
     
     public void showListTeam() {
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "ListTeamPanel");
+        cYourTeam.populateTable();
     }
     
     public void showAddProgrammer() {
@@ -73,6 +80,7 @@ public class ControllerDashboard implements ActionListener {
     
     public void showListProject() {
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "ListProjectPanel");
+        cYourProj.populateTable();
     }
     
     public void showNewProject() {

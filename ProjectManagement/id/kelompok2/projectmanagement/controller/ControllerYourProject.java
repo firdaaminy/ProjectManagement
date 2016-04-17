@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -40,6 +41,7 @@ public class ControllerYourProject implements ActionListener{
             }
         }
         dash = cd;
+        populateTable();
     }
 
     @Override
@@ -48,8 +50,7 @@ public class ControllerYourProject implements ActionListener{
         if(oo.equals(YP.getBtnSearchYP())){
             clearRow();
             try {
-                ResultSet rs=database.getData("select * from projects where name= '"+YP.getSearchText()+"' or client= '"+YP.getSearchText()+"'");
-                List<Object> data=new ArrayList<Object>();
+                ResultSet rs = dash.getApplication().searchProject(YP.getSearchText());
                 DefaultTableModel modelTable=(DefaultTableModel) this.YP.getTableYourProject().getModel();
                 while(rs.next()){
                     modelTable.addRow(new Object[]{rs.getString(2), rs.getString(3), rs.getString(6)});
@@ -61,13 +62,21 @@ public class ControllerYourProject implements ActionListener{
     }
     
     public void clearRow(){
-        try{
-            DefaultTableModel modelTable=(DefaultTableModel) this.YP.getTableYourProject().getModel();
-            for(int i=0;i<modelTable.getRowCount();i++){
-                modelTable.removeRow(0);
+        DefaultTableModel modelTable = (DefaultTableModel) YP.getTableYourProject().getModel();
+        modelTable.setRowCount(0);
+    }
+
+    public void populateTable() {
+        try {
+            clearRow();
+            ResultSet rs = dash.getApplication().getAllProjects();
+            DefaultTableModel tableModel = (DefaultTableModel) YP.getTableYourProject().getModel();
+            while(rs.next()) {
+                tableModel.addRow(new Object[]{rs.getString("name"),rs.getString("client"), "", (rs.getBoolean("done")? "Done": "Not done")});        
             }
-        } catch (Exception e){
-            
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerYourTeam.class.getName()).log(Level.SEVERE, null, ex);
         }
+        YP.resetText();
     }
 }

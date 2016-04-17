@@ -59,6 +59,14 @@ public class ListTeam extends javax.swing.JPanel implements View {
         jxSearchId.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jxSearchId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jxSearchId.setText("Search your member by his/her ID or name...");
+        jxSearchId.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jxSearchIdFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jxSearchIdFocusLost(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,8 +129,8 @@ public class ListTeam extends javax.swing.JPanel implements View {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jxSearchId, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                     .addComponent(BtnSearchYT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -131,6 +139,19 @@ public class ListTeam extends javax.swing.JPanel implements View {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jxSearchIdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxSearchIdFocusGained
+        if(jxSearchId.getText().equals("Search your member by his/her ID or name..."))
+            jxSearchId.setText("");
+    }//GEN-LAST:event_jxSearchIdFocusGained
+
+    private void jxSearchIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxSearchIdFocusLost
+        if(jxSearchId.getText().equals(""))
+            jxSearchId.setText("Search your member by his/her ID or name...");
+    }//GEN-LAST:event_jxSearchIdFocusLost
+
+    public void resetText() {
+        jxSearchId.setText("Search your member by his/her ID or name...");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSearchYT;

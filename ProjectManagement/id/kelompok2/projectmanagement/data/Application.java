@@ -40,7 +40,7 @@ public class Application {
         String uname = "select * from user where username= '" + username + "'";
         try {
             resultSet = database.getData(uname);
-            if(resultSet != null) {
+            if(resultSet.next()) {
                 String temp=resultSet.getString("password");
                 if(password.equals(temp)) {
                     if(resultSet.getInt("tipeUser") == 99) {
@@ -89,5 +89,46 @@ public class Application {
         prepare.setString(3, projDesc);
         prepare.setInt(4, (int) user.getId());
         database.updateQuery(prepare);
+    }
+
+    public ResultSet searchListTeam(String search) {
+        ResultSet rs = null;
+        try {
+            rs = database.getData("select * from user where id= '"+search+"' or fullName='"+search+"'");
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public ResultSet searchProject(String searchText) {
+        ResultSet rs = null;
+        try {
+            rs=database.getData("select * from projects where name= '"+searchText+"' or client= '"+searchText+"' and managerid = '"
+                    + user.getId() +"'");
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;       
+    }
+
+    public ResultSet getAllProgrammers() {
+        ResultSet rs = null;
+        try {
+            rs = database.getData("select * from user where tipeUser = '1'");
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public ResultSet getAllProjects() {
+        ResultSet rs = null;
+        try {
+            rs = database.getData("select * from projects where managerid = '"+ user.getId() +"'");
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
     }
 }

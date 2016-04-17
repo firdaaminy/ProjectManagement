@@ -42,6 +42,14 @@ public class ListProject extends javax.swing.JPanel implements View {
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         txSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txSearch.setText("You can search your project by its client or name...");
+        txSearch.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txSearchFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txSearchFocusLost(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -118,6 +126,19 @@ public class ListProject extends javax.swing.JPanel implements View {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txSearchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSearchFocusGained
+        if(txSearch.getText().equals("You can search your project by its client or name..."))
+            txSearch.setText("");
+    }//GEN-LAST:event_txSearchFocusGained
+
+    private void txSearchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSearchFocusLost
+        if(txSearch.getText().equals(""))
+            txSearch.setText("You can search your project by its client or name...");
+    }//GEN-LAST:event_txSearchFocusLost
+
+    public void resetText() {
+        txSearch.setText("You can search your project by its client or name...");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearchYP;

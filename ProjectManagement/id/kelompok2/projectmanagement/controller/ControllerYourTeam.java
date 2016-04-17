@@ -13,13 +13,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -40,19 +43,19 @@ public class ControllerYourTeam implements ActionListener {
             }
         }
         dash = cd;
+        populateTable();
     }
 
     
     @Override
     public void actionPerformed(ActionEvent e) {
         Object oo =  e.getSource();
-        if(oo.equals(YT.getBtnSearchYT())){
+        if(oo.equals(YT.getBtnSearchYT())){        
             clearRow();
             try {
-                ResultSet rs= db.getData("select * from user where id= '"+YT.getJxSearchId().getText()+"' or fullName='"+YT.getJxSearchId().getText()+"'");
-//                System.out.println("select * from user where id= "+YT.getJxSearchId().getText()+"or fullName='"+YT.getJxSearchId().getText()+"'");
-                List<Object> data = new ArrayList<Object>();
-                DefaultTableModel modelTable = (DefaultTableModel) this.YT.getTableMember().getModel();
+                String search = YT.getJxSearchId().getText();
+                ResultSet rs = dash.getApplication().searchListTeam(search);
+                DefaultTableModel modelTable = (DefaultTableModel) YT.getTableMember().getModel();
                 while(rs.next())
                 {
                     modelTable.addRow(new Object[]{rs.getInt(1),rs.getString(2), rs.getDouble(5), ""});
@@ -60,17 +63,25 @@ public class ControllerYourTeam implements ActionListener {
             } catch (Exception ex) {
                 Logger.getLogger(ControllerYourTeam.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
 
     public void clearRow(){
+        DefaultTableModel modelTable = (DefaultTableModel) this.YT.getTableMember().getModel();
+        modelTable.setRowCount(0);
+    }
+
+    public void populateTable() {
         try {
-            DefaultTableModel modelTable = (DefaultTableModel) this.YT.getTableMember().getModel();
-            for(int i = 0;i<modelTable.getRowCount();i++){
-                modelTable.removeRow(0);
+            clearRow();
+            ResultSet rs = dash.getApplication().getAllProgrammers();
+            DefaultTableModel tableModel = (DefaultTableModel) YT.getTableMember().getModel();
+            while(rs.next()) {
+                tableModel.addRow(new Object[]{rs.getInt("id"),rs.getString("username"), rs.getDouble("salary"), ""});        
             }
-        } catch (Exception e) {
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerYourTeam.class.getName()).log(Level.SEVERE, null, ex);
         }
+        YT.resetText();
     }
 }

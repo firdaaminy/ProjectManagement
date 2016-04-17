@@ -30,10 +30,7 @@ public class Database {
     
     public ResultSet getData(String SQLString) throws Exception{
         rst=statement.executeQuery(SQLString);
-        if(rst.next()) {
-            return rst;
-        }
-        return null;
+        return rst;
     }
     
     public void updateQuery(String SQLString) throws Exception{
