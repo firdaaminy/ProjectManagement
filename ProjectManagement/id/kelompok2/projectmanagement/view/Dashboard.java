@@ -8,6 +8,7 @@ package id.kelompok2.projectmanagement.view;
 import java.awt.CardLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -31,6 +32,8 @@ public class Dashboard extends javax.swing.JFrame implements View {
         btnYourTeam.addActionListener(e);
         btnHome.addActionListener(e);
         btnNewProject.addActionListener(e);
+        btnEditProfile.addActionListener(e);
+        btnGraph.addActionListener(e);
     }
     
     /**
@@ -45,7 +48,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         btnNotif = new javax.swing.JButton();
-        btnMe = new javax.swing.JButton();
+        btnEditProfile = new javax.swing.JButton();
         btnGraph = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -53,7 +56,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jTextField3 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         greetingLabel = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblPosition = new javax.swing.JLabel();
         btnAvatar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewMember = new javax.swing.JButton();
@@ -80,11 +83,11 @@ public class Dashboard extends javax.swing.JFrame implements View {
         btnNotif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/bell.png"))); // NOI18N
         btnNotif.setBorder(null);
 
-        btnMe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/social.png"))); // NOI18N
-        btnMe.setBorder(null);
-        btnMe.addActionListener(new java.awt.event.ActionListener() {
+        btnEditProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/social.png"))); // NOI18N
+        btnEditProfile.setBorder(null);
+        btnEditProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMeActionPerformed(evt);
+                btnEditProfileActionPerformed(evt);
             }
         });
 
@@ -107,7 +110,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addGap(39, 39, 39)
                 .addComponent(btnNotif, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(btnMe, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
         jPanel2Layout.setVerticalGroup(
@@ -122,7 +125,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addComponent(btnGraph, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnMe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEditProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnNotif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -171,9 +174,9 @@ public class Dashboard extends javax.swing.JFrame implements View {
         greetingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         greetingLabel.setText("Hello, Adam Geraldy");
 
-        jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Project Manager");
+        lblPosition.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        lblPosition.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPosition.setText("Project Manager");
 
         btnAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/people (3).png"))); // NOI18N
 
@@ -186,7 +189,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(greetingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
@@ -201,7 +204,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAvatar, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(lblPosition)
                 .addContainerGap())
         );
 
@@ -323,9 +326,9 @@ public class Dashboard extends javax.swing.JFrame implements View {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeActionPerformed
+    private void btnEditProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditProfileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnMeActionPerformed
+    }//GEN-LAST:event_btnEditProfileActionPerformed
 
     public CardLayout getCardLayout() {
         return cardLayout;
@@ -375,20 +378,22 @@ public class Dashboard extends javax.swing.JFrame implements View {
 //    }
     
     public void addCards() {
-        contentPanel.add(new Home(), "HomePanel");
+        contentPanel.add(new AssignProject(), "AssignProjectPanel");
         contentPanel.add(new AddProgrammer(), "AddProgrammerPanel");
-        contentPanel.add(new ProgressCheck(), "ProgressCheckPanel");
+        contentPanel.add(new CheckProgress(), "ProgressCheckPanel");
         contentPanel.add(new ListProject(), "ListProjectPanel");
         contentPanel.add(new ListTeam(), "ListTeamPanel");
         contentPanel.add(new NewProject(), "NewProjectPanel");
+        contentPanel.add(new EditProfile(), "EditProfilePanel");
+        contentPanel.add(new Home(), "HomePanel");
         cardLayout = (CardLayout) contentPanel.getLayout();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAvatar;
+    private javax.swing.JButton btnEditProfile;
     private javax.swing.JButton btnGraph;
     private javax.swing.JButton btnHome;
-    private javax.swing.JButton btnMe;
     private javax.swing.JButton btnNewMember;
     private javax.swing.JButton btnNewProject;
     private javax.swing.JButton btnNotif;
@@ -399,7 +404,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
@@ -408,6 +412,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel lblPosition;
     // End of variables declaration//GEN-END:variables
 
     public Object getBtnNewProject(){
@@ -434,16 +439,20 @@ public class Dashboard extends javax.swing.JFrame implements View {
     public JButton getBtnHome() {
         return btnHome;
     }
+    
+    public JLabel getPositionLabel() {
+        return lblPosition;
+    }
 
-    public JButton getBtnMe() {
-        return btnMe;
+    public JButton getBtnEditProfile() {
+        return btnEditProfile;
     }
 
     public JButton getBtnNotif() {
         return btnNotif;
     }
     
-    public void setGreetingLabel(String name) {
-        greetingLabel.setText("Hello, "+ name);
+    public JLabel getGreetingLabel() {
+        return greetingLabel;
     }
 }

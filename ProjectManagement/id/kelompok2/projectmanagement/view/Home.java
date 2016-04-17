@@ -5,6 +5,9 @@
  */
 package id.kelompok2.projectmanagement.view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Adam
@@ -27,207 +30,128 @@ public class Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        txHistory = new javax.swing.JTextField();
-        txHistory2 = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jcSendto = new javax.swing.JComboBox();
-        jbCancel = new javax.swing.JButton();
-        jbSend = new javax.swing.JButton();
-        txDetails = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jbAttachfile = new javax.swing.JButton();
+        labelName = new javax.swing.JLabel();
+        lblFullname = new javax.swing.JLabel();
+        txFullname = new javax.swing.JTextField();
+        lblFullname1 = new javax.swing.JLabel();
+        txUsername = new javax.swing.JTextField();
+        lblFullname2 = new javax.swing.JLabel();
+        txPosition = new javax.swing.JTextField();
+        lblFullname3 = new javax.swing.JLabel();
+        txSince = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setBackground(new java.awt.Color(255, 255, 153));
 
-        jLabel11.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Done projects");
+        labelName.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        labelName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelName.setText("jLabel1");
 
-        txHistory.setText("Semacam history project mana aja yang udah dikerjain dan uda beres");
+        lblFullname.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname.setText("Name");
 
-        txHistory2.setText("Itu gambar calendar di sebelah buat ngatur deadline");
-        txHistory2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txHistory2ActionPerformed(evt);
-            }
-        });
+        txFullname.setEditable(false);
+        txFullname.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        txFullname.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txFullname.setText("jTextField1");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txHistory2)
-                    .addComponent(txHistory))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txHistory2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 76, Short.MAX_VALUE))
-        );
+        lblFullname1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname1.setText("Username");
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 153));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txUsername.setEditable(false);
+        txUsername.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        txUsername.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txUsername.setText("jTextField1");
 
-        jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel7.setText("Assign task to your team member");
+        lblFullname2.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname2.setText("Position");
 
-        jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel8.setText("Type the task details here");
+        txPosition.setEditable(false);
+        txPosition.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        txPosition.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txPosition.setText("jTextField1");
 
-        jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel9.setText("Send to");
+        lblFullname3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        lblFullname3.setText("Member since");
 
-        jcSendto.setEditable(true);
-        jcSendto.setToolTipText("");
-
-        jbCancel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jbCancel.setText("Cancel");
-
-        jbSend.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jbSend.setText("Send");
-
-        txDetails.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
-        txDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txDetailsActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
-        jLabel10.setText("Attach file(s)");
-
-        jbAttachfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/interface.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbAttachfile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbCancel)
-                .addGap(76, 76, 76)
-                .addComponent(jbSend)
-                .addGap(39, 39, 39))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txDetails)
-                    .addComponent(jcSendto, 0, 275, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcSendto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbAttachfile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbCancel)
-                        .addComponent(jbSend)
-                        .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        txSince.setEditable(false);
+        txSince.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        txSince.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txSince.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 491, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap()))
+            .addComponent(labelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFullname2)
+                    .addComponent(lblFullname3)
+                    .addComponent(lblFullname1)
+                    .addComponent(lblFullname))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txFullname)
+                    .addComponent(txUsername)
+                    .addComponent(txSince)
+                    .addComponent(txPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFullname)
+                    .addComponent(txFullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFullname1)
+                    .addComponent(txUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFullname2)
+                    .addComponent(txPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFullname3)
+                    .addComponent(txSince, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDetailsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txDetailsActionPerformed
+    public void setLabelName(String name) {
+        labelName.setText(name);
+    }
 
-    private void txHistory2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHistory2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txHistory2ActionPerformed
+    public void setTxFullname(String name) {
+        txFullname.setText(name);
+    }
 
-    public Object getDetails(){
-        return txDetails.getText();
+    public void setTxPosition(String position) {
+        txPosition.setText(position);
     }
-    public Object getBtnCancel(){
-        return jbCancel;
+
+    public void setTxSince(String since) {
+        txSince.setText(since);
     }
-    
-    public Object getBtnAttachfile(){
-        return jbAttachfile;
-    }
-    
-    public Object getBtnSend(){
-        return jbSend;
+
+    public void setTxUsername(String username) {
+        txUsername.setText(username);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JButton jbAttachfile;
-    private javax.swing.JButton jbCancel;
-    private javax.swing.JButton jbSend;
-    private javax.swing.JComboBox jcSendto;
-    private javax.swing.JTextField txDetails;
-    private javax.swing.JTextField txHistory;
-    private javax.swing.JTextField txHistory2;
+    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel lblFullname;
+    private javax.swing.JLabel lblFullname1;
+    private javax.swing.JLabel lblFullname2;
+    private javax.swing.JLabel lblFullname3;
+    private javax.swing.JTextField txFullname;
+    private javax.swing.JTextField txPosition;
+    private javax.swing.JTextField txSince;
+    private javax.swing.JTextField txUsername;
     // End of variables declaration//GEN-END:variables
 }
