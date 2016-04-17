@@ -6,6 +6,8 @@
 package id.kelompok2.projectmanagement.view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,6 +20,38 @@ public class Settings extends javax.swing.JPanel implements View {
      */
     public Settings() {
         initComponents();
+    }
+
+    public JButton getBtnSavePass() {
+        return btnSavePass;
+    }
+
+    public JButton getBtnSaveSalary() {
+        return btnSaveSalary;
+    }
+
+    public JButton getBtnSaveUser() {
+        return btnSaveUser;
+    }
+
+    public JButton getBtnSubmit() {
+        return btnSubmit;
+    }
+
+    public JTextField getTxPassword() {
+        return txPassword;
+    }
+
+    public JTextField getTxSalary() {
+        return txSalary;
+    }
+
+    public JTextField getTxSearch() {
+        return txSearch;
+    }
+
+    public JTextField getTxUsername() {
+        return txUsername;
     }
 
     /**

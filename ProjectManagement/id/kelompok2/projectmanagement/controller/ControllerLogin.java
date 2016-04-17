@@ -40,7 +40,7 @@ public class ControllerLogin implements ActionListener {
             if (a.equals(login.getBtnLogin())){
                 app.userLogin(login, login.getUser(), login.getPass());
             }
-            if(a.equals(login.getBtnSignUp())) {
+            else if(a.equals(login.getBtnSignUp())) {
                 String name = login.getFirstName() +" "+ login.getLastName();
                 String email = login.getEmail();
                 String userName = login.getUserSignup();
@@ -54,7 +54,7 @@ public class ControllerLogin implements ActionListener {
                     gender = "Male";
                 }
                 try {
-                    app.signUp(name, email, userName, passWord, birthDate, gender, 99);
+                    app.signUp(name, email, userName, passWord, birthDate, gender, 1);
                 } catch (SQLException ex) {
                     Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }

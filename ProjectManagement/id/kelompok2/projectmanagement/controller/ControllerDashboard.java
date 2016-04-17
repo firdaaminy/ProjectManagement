@@ -27,7 +27,7 @@ public class ControllerDashboard implements ActionListener {
     private Application app;
     
     // Controllers
-    private ControllerAddProgrammer cAddProg;
+    private ControllerAddProjectManager cAddProj;
     private ControllerNewProject cNewProj;
     private ControllerYourProject cYourProj;
     private ControllerYourTeam cYourTeam;
@@ -45,7 +45,7 @@ public class ControllerDashboard implements ActionListener {
         dashboard.addListener(this);
         setGreetingLabel(Application.getFullName());
         view = dashboard;
-        cAddProg = new ControllerAddProgrammer(this);
+        cAddProj = new ControllerAddProjectManager(this);
         cNewProj = new ControllerNewProject(this);
         cYourProj = new ControllerYourProject(this);
         cYourTeam = new ControllerYourTeam(this);
@@ -103,8 +103,8 @@ public class ControllerDashboard implements ActionListener {
         cYourTeam.populateTable();
     }
     
-    public void showAddProgrammer() {
-        dashboard.getCardLayout().show(dashboard.getContentPanel(), "AddProgrammerPanel");
+    public void showAddProjectManager() {
+        dashboard.getCardLayout().show(dashboard.getContentPanel(), "AddProjectManagerPanel");
     }
     
     public void showListProject() {
@@ -140,6 +140,7 @@ public class ControllerDashboard implements ActionListener {
     }
     
     public void showSettings() {
+        cSettings.clearFields();
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "SettingsPanel");
     }
     
@@ -153,7 +154,7 @@ public class ControllerDashboard implements ActionListener {
             showListTeam();
         }
         else if(source.equals(dashboard.getBtnMembers())) {
-            showAddProgrammer();
+            showAddProjectManager();
         }
         else if(source.equals(dashboard.getBtnProjects())) {
             showListProject();

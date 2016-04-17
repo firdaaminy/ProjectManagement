@@ -8,6 +8,7 @@ package id.kelompok2.projectmanagement.data;
 import id.kelompok2.projectmanagement.controller.ControllerDashboard;
 import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.controller.ControllerLogin;
+import id.kelompok2.projectmanagement.controller.ControllerSettings;
 import id.kelompok2.projectmanagement.employees.Person;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -224,7 +225,12 @@ public class Application {
                 difficulties += rs.getInt("difficulties");
             }
             if(difficulties == 0) return 0;
-            return (donedifficulties/difficulties*100);
+            double done = 0.0, diff = 0.0;
+            done = donedifficulties;
+            diff = difficulties;
+            double percentage = done/diff * 100;
+            System.out.println(percentage);
+            return (int) (percentage);
         } catch (Exception ex) {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -287,6 +293,49 @@ public class Application {
         PreparedStatement prepare = database.getConnection().prepareStatement(query);
         prepare.setInt(1, progId);
         prepare.setInt(2, taskId);
+        prepare.executeUpdate();
+    }
+
+    public void searchUser(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void searchUser(ControllerSettings cSettings, String search) {
+        try {
+            String query = "select * from user where id = '"+ search +"' or username = '"+ search +"'";
+            ResultSet rs = database.getData(query);
+            if(rs.next()) {
+                cSettings.setSearchedId(rs.getInt("id"));
+                cSettings.setTxUser(rs.getString("username"));
+                cSettings.setTxPass(rs.getString("password"));
+                cSettings.setTxSalary(rs.getString("salary"));
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateUserSalary(int searchedId, String salary) throws SQLException {
+        String query = "update user set salary = ? where id = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setDouble(1, Double.parseDouble(salary));
+        prepare.setInt(2, searchedId);
+        prepare.executeUpdate();
+    }
+
+    public void updateUserUsername(int searchedId, String username) throws SQLException {
+        String query = "update user set username = ? where id = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setString(1, username);
+        prepare.setInt(2, searchedId);
+        prepare.executeUpdate();
+    }
+
+    public void updateUserPassword(int searchedId, String pass) throws SQLException {
+        String query = "update user set password = ? where id = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setString(1, pass);
+        prepare.setInt(2, searchedId);
         prepare.executeUpdate();
     }
 }

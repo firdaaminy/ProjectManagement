@@ -58,7 +58,9 @@ public class Dashboard extends javax.swing.JFrame implements View {
         btnHome = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         greetingLabel = new javax.swing.JLabel();
         lblPosition = new javax.swing.JLabel();
@@ -146,31 +148,55 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jPanel3.setMaximumSize(new java.awt.Dimension(161, 105));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
 
-        jLabel12.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Sitka Text", 0, 36)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Deadline");
+        jLabel12.setText("Developer");
 
-        jTextField3.setText("Project yang deadline uda dekat");
+        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Abby Setyo");
+
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Firda Aminy");
+
+        jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Adam Geraldy");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel4)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(59, 59, 59)
+                    .addComponent(jLabel7)
+                    .addContainerGap(429, Short.MAX_VALUE)))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 153));
@@ -223,7 +249,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel2.setLabelFor(btnNewMember);
-        jLabel2.setText("New team member");
+        jLabel2.setText("New project manager");
 
         btnNewProject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/sign.png"))); // NOI18N
 
@@ -385,7 +411,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
     
     public void addCards() {
         contentPanel.add(new AssignProject(), "AssignProjectPanel");
-        contentPanel.add(new AddProgrammer(), "AddProgrammerPanel");
+        contentPanel.add(new AddProjectManager(), "AddProjectManagerPanel");
         contentPanel.add(new CheckProgress(), "ProgressCheckPanel");
         contentPanel.add(new ListProject(), "ListProjectPanel");
         contentPanel.add(new ListTeam(), "ListTeamPanel");
@@ -409,17 +435,19 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JButton btnYourTeam;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel greetingLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblPosition;
     // End of variables declaration//GEN-END:variables
 

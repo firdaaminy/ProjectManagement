@@ -5,7 +5,7 @@
  */
 package id.kelompok2.projectmanagement.controller;
 
-import id.kelompok2.projectmanagement.view.AddProgrammer;
+import id.kelompok2.projectmanagement.view.AddProjectManager;
 import id.kelompok2.projectmanagement.view.NewProject;
 import java.awt.Component;
 import java.awt.event.ActionEvent;

@@ -7,7 +7,7 @@ package id.kelompok2.projectmanagement.controller;
 
 import id.kelompok2.projectmanagement.view.Login;
 import id.kelompok2.projectmanagement.view.Dashboard;
-import id.kelompok2.projectmanagement.view.AddProgrammer;
+import id.kelompok2.projectmanagement.view.AddProjectManager;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,15 +21,15 @@ import javax.swing.JPanel;
  *
  * @author Abbi PC
  */
-public class ControllerAddProgrammer implements ActionListener {
-    private AddProgrammer addProg;
+public class ControllerAddProjectManager implements ActionListener {
+    private AddProjectManager addProg;
     private ControllerDashboard dash;
      
-    public ControllerAddProgrammer(ControllerDashboard cd){
+    public ControllerAddProjectManager(ControllerDashboard cd){
         for(Component comp: cd.getComponents()) {
             JPanel content = (JPanel) comp;
-            if(content instanceof AddProgrammer) {
-                addProg = (AddProgrammer) content;
+            if(content instanceof AddProjectManager) {
+                addProg = (AddProjectManager) content;
                 addProg.addListener(this);                
             }
         }
@@ -48,13 +48,13 @@ public class ControllerAddProgrammer implements ActionListener {
             Double salary = Double.parseDouble(addProg.getProgrammerSalary());
             String password = addProg.getProgrammerPassword();
             try {
-                dash.getApplication().signUp("", "", name, password, null, "", 1);
+                dash.getApplication().signUp("", "", name, password, null, "", 99);
                 JOptionPane.showMessageDialog(addProg, "You added "+ name +" as programmer!");
                 dash.showHome();
                 addProg.clearFields();
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(addProg, ex.getMessage(), "ERROR!", JOptionPane.ERROR_MESSAGE);
-                Logger.getLogger(ControllerAddProgrammer.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAddProjectManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

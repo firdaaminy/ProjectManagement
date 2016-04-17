@@ -90,7 +90,7 @@
           <Font name="Sitka Text" size="12" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Enter your programmer&apos;s name"/>
+        <Property name="text" type="java.lang.String" value="Enter name"/>
       </Properties>
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jxProgrammerNameFocusGained"/>
@@ -103,7 +103,7 @@
           <Font name="Sitka Text" size="12" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Enter your programmer&apos;s salary"/>
+        <Property name="text" type="java.lang.String" value="Enter salary"/>
       </Properties>
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jxProgrammerSalaryFocusGained"/>
@@ -116,7 +116,7 @@
           <Font name="Sitka Text" size="12" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Enter your programmer&apos;s default password"/>
+        <Property name="text" type="java.lang.String" value="Enter default password"/>
       </Properties>
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jxProgrammerPasswordFocusGained"/>
@@ -164,7 +164,7 @@
           <Font name="Sitka Text" size="18" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Create an account for each of your programmers"/>
+        <Property name="text" type="java.lang.String" value="Create an account for a project manager"/>
       </Properties>
     </Component>
   </SubComponents>

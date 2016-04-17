@@ -18,7 +18,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -36,6 +38,14 @@ public class Login extends javax.swing.JFrame implements View {
 
     public JButton getBtnLogin() {
         return btnLogin;
+    }
+
+    public JPasswordField getPasswordLogin() {
+        return passwordLogin;
+    }
+
+    public JTextField getUsernameLogin() {
+        return usernameLogin;
     }
 
     public JButton getBtnSignUp() {
