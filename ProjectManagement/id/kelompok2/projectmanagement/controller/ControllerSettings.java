@@ -37,7 +37,7 @@ public class ControllerSettings implements ActionListener {
     }
     
     public void clearFields() {
-        settings.getTxSearch().setText("");
+        settings.getTxSearch().setText("(By ID/Username)");
         settings.getTxPassword().setText("");
         settings.getTxUsername().setText("");
         settings.getTxSalary().setText("");

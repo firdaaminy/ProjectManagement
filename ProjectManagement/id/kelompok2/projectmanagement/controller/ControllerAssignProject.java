@@ -45,6 +45,7 @@ public class ControllerAssignProject implements ActionListener {
             assignProject.getComboProgTask().removeAllItems();
             assignProject.getComboTask().removeAllItems();
             assignProject.getTxDetail().setText("");
+            assignProject.getTxTaskDesc().setText("");
             List<String> programmers = new ArrayList<>();
             ResultSet rs = dash.getApplication().getAllProgrammers();
             while(rs.next()) {

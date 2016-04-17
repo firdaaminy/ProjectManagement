@@ -39,10 +39,10 @@ public class ControllerAssignedTask {
                 if(e.getClickCount() == 2) {
                     int projId;
                     int row = assignedTask.getTableTasks().getSelectedRow();
-                    String projName = (String) assignedTask.getTableTasks().getValueAt(row, 1);
+                    int taskId = Integer.parseInt(assignedTask.getTableTasks().getValueAt(row, 0).toString());
                     String done = assignedTask.getTableTasks().getValueAt(row, 2).toString();
                     try {
-                        dash.getApplication().toggleDoneTask(projID, done);
+                        dash.getApplication().toggleDoneTask(projID, taskId, done);
                         assignedTask.getTableTasks().setValueAt((done.equals("Done")? "Not done": "Done"), row, 2);
                     } catch (SQLException ex) {
                         Logger.getLogger(ControllerAssignedTask.class.getName()).log(Level.SEVERE, null, ex);

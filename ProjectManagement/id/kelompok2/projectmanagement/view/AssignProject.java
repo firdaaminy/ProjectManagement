@@ -69,7 +69,6 @@ public class AssignProject extends javax.swing.JPanel implements View {
         jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel9.setText("Assign to");
 
-        jcSendto.setEditable(true);
         jcSendto.setToolTipText("");
 
         jbCancel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N

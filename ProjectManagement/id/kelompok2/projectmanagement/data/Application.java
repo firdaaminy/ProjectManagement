@@ -249,13 +249,14 @@ public class Application {
         return rs;
     }
 
-    public void toggleDoneTask(int projId, String done) throws SQLException {
-        String query = "update tasks set done = ? where projectid = ?";
+    public void toggleDoneTask(int projId, int taskId, String done) throws SQLException {
+        String query = "update tasks set done = ? where projectid = ? and id = ?";
         PreparedStatement prepare = database.getConnection().prepareStatement(query);
         if(done.equals("Done"))
             prepare.setBoolean(1, false);
         else prepare.setBoolean(1, true);
         prepare.setInt(2, projId);
+        prepare.setInt(3, taskId);
         prepare.executeUpdate();
         System.out.println(prepare.toString());
     }
