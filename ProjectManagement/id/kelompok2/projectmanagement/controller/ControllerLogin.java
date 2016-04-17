@@ -6,7 +6,6 @@
 package id.kelompok2.projectmanagement.controller;
 
 import id.kelompok2.projectmanagement.data.Application;
-import id.kelompok2.projectmanagement.view.Dashboard;
 import id.kelompok2.projectmanagement.view.View;
 import id.kelompok2.projectmanagement.view.Login;
 import java.awt.event.ActionEvent;
@@ -29,6 +28,7 @@ public class ControllerLogin implements ActionListener {
         Login login = new Login();
         login.setVisible(true);
         login.addListener(this);
+        login.setLocationRelativeTo(null);
         view = login;
     }
     

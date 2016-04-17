@@ -62,6 +62,7 @@ public class ControllerDashboard implements ActionListener {
             dashboard.getBtnNewProject().setVisible(false);
             dashboard.getBtnSettings().setVisible(false);
         }
+        dashboard.setLocationRelativeTo(null);
         showHome();
     }
     

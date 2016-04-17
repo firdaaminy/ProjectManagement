@@ -77,6 +77,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("On-Board");
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 153));
