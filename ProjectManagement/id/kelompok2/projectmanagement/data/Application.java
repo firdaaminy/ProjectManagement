@@ -5,8 +5,15 @@
  */
 package id.kelompok2.projectmanagement.data;
 
+import id.kelompok2.projectmanagement.controller.ControllerDashboard;
 import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.controller.ControllerLogin;
+import id.kelompok2.projectmanagement.employees.Person;
+import id.kelompok2.projectmanagement.employees.Programmer;
+import id.kelompok2.projectmanagement.employees.ProjectManager;
+import id.kelompok2.projectmanagement.view.Login;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -18,6 +25,7 @@ import java.util.logging.Logger;
  */
 public class Application {
     private Database database;
+    private static Person user;
     
     public Application() {
         try {
@@ -27,32 +35,59 @@ public class Application {
         }
     }
     
-    public void userLogin(String username, String password) {
+    public void userLogin(Login login, String username, String password) {
+        ResultSet resultSet=null;
+        String uname = "select * from user where username= '" + username + "'";
         try {
-            ResultSet resultset=null;
-            String uname = "select (username,password) from user where username= '" + username + "'";
-            
-            try {
-                resultset = Database.getData(uname);
-            } catch (Exception ex) {
-                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            resultSet = database.getData(uname);
+            if(resultSet != null) {
+                String temp=resultSet.getString("password");
+                if(password.equals(temp)) {
+                    if(resultSet.getInt("tipeUser") == 99) {
+                        user = new ProjectManager(username, resultSet.getInt("id"), 
+                                resultSet.getDouble("salary"), temp);
+                    }
+                    else if(resultSet.getInt("tipeUser") == 1) {
+                        user = new Programmer(username, resultSet.getInt("id"), resultSet.getDouble("salary"),
+                                temp);
+                    }
+                    user.setFullName(resultSet.getString("fullName"));
+                    ControllerDashboard dash = new ControllerDashboard(this);
+                    login.dispose();
+                }
             }
-            String temp=resultset.getString(1);
-            if(password.equals(temp)){
-                ControllerLogin cl= new ControllerLogin();
-                cl.goToDashboard();
-            }
-            else if(resultset==null){
-                
-            }
-            else{
-                //JOptionPane.showConfirmDialog(,"salah password");
-            }
-                
-//            String pass = "select * from user where password= " + password + ";";
-//            ResultSet result2 = database.getData(pass);
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public static String getFullName() {
+        return user.getFullName();
+    }
+
+    public void signUp(String name, String email, String userName, String passWord, 
+            Date birthDate, String gender, int userType) throws SQLException {
+        String query = "insert into user (username, password, email, birthday, gender, fullName, tipeUser)"
+                + " values(?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setString(1, userName);
+        prepare.setString(2, passWord);
+        prepare.setString(3, email);
+        prepare.setDate(4, birthDate);
+        prepare.setString(5, gender);
+        prepare.setString(6, name);
+        prepare.setInt(7, userType);
+        database.updateQuery(prepare);
+    }
+    
+    public void createProject(String projName, String projClient, String projDesc) throws SQLException {
+        String query = "insert into projects(name, client, description, managerid, deadline)"
+                + " values(?, ?, ?, ?, now()+interval 7 day)";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setString(1, projName);
+        prepare.setString(2, projClient);
+        prepare.setString(3, projDesc);
+        prepare.setInt(4, (int) user.getId());
+        database.updateQuery(prepare);
     }
 }

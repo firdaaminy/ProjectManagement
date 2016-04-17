@@ -11,6 +11,10 @@ import id.kelompok2.projectmanagement.view.View;
 import id.kelompok2.projectmanagement.view.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,13 +31,6 @@ public class ControllerLogin implements ActionListener {
         login.addListener(this);
         view = login;
     }
-
-    public void goToDashboard(){
-        Dashboard dash = new Dashboard();
-        dash.setVisible(true);
-        dash.addListener(this);
-        view = dash;
-    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -41,12 +38,28 @@ public class ControllerLogin implements ActionListener {
         if (view instanceof Login){
             Login login = (Login) view;
             if (a.equals(login.getBtnLogin())){
-                app.userLogin(login.getUser(), login.getPass());
-                login.dispose();
-                goToDashboard();
+                app.userLogin(login, login.getUser(), login.getPass());
+            }
+            if(a.equals(login.getBtnSignUp())) {
+                String name = login.getFirstName() +" "+ login.getLastName();
+                String email = login.getEmail();
+                String userName = login.getUserSignup();
+                String passWord = login.getPassSignup();
+                Date birthDate = login.getBirthDate();
+                String gender = null;
+                if(login.getRadioFemale().isSelected()) {
+                    gender = "Female";
+                }
+                else if(login.getRadioMale().isSelected()) {
+                    gender = "Male";
+                }
+                try {
+                    app.signUp(name, email, userName, passWord, birthDate, gender, 99);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -6,6 +6,8 @@
 package id.kelompok2.projectmanagement.database;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,13 +24,28 @@ public class Database {
         statement=koneksi.createStatement();
     }
     
-    public static ResultSet getData(String SQLString) throws Exception{
+    public Connection getConnection() {
+        return koneksi;
+    }
+    
+    public ResultSet getData(String SQLString) throws Exception{
         rst=statement.executeQuery(SQLString);
-        return rst;
+        if(rst.next()) {
+            return rst;
+        }
+        return null;
     }
     
     public void updateQuery(String SQLString) throws Exception{
         statement.executeUpdate(SQLString);
+    }
+    
+    public void updateQuery(PreparedStatement preparedStatement) {
+        try {
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void closeDB() throws Exception{

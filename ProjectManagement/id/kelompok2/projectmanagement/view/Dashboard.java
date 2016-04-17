@@ -5,7 +5,10 @@
  */
 package id.kelompok2.projectmanagement.view;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,17 +16,21 @@ import java.awt.event.ActionListener;
  */
 public class Dashboard extends javax.swing.JFrame implements View {
 
+    private CardLayout cardLayout;
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
+        addCards();
     }
     
     public void addListener(ActionListener e){
         btnNewMember.addActionListener(e);
         btnYourProject.addActionListener(e);
-        
+        btnYourTeam.addActionListener(e);
+        btnHome.addActionListener(e);
+        btnNewProject.addActionListener(e);
     }
     
     /**
@@ -45,9 +52,9 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel12 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        greetingLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txPhotoManager = new javax.swing.JButton();
+        btnAvatar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewMember = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -157,14 +164,15 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel1.setText("Hello, Adam Geraldy");
+        greetingLabel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        greetingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        greetingLabel.setText("Hello, Adam Geraldy");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Project Manager");
 
-        txPhotoManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/people (3).png"))); // NOI18N
+        btnAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/people (3).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -176,19 +184,19 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addGap(29, 29, 29)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
+                            .addComponent(greetingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(txPhotoManager, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addComponent(btnAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(36, 36, 36))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(greetingLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txPhotoManager, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(btnAvatar, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addContainerGap())
@@ -322,60 +330,65 @@ public class Dashboard extends javax.swing.JFrame implements View {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMeActionPerformed
 
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+
+    public JPanel getContentPanel() {
+        return contentPanel;
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Dashboard db = new Dashboard();
-//                new Dashboard().setVisible(true);
-                db.setVisible(true);
-                db.showProgressCheck();
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                Dashboard db = new Dashboard();
+////                new Dashboard().setVisible(true);
+//                db.setVisible(true);
+//                db.addCards();
+//                db.cardLayout.show(db.contentPanel, "HomePanel");
+//            }
+//        });
+//    }
     
-    public void showHome() {
-        Home home = new Home();
-        this.contentPanel.add(home);
-    }
-    
-    public void showAddProg() {
-        AddProgrammer ap = new AddProgrammer();
-        this.contentPanel.add(ap);
-    }
-    
-    public void showProgressCheck() {
-        ProgressCheck pc = new ProgressCheck();
-        this.contentPanel.add(pc);
+    public void addCards() {
+        contentPanel.add(new Home(), "HomePanel");
+        contentPanel.add(new AddProgrammer(), "AddProgrammerPanel");
+        contentPanel.add(new ProgressCheck(), "ProgressCheckPanel");
+        contentPanel.add(new ListProject(), "ListProjectPanel");
+        contentPanel.add(new ListTeam(), "ListTeamPanel");
+        contentPanel.add(new NewProject(), "NewProjectPanel");
+        cardLayout = (CardLayout) contentPanel.getLayout();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAvatar;
     private javax.swing.JButton btnGraph;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnMe;
@@ -385,8 +398,8 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JButton btnYourProject;
     private javax.swing.JButton btnYourTeam;
     private javax.swing.JPanel contentPanel;
+    private javax.swing.JLabel greetingLabel;
     private javax.swing.JButton jButton12;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -399,19 +412,42 @@ public class Dashboard extends javax.swing.JFrame implements View {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JButton txPhotoManager;
     // End of variables declaration//GEN-END:variables
 
     public Object getBtnNewProject(){
         return btnNewProject;
     }
-    public Object getBtnNewmember(){
+    public Object getBtnMembers(){
         return btnNewMember;
     }
-    public Object getYourproject(){
+    public Object getBtnProjects(){
         return btnYourProject;
     }
-    public Object getPhotoManager(){
-        return txPhotoManager;
+    public Object getBtnYourTeam() {
+        return btnYourTeam;
+    }
+    
+    public Object getBtnAvatar(){
+        return btnAvatar;
+    }
+
+    public JButton getBtnGraph() {
+        return btnGraph;
+    }
+
+    public JButton getBtnHome() {
+        return btnHome;
+    }
+
+    public JButton getBtnMe() {
+        return btnMe;
+    }
+
+    public JButton getBtnNotif() {
+        return btnNotif;
+    }
+    
+    public void setGreetingLabel(String name) {
+        greetingLabel.setText("Hello, "+ name);
     }
 }

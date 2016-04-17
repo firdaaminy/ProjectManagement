@@ -31,7 +31,6 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
     private void initComponents() {
 
         jxProgrammerName = new javax.swing.JTextField();
-        jxProgrammerId = new javax.swing.JTextField();
         jxProgrammerSalary = new javax.swing.JTextField();
         jxProgrammerPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -43,23 +42,38 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
         jxProgrammerName.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jxProgrammerName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jxProgrammerName.setText("Enter your programmer's name");
-
-        jxProgrammerId.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jxProgrammerId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jxProgrammerId.setText("Enter your programmer's ID");
-        jxProgrammerId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jxProgrammerIdActionPerformed(evt);
+        jxProgrammerName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jxProgrammerNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jxProgrammerNameFocusLost(evt);
             }
         });
 
         jxProgrammerSalary.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jxProgrammerSalary.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jxProgrammerSalary.setText("Enter your programmer's salary");
+        jxProgrammerSalary.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jxProgrammerSalaryFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jxProgrammerSalaryFocusLost(evt);
+            }
+        });
 
         jxProgrammerPassword.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jxProgrammerPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jxProgrammerPassword.setText("Enter your programmer's default password");
+        jxProgrammerPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jxProgrammerPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jxProgrammerPasswordFocusLost(evt);
+            }
+        });
         jxProgrammerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jxProgrammerPasswordActionPerformed(evt);
@@ -103,17 +117,15 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
                         .addComponent(jxProgrammerSalary)
                         .addGap(5, 5, 5))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jxProgrammerName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jxProgrammerId, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(jxProgrammerName)
                         .addGap(5, 5, 5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jxProgrammerPassword)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbCancel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbCreate))
-                            .addComponent(jxProgrammerPassword))
+                                .addComponent(jbCreate)))
                         .addGap(7, 7, 7)))
                 .addGap(30, 30, 30))
         );
@@ -124,17 +136,15 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jxProgrammerName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jxProgrammerId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addComponent(jxProgrammerSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addComponent(jxProgrammerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbCreate)
-                    .addComponent(jbCancel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbCancel)
+                    .addComponent(jbCreate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,13 +152,39 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jxProgrammerIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxProgrammerIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jxProgrammerIdActionPerformed
-
     private void jxProgrammerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxProgrammerPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jxProgrammerPasswordActionPerformed
+
+    private void jxProgrammerNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerNameFocusGained
+        if(jxProgrammerName.getText().equals("Enter your programmer's name"))
+            jxProgrammerName.setText("");
+    }//GEN-LAST:event_jxProgrammerNameFocusGained
+
+    private void jxProgrammerNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerNameFocusLost
+        if(jxProgrammerName.getText().equals(""))
+            jxProgrammerName.setText("Enter your programmer's name");
+    }//GEN-LAST:event_jxProgrammerNameFocusLost
+
+    private void jxProgrammerSalaryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerSalaryFocusGained
+        if(jxProgrammerSalary.getText().equals("Enter your programmer's salary"))
+            jxProgrammerSalary.setText("");
+    }//GEN-LAST:event_jxProgrammerSalaryFocusGained
+
+    private void jxProgrammerSalaryFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerSalaryFocusLost
+        if(jxProgrammerSalary.getText().equals(""))
+            jxProgrammerSalary.setText("Enter your programmer's salary");
+    }//GEN-LAST:event_jxProgrammerSalaryFocusLost
+
+    private void jxProgrammerPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerPasswordFocusGained
+        if(jxProgrammerPassword.getText().equals("Enter your programmer's default password"))
+            jxProgrammerPassword.setText("");
+    }//GEN-LAST:event_jxProgrammerPasswordFocusGained
+
+    private void jxProgrammerPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jxProgrammerPasswordFocusLost
+        if(jxProgrammerPassword.getText().equals(""))
+            jxProgrammerPassword.setText("Enter your programmer's default password");
+    }//GEN-LAST:event_jxProgrammerPasswordFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -157,7 +193,6 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbCancel;
     private javax.swing.JButton jbCreate;
-    private javax.swing.JTextField jxProgrammerId;
     private javax.swing.JTextField jxProgrammerName;
     private javax.swing.JTextField jxProgrammerPassword;
     private javax.swing.JTextField jxProgrammerSalary;
@@ -165,7 +200,8 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
 
     @Override
     public void addListener(ActionListener e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jbCancel.addActionListener(e);
+        jbCreate.addActionListener(e);
     }
 
     public JButton getJbCancel() {
@@ -174,5 +210,23 @@ public class AddProgrammer extends javax.swing.JPanel implements View {
 
     public JButton getJbCreate() {
         return jbCreate;
+    }
+    
+    public String getProgrammerName() {
+        return jxProgrammerName.getText();
+    }
+    
+    public String getProgrammerSalary() {
+        return jxProgrammerSalary.getText();
+    }
+    
+    public String getProgrammerPassword() {
+        return jxProgrammerPassword.getText();
+    }
+
+    public void clearFields() {
+        jxProgrammerName.setText("Enter your programmer's name");
+        jxProgrammerPassword.setText("Enter your programmer's default password");
+        jxProgrammerSalary.setText("Enter your programmer's salary");
     }
 }

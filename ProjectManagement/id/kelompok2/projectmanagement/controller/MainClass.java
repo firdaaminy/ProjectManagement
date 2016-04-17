@@ -11,7 +11,7 @@ import id.kelompok2.projectmanagement.controller.ControllerLogin;
  *
  * @author Iwan Ma'ruf
  */
-public class DriverCoba {
+public class MainClass {
 
     /**
      * @param args the command line arguments

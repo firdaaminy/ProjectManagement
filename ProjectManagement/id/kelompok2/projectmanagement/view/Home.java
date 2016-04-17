@@ -187,24 +187,17 @@ public class Home extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txHistory2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHistory2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txHistory2ActionPerformed
-
     private void txDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDetailsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txDetailsActionPerformed
 
+    private void txHistory2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txHistory2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txHistory2ActionPerformed
+
     public Object getDetails(){
         return txDetails.getText();
     }
-    public Object getHistory(){
-        return txHistory.getText();
-    }
-    public Object getHistory2(){
-        return txHistory2.getText();
-    }
-    
     public Object getBtnCancel(){
         return jbCancel;
     }

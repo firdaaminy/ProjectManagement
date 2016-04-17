@@ -8,42 +8,54 @@ package id.kelompok2.projectmanagement.controller;
 import id.kelompok2.projectmanagement.view.Login;
 import id.kelompok2.projectmanagement.view.Dashboard;
 import id.kelompok2.projectmanagement.view.AddProgrammer;
-import id.kelompok2.projectmanagement.view.View;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static sun.security.jgss.GSSUtil.login;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Abbi PC
  */
 public class ControllerAddProgrammer implements ActionListener {
-    private View view;
-    private AddProgrammer login;
+    private AddProgrammer addProg;
+    private ControllerDashboard dash;
      
-    public ControllerAddProgrammer(){
-        login = new AddProgrammer();
-        login.setVisible(true);
-        login.addListener(this);
-        view = login;
+    public ControllerAddProgrammer(ControllerDashboard cd){
+        for(Component comp: cd.getComponents()) {
+            JPanel content = (JPanel) comp;
+            if(content instanceof AddProgrammer) {
+                addProg = (AddProgrammer) content;
+                addProg.addListener(this);                
+            }
+        }
+        dash = cd;
     }
-
-    public void goToDashboard(){
-        Dashboard dash = new Dashboard();
-        dash.setVisible(true);
-        dash.addListener(this);
-        view = dash;
-    }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        
         Object a = e.getSource();
-        if (e.equals(login.getJbCancel())){
-        
+        if (a.equals(addProg.getJbCancel())){
+            dash.showHome();
+            addProg.clearFields();
         }
-        else if (e.equals((login.getJbCreate()))){
-            
+        else if (a.equals((addProg.getJbCreate()))){
+            String name = addProg.getProgrammerName();
+            Double salary = Double.parseDouble(addProg.getProgrammerSalary());
+            String password = addProg.getProgrammerPassword();
+            try {
+                dash.getApplication().signUp("", "", name, password, null, "", 1);
+                JOptionPane.showMessageDialog(addProg, "You added "+ name +" as programmer!");
+                dash.showHome();
+                addProg.clearFields();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(addProg, ex.getMessage(), "ERROR!", JOptionPane.ERROR_MESSAGE);
+                Logger.getLogger(ControllerAddProgrammer.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }

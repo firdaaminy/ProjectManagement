@@ -7,7 +7,18 @@ package id.kelompok2.projectmanagement.view;
 
 import id.kelompok2.projectmanagement.view.View;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -20,6 +31,7 @@ public class Login extends javax.swing.JFrame implements View {
      */
     public Login() {
         initComponents();
+        populateBirthCombo();
     }
 
     public JButton getBtnLogin() {
@@ -61,12 +73,12 @@ public class Login extends javax.swing.JFrame implements View {
         passwordSignUp = new javax.swing.JPasswordField();
         lblTerms = new javax.swing.JLabel();
         lblPolicy = new javax.swing.JLabel();
-        monthField = new javax.swing.JTextField();
         btnSignUp = new javax.swing.JButton();
-        yearField = new javax.swing.JTextField();
-        dayField = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioMale = new javax.swing.JRadioButton();
+        radioFemale = new javax.swing.JRadioButton();
+        comboMonth = new javax.swing.JComboBox<>();
+        comboYear = new javax.swing.JComboBox<>();
+        comboDay = new javax.swing.JComboBox<>();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -223,43 +235,47 @@ public class Login extends javax.swing.JFrame implements View {
         getContentPane().add(lblPolicy);
         lblPolicy.setBounds(640, 540, 280, 30);
 
-        monthField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        monthField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        monthField.setText("Month");
-        monthField.setToolTipText("Month of birth");
-        getContentPane().add(monthField);
-        monthField.setBounds(730, 380, 90, 30);
-
         btnSignUp.setFont(new java.awt.Font("Sitka Text", 0, 36)); // NOI18N
         btnSignUp.setText("Sign Up");
         getContentPane().add(btnSignUp);
         btnSignUp.setBounds(680, 570, 210, 70);
 
-        yearField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        yearField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        yearField.setText("Year");
-        yearField.setToolTipText("Year of birth");
-        getContentPane().add(yearField);
-        yearField.setBounds(880, 380, 90, 30);
+        buttonGroup1.add(radioMale);
+        radioMale.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        radioMale.setText("Male");
+        getContentPane().add(radioMale);
+        radioMale.setBounds(650, 460, 67, 31);
 
-        dayField.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        dayField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        dayField.setText("Day");
-        dayField.setToolTipText("Date of birth");
-        getContentPane().add(dayField);
-        dayField.setBounds(570, 380, 90, 30);
+        buttonGroup1.add(radioFemale);
+        radioFemale.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        radioFemale.setText("Female");
+        getContentPane().add(radioFemale);
+        radioFemale.setBounds(810, 460, 85, 31);
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jRadioButton1.setText("Male");
-        getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(650, 460, 67, 31);
+        comboMonth.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        comboMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboMonthActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboMonth);
+        comboMonth.setBounds(690, 380, 140, 30);
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jRadioButton2.setText("Female");
-        getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(810, 460, 85, 31);
+        comboYear.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        comboYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboYearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboYear);
+        comboYear.setBounds(840, 380, 130, 30);
+
+        comboDay.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        comboDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
+        getContentPane().add(comboDay);
+        comboDay.setBounds(570, 380, 110, 30);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/BackgroundLogin.jpg"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1010, 680));
@@ -335,6 +351,77 @@ public class Login extends javax.swing.JFrame implements View {
         if(passwordSignUp.getText().equals("")) passwordSignUp.setText("Password");
     }//GEN-LAST:event_passwordSignUpFocusLost
 
+    private void comboMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMonthActionPerformed
+        populateComboDay();
+    }//GEN-LAST:event_comboMonthActionPerformed
+
+    private void comboYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboYearActionPerformed
+        populateComboDay();
+    }//GEN-LAST:event_comboYearActionPerformed
+
+    private void populateBirthCombo() {
+        List<String> year = new ArrayList<>();
+        for(int i = 1901; i < 2017; i++) {
+            year.add(String.valueOf(i));
+        }
+        comboYear.setModel(new DefaultComboBoxModel(year.toArray()));
+        List<String> month = new ArrayList<>();
+        month.add("January");
+        month.add("February");
+        month.add("March");
+        month.add("April");
+        month.add("May");
+        month.add("June");
+        month.add("July");
+        month.add("August");
+        month.add("September");
+        month.add("October");
+        month.add("November");
+        month.add("December");
+        comboMonth.setModel(new DefaultComboBoxModel(month.toArray()));
+        
+        populateComboDay();
+    }
+    
+    private void populateComboDay() {
+        List<Integer> day = new ArrayList<>();
+        switch(comboMonth.getSelectedItem().toString()) {
+            case "January":
+            case "March":
+            case "May":
+            case "July":
+            case "August":
+            case "October":
+            case "December":
+                day.clear();
+                for(int i = 1; i < 32; i++) {
+                    day.add(i);
+                }
+                comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                break;
+            case "February":
+                int year = Integer.parseInt(comboYear.getSelectedItem().toString());
+                if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) { // leap
+                    day.clear();
+                    for(int i = 1; i < 30; i++) {
+                        day.add(i);
+                    }
+                    comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                }
+                break;
+            case "April":
+            case "June":
+            case "September":
+            case "November":
+                day.clear();
+                for(int i = 1; i < 31; i++) {
+                    day.add(i);
+                }
+                comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                break;
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -374,15 +461,60 @@ public class Login extends javax.swing.JFrame implements View {
         });
     }
 
+    public String getFirstName() {
+        return firstName.getText();
+    }
+    
+    public String getLastName() {
+        return lastName.getText();
+    }
+    
+    public String getEmail() {
+        return mailField.getText();
+    }
+    
+    public String getUserSignup() {
+        return usernameSignUp.getText();
+    }
+    
+    public String getPassSignup() {
+        return passwordSignUp.getText();
+    }
+    
+    public java.sql.Date getBirthDate() {
+        String day, month, year;
+        day = comboDay.getSelectedItem().toString();
+        month = comboMonth.getSelectedItem().toString();
+        year = comboYear.getSelectedItem().toString();
+        String date = month +" "+ day +", "+ year;
+        DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+        Date bDate = null;
+        try {
+            bDate = format.parse(date);
+        } catch (ParseException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        java.sql.Date sqlDate = new java.sql.Date(bDate.getTime());
+        return sqlDate;
+    }
+
+    public JRadioButton getRadioFemale() {
+        return radioFemale;
+    }
+
+    public JRadioButton getRadioMale() {
+        return radioMale;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField dayField;
+    private javax.swing.JComboBox<String> comboDay;
+    private javax.swing.JComboBox<String> comboMonth;
+    private javax.swing.JComboBox<String> comboYear;
     private javax.swing.JTextField firstName;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField lastName;
     private javax.swing.JLabel lblMotto;
     private javax.swing.JLabel lblPolicy;
@@ -390,12 +522,12 @@ public class Login extends javax.swing.JFrame implements View {
     private javax.swing.JLabel lblTerms;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField mailField;
-    private javax.swing.JTextField monthField;
     private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JPasswordField passwordSignUp;
+    private javax.swing.JRadioButton radioFemale;
+    private javax.swing.JRadioButton radioMale;
     private javax.swing.JTextField usernameLogin;
     private javax.swing.JTextField usernameSignUp;
-    private javax.swing.JTextField yearField;
     // End of variables declaration//GEN-END:variables
 
     @Override
