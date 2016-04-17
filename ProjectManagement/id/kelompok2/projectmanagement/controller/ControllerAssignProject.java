@@ -42,12 +42,25 @@ public class ControllerAssignProject implements ActionListener {
     public void clearFields() {
         try {
             assignProject.getAssignTo().removeAllItems();
+            assignProject.getComboProgTask().removeAllItems();
+            assignProject.getComboTask().removeAllItems();
             assignProject.getTxDetail().setText("");
             List<String> programmers = new ArrayList<>();
             ResultSet rs = dash.getApplication().getAllProgrammers();
             while(rs.next()) {
                 assignProject.getAssignTo().addItem(rs.getString("username"));
             }
+            
+            rs = dash.getApplication().getAssignedProgrammers(projId);
+            while(rs.next()) {
+                assignProject.getComboProgTask().addItem(rs.getString("username"));
+            }
+            
+            rs = dash.getApplication().getIncompleteTasks(projId);
+            while(rs.next()) {
+                assignProject.getComboTask().addItem(rs.getInt("id")+". "+rs.getString("taskdescription"));
+            }
+            
         } catch (SQLException ex) {
             Logger.getLogger(ControllerAssignProject.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -73,8 +86,19 @@ public class ControllerAssignProject implements ActionListener {
         else if(source.equals(assignProject.getBtnSubmitTask())) {
             try {
                 dash.getApplication().createTask(projId, assignProject.getTxTaskDesc().getText());
-                dash.getApplication().assignProject(projId, programmerName);
                 JOptionPane.showMessageDialog(assignProject, "Task berhasil dibuat!");
+                dash.showHome();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(assignProject, ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+                Logger.getLogger(ControllerAssignProject.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if(source.equals(assignProject.getBtnSubmitAssTask())) {
+            String[] taskdetail = assignProject.getComboTask().getSelectedItem().toString().split("\\. ");
+            String programmerName = assignProject.getComboProgTask().getSelectedItem().toString();
+            try {
+                dash.getApplication().assignTask(Integer.parseInt(taskdetail[0]), programmerName);
+                JOptionPane.showMessageDialog(assignProject, "Task berhasil diassign ke "+ programmerName +"!");
                 dash.showHome();
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(assignProject, ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
@@ -83,7 +107,7 @@ public class ControllerAssignProject implements ActionListener {
         }
     }
 
-    void setText(int projId, String projName) {
+    public void setText(int projId, String projName) {
         this.projId = projId;
         assignProject.setTxDetail(projName, projId);
     }

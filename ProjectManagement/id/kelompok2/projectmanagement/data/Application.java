@@ -235,7 +235,6 @@ public class Application {
         ResultSet rs = null;
         String query = "select * from tasks where projectid = '"+ projectId +"' and programmerid = '"+
                 user.getId()+ "'";
-        System.out.println(query);
         try {
             rs = database.getData(query);
         } catch (Exception ex) {
@@ -247,8 +246,47 @@ public class Application {
     public void toggleDoneTask(int projId, String done) throws SQLException {
         String query = "update tasks set done = ? where projectid = ?";
         PreparedStatement prepare = database.getConnection().prepareStatement(query);
-        prepare.setBoolean(1, (done.equals("Done")? false: true));
+        if(done.equals("Done"))
+            prepare.setBoolean(1, false);
+        else prepare.setBoolean(1, true);
         prepare.setInt(2, projId);
+        prepare.executeUpdate();
+        System.out.println(prepare.toString());
+    }
+
+    public ResultSet getAssignedProgrammers(int projId) {
+        ResultSet rs = null;
+        String query = "select * from projects_assignment left join user on user.id = projects_assignment.programmerid"
+                + " where projects_assignment.projectid = '"+ projId +"'";
+        try {
+            rs = database.getData(query);
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public ResultSet getIncompleteTasks(int projId) {
+        ResultSet rs = null;
+        String query = "select * from tasks where projectid = '"+ projId +"' and done = '0'";
+        try {
+            rs = database.getData(query);
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public void assignTask(int taskId, String programmerName) throws SQLException, Exception {
+        ResultSet rs = database.getData("select id from user where username = '"+ programmerName +"'");
+        int progId = 0;
+        if(rs.next()) {
+            progId = rs.getInt("id");
+        }
+        String query = "update tasks set programmerid = ? where id = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setInt(1, progId);
+        prepare.setInt(2, taskId);
         prepare.executeUpdate();
     }
 }

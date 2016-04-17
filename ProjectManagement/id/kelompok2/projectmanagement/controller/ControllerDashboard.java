@@ -121,6 +121,7 @@ public class ControllerDashboard implements ActionListener {
     }
     
     public void showAssignProject(int projId, String projName) {
+        cAssignProj.setText(projId, projName);
         cAssignProj.clearFields();
         cAssignProj.setText(projId, projName);
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "AssignProjectPanel");
