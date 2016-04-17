@@ -47,7 +47,6 @@ public class ControllerCheckProgress implements ActionListener {
                 }
                 else {
                     String[] projectDetails = value.split("\\. ");
-                    System.out.println(projectDetails[1]);
                     int progress = dash.getApplication().getProgress(Integer.parseInt(projectDetails[0]));
                     checkProgress.getjProgressBar().setValue(progress);
                     checkProgress.getTxProgressDeadline().setText(dash.getApplication().getDeadline(Integer.parseInt(projectDetails[0])));

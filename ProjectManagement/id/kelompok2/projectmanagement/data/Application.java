@@ -110,7 +110,7 @@ public class Application {
         ResultSet rs = null;
         if(user instanceof ProjectManager) {
             try {
-                rs=database.getData("select * from projects where name= '"+searchText+"' or client= '"+searchText+"' and managerid = '"
+                rs=database.getData("select * from projects where (name= '"+searchText+"' or client= '"+searchText+"' or id = '"+ searchText+"') and managerid = '"
                         + user.getId() +"'");
             } catch (Exception ex) {
                 Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,7 +120,7 @@ public class Application {
             try {
                 rs = database.getData("select * from projects left join projects_assignment on "
                         + "projects.id = projects_assignment.projectid where (name = '"+searchText+"' or client = '"
-                        +searchText +"') and programmerid = '"+ user.getId() +"'");
+                        +searchText +"' or id = '"+ searchText+"') and programmerid = '"+ user.getId() +"'");
             } catch (Exception ex) {
                 Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -229,5 +229,26 @@ public class Application {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
+    }
+
+    public ResultSet getMyTasks(int projectId) {
+        ResultSet rs = null;
+        String query = "select * from tasks where projectid = '"+ projectId +"' and programmerid = '"+
+                user.getId()+ "'";
+        System.out.println(query);
+        try {
+            rs = database.getData(query);
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public void toggleDoneTask(int projId, String done) throws SQLException {
+        String query = "update tasks set done = ? where projectid = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        prepare.setBoolean(1, (done.equals("Done")? false: true));
+        prepare.setInt(2, projId);
+        prepare.executeUpdate();
     }
 }

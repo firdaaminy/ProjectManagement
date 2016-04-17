@@ -6,6 +6,7 @@
 package id.kelompok2.projectmanagement.controller;
 
 import id.kelompok2.projectmanagement.data.Application;
+import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
 import id.kelompok2.projectmanagement.view.Dashboard;
 import id.kelompok2.projectmanagement.view.View;
@@ -34,6 +35,8 @@ public class ControllerDashboard implements ActionListener {
     private ControllerHome cHome;
     private ControllerAssignProject cAssignProj;
     private ControllerCheckProgress cCheckProgress;
+    private ControllerSettings cSettings;
+    private ControllerAssignedTask cAssignedTask;
     
     public ControllerDashboard(Application app) {
         this.app = app;
@@ -50,6 +53,15 @@ public class ControllerDashboard implements ActionListener {
         cHome = new ControllerHome(this);
         cAssignProj = new ControllerAssignProject(this);
         cCheckProgress = new ControllerCheckProgress(this);
+        cSettings = new ControllerSettings(this);
+        cAssignedTask = new ControllerAssignedTask(this);
+        if(Application.getUser() instanceof Programmer) {
+            dashboard.getjLabel2().setVisible(false);
+            dashboard.getBtnMembers().setVisible(false);
+            dashboard.getLabel3().setVisible(false);
+            dashboard.getBtnNewProject().setVisible(false);
+            dashboard.getBtnSettings().setVisible(false);
+        }
         showHome();
     }
     
@@ -113,11 +125,21 @@ public class ControllerDashboard implements ActionListener {
         cAssignProj.setText(projId, projName);
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "AssignProjectPanel");
     }
+    
+    public void showAssignedTask(int projId, String projName) {
+        cAssignedTask.setLabel(projId, projName);
+        cAssignedTask.populateTable();
+        dashboard.getCardLayout().show(dashboard.getContentPanel(), "AssignedTaskPanel");
+    }
 
-    private void showCheckProgress() {
+    public void showCheckProgress() {
         cCheckProgress.clearFields();
         cCheckProgress.populateSelector();
         dashboard.getCardLayout().show(dashboard.getContentPanel(), "ProgressCheckPanel");
+    }
+    
+    public void showSettings() {
+        dashboard.getCardLayout().show(dashboard.getContentPanel(), "SettingsPanel");
     }
     
     @Override
@@ -143,6 +165,9 @@ public class ControllerDashboard implements ActionListener {
         }
         else if(source.equals(dashboard.getBtnGraph())) {
             showCheckProgress();
+        }
+        else if(source.equals(dashboard.getBtnSettings())) {
+            showSettings();
         }
     }
 }

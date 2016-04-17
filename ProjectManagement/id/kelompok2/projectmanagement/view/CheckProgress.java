@@ -42,6 +42,8 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         projectSelector = new javax.swing.JComboBox<>();
         labelPilih = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 153));
+
         jLabel23.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel23.setText("Deadline:");
 

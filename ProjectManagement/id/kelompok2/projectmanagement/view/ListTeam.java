@@ -94,7 +94,11 @@ public class ListTeam extends javax.swing.JPanel implements View {
             new String [] {
                 "Programmer ID", "Programmer name", "Programmer salary", "Project(s) worked"
             }
-        ));
+        ) {
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        });
         jScrollPane1.setViewportView(tableMember);
 
         BtnSearchYT.setText("Search");
@@ -164,8 +168,6 @@ public class ListTeam extends javax.swing.JPanel implements View {
     private javax.swing.JTextField jxSearchId;
     private javax.swing.JTable tableMember;
     // End of variables declaration//GEN-END:variables
-
-    
     
     @Override
     public void addListener(ActionListener e) {

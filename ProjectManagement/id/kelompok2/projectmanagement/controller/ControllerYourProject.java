@@ -5,6 +5,7 @@
  */
 package id.kelompok2.projectmanagement.controller;
 
+import id.kelompok2.projectmanagement.data.Application;
 import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.employees.Programmer;
 import id.kelompok2.projectmanagement.employees.ProjectManager;
@@ -54,7 +55,12 @@ public class ControllerYourProject implements ActionListener{
     }
 
     private void openPopup(int projId, String projName) {
-        dash.showAssignProject(projId, projName);
+        if(Application.getUser() instanceof ProjectManager) {
+            dash.showAssignProject(projId, projName);
+        }
+        else {
+            dash.showAssignedTask(projId, projName);
+        }
     }
     
     @Override

@@ -40,6 +40,8 @@ public class ListProject extends javax.swing.JPanel implements View {
         tableProjects = new javax.swing.JTable();
         btnSearchYP = new javax.swing.JButton();
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
+
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         txSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txSearch.setText("You can search your project by its client or name...");
@@ -132,17 +134,17 @@ public class ListProject extends javax.swing.JPanel implements View {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txSearchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSearchFocusGained
-        if(txSearch.getText().equals("You can search your project by its client or name..."))
+        if(txSearch.getText().equals("You can search your project by its id, client or name..."))
             txSearch.setText("");
     }//GEN-LAST:event_txSearchFocusGained
 
     private void txSearchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSearchFocusLost
         if(txSearch.getText().equals(""))
-            txSearch.setText("You can search your project by its client or name...");
+            txSearch.setText("You can search your project by its id, client or name...");
     }//GEN-LAST:event_txSearchFocusLost
 
     public void resetText() {
-        txSearch.setText("You can search your project by its client or name...");
+        txSearch.setText("You can search your project by its id, client or name...");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
