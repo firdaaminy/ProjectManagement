@@ -6,6 +6,9 @@
 package id.kelompok2.projectmanagement.view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -32,7 +35,7 @@ public class YourProject extends javax.swing.JFrame implements View{
         jPanel1 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jxInfo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -50,11 +53,12 @@ public class YourProject extends javax.swing.JFrame implements View{
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        txInfo = new javax.swing.JTextField();
+        jxSearch = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableYourProject = new javax.swing.JTable();
+        btnSearchYP = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -63,9 +67,9 @@ public class YourProject extends javax.swing.JFrame implements View{
 
         jButton2.setBorder(null);
 
-        jTextField1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Search project, team member, and more on ON-BOARD");
+        jxInfo.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jxInfo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxInfo.setText("Search project, team member, and more on ON-BOARD");
 
         jButton1.setBorder(null);
 
@@ -86,7 +90,7 @@ public class YourProject extends javax.swing.JFrame implements View{
                 .addGap(32, 32, 32)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jxInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
@@ -105,7 +109,7 @@ public class YourProject extends javax.swing.JFrame implements View{
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1)
+                        .addComponent(jxInfo)
                         .addGap(13, 13, 13))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -214,7 +218,7 @@ public class YourProject extends javax.swing.JFrame implements View{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbYourProject))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbYourTeam)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,10 +229,14 @@ public class YourProject extends javax.swing.JFrame implements View{
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
 
-        txInfo.setEditable(false);
-        txInfo.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        txInfo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txInfo.setText("You can search your project by its ID or name");
+        jxSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jxSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jxSearch.setToolTipText("You can search your project by its ID or name");
+        jxSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jxSearchActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 102));
@@ -240,24 +248,17 @@ public class YourProject extends javax.swing.JFrame implements View{
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("“Don't wait to be compelled to do great work.” ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableYourProject.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Project Name", "Project Client", "Number of programmer(s)", "Done/Undone"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableYourProject);
+
+        btnSearchYP.setText("Search");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -267,23 +268,26 @@ public class YourProject extends javax.swing.JFrame implements View{
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92))))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jxSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSearchYP))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(txInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearchYP)
+                    .addComponent(jxSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7))
@@ -344,6 +348,10 @@ public class YourProject extends javax.swing.JFrame implements View{
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jxSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jxSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -380,6 +388,7 @@ public class YourProject extends javax.swing.JFrame implements View{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSearchYP;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -398,14 +407,14 @@ public class YourProject extends javax.swing.JFrame implements View{
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbNewMember;
     private javax.swing.JButton jbNewProject;
     private javax.swing.JButton jbPhoto;
     private javax.swing.JButton jbYourProject;
     private javax.swing.JButton jbYourTeam;
-    private javax.swing.JTextField txInfo;
+    private javax.swing.JTextField jxInfo;
+    private javax.swing.JTextField jxSearch;
+    private javax.swing.JTable tableYourProject;
     // End of variables declaration//GEN-END:variables
 public Object getJbnewMember(){
     return jbNewMember;
@@ -420,11 +429,24 @@ public Object getJbYourTeam(){
     return jbYourTeam;
 }
 public void setTxInfo(String a){
-    txInfo.setText(a);
+    jxSearch.setText(a);
 }
+
+    public JButton getBtnSearchYP() {
+        return btnSearchYP;
+    }
+
+    public JTable getTableYourProject() {
+        return tableYourProject;
+    }
+
+    public JTextField getJxSearch() {
+        return jxSearch;
+    }
+
 
     @Override
     public void addListener(ActionListener e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        btnSearchYP.addActionListener(e);
     }
 }

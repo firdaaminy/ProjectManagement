@@ -22,7 +22,7 @@ public class Database {
         statement=koneksi.createStatement();
     }
     
-    public static ResultSet getData(String SQLString) throws Exception{
+    public ResultSet getData(String SQLString) throws Exception{
         rst=statement.executeQuery(SQLString);
         return rst;
     }

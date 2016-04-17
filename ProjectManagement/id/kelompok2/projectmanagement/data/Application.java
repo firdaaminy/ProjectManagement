@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class Application {
     private Database database;
-    
+    private ResultSet resultset;
     public Application() {
         try {
             database = new Database();
@@ -29,11 +29,11 @@ public class Application {
     
     public void userLogin(String username, String password) {
         try {
-            ResultSet resultset=null;
+            resultset=null;
             String uname = "select (username,password) from user where username= '" + username + "'";
             
             try {
-                resultset = Database.getData(uname);
+                resultset = database.getData(uname);
             } catch (Exception ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             }
