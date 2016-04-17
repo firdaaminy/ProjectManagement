@@ -52,7 +52,7 @@ public class ControllerAddProjectManager implements ActionListener {
                 JOptionPane.showMessageDialog(addProg, "You added "+ name +" as programmer!");
                 dash.showHome();
                 addProg.clearFields();
-            } catch (SQLException ex) {
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(addProg, ex.getMessage(), "ERROR!", JOptionPane.ERROR_MESSAGE);
                 Logger.getLogger(ControllerAddProjectManager.class.getName()).log(Level.SEVERE, null, ex);
             }
