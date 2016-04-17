@@ -36,29 +36,28 @@ public class Application {
         }
     }
     
-    public void userLogin(Login login, String username, String password) {
+    public void userLogin(Login login, String username, String password) throws Exception {
         ResultSet resultSet=null;
         String uname = "select * from user where username= '" + username + "'";
-        try {
-            resultSet = database.getData(uname);
-            if(resultSet.next()) {
-                String temp=resultSet.getString("password");
-                if(password.equals(temp)) {
-                    if(resultSet.getInt("tipeUser") == 99) {
-                        user = new ProjectManager(username, resultSet.getInt("id"), 
-                                resultSet.getDouble("salary"), temp);
-                    }
-                    else if(resultSet.getInt("tipeUser") == 1) {
-                        user = new Programmer(username, resultSet.getInt("id"), resultSet.getDouble("salary"),
-                                temp);
-                    }
-                    user.setFullName(resultSet.getString("fullName"));
-                    login.dispose();
-                    ControllerDashboard dash = new ControllerDashboard(this);
+        resultSet = database.getData(uname);
+        if(resultSet.next()) {
+            String temp=resultSet.getString("password");
+            if(password.equals(temp)) {
+                if(resultSet.getInt("tipeUser") == 99) {
+                    user = new ProjectManager(username, resultSet.getInt("id"), 
+                            resultSet.getDouble("salary"), temp);
                 }
+                else if(resultSet.getInt("tipeUser") == 1) {
+                    user = new Programmer(username, resultSet.getInt("id"), resultSet.getDouble("salary"),
+                            temp);
+                }
+                user.setFullName(resultSet.getString("fullName"));
+                login.dispose();
+                ControllerDashboard dash = new ControllerDashboard(this);
             }
-        } catch (Exception ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        else {
+            throw new Exception("Username/password salah!");
         }
     }
     
@@ -71,7 +70,11 @@ public class Application {
     }
 
     public void signUp(String name, String email, String userName, String passWord, 
-            Date birthDate, String gender, int userType) throws SQLException {
+            Date birthDate, String gender, int userType) throws Exception {
+        ResultSet rs = database.getData("select * from user where username = '"+ userName +"'");
+        if(rs.next()) {
+            throw new Exception("Username sudah ada!");
+        }
         String query = "insert into user (username, password, email, birthday, gender, fullName, tipeUser)"
                 + " values(?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement prepare = database.getConnection().prepareStatement(query);
@@ -183,11 +186,18 @@ public class Application {
         int programmerId = 0;
         ResultSet rs = database.getData("select id from user where username = '"+ programmerName +"'");
         if(rs.next()) programmerId = rs.getInt("id");
-        String query = "insert into projects_assignment values (?, ?, null)";
-        PreparedStatement prepare = database.getConnection().prepareStatement(query);
-        prepare.setInt(1, projId);
-        prepare.setInt(2, programmerId);
-        prepare.executeUpdate();
+        if(programmerId != 0) {
+            rs = database.getData("select * from projects_assignment where projectid = '"+ projId +"' and "
+                    + "programmerid = '"+ programmerId +"'");
+            if(rs.next()) {
+                throw new Exception("This programmer's already assigned to this project!");
+            }
+            String query = "insert into projects_assignment values (?, ?, null)";
+            PreparedStatement prepare = database.getConnection().prepareStatement(query);
+            prepare.setInt(1, projId);
+            prepare.setInt(2, programmerId);
+            prepare.executeUpdate();
+        }
     }
 
     public void createTask(int projId, String text) throws SQLException {
@@ -229,7 +239,6 @@ public class Application {
             done = donedifficulties;
             diff = difficulties;
             double percentage = done/diff * 100;
-            System.out.println(percentage);
             return (int) (percentage);
         } catch (Exception ex) {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);

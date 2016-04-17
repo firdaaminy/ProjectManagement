@@ -14,6 +14,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,7 +39,12 @@ public class ControllerLogin implements ActionListener {
         if (view instanceof Login){
             Login login = (Login) view;
             if (a.equals(login.getBtnLogin())){
-                app.userLogin(login, login.getUser(), login.getPass());
+                try {
+                    app.userLogin(login, login.getUser(), login.getPass());
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(login, ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+                    Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             else if(a.equals(login.getBtnSignUp())) {
                 String name = login.getFirstName() +" "+ login.getLastName();
@@ -55,7 +61,8 @@ public class ControllerLogin implements ActionListener {
                 }
                 try {
                     app.signUp(name, email, userName, passWord, birthDate, gender, 1);
-                } catch (SQLException ex) {
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(login, ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
                     Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

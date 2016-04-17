@@ -394,6 +394,7 @@ public class Login extends javax.swing.JFrame implements View {
     }
     
     private void populateComboDay() {
+        int getSelectedDate = Integer.parseInt(comboDay.getSelectedItem().toString());
         List<Integer> day = new ArrayList<>();
         switch(comboMonth.getSelectedItem().toString()) {
             case "January":
@@ -408,6 +409,7 @@ public class Login extends javax.swing.JFrame implements View {
                     day.add(i);
                 }
                 comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                if(getSelectedDate < 32) comboDay.setSelectedItem(getSelectedDate);
                 break;
             case "February":
                 int year = Integer.parseInt(comboYear.getSelectedItem().toString());
@@ -417,6 +419,7 @@ public class Login extends javax.swing.JFrame implements View {
                         day.add(i);
                     }
                     comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                    if(getSelectedDate < 30) comboDay.setSelectedItem(getSelectedDate);
                 }
                 break;
             case "April":
@@ -428,6 +431,7 @@ public class Login extends javax.swing.JFrame implements View {
                     day.add(i);
                 }
                 comboDay.setModel(new DefaultComboBoxModel(day.toArray()));
+                if(getSelectedDate < 31) comboDay.setSelectedItem(getSelectedDate);
                 break;
         }
     }
