@@ -49,12 +49,17 @@ public class ControllerAssignProject implements ActionListener {
             List<String> programmers = new ArrayList<>();
             ResultSet rs = dash.getApplication().getAllProgrammers();
             while(rs.next()) {
-                assignProject.getAssignTo().addItem(rs.getString("username"));
-            }
+                programmers.add(rs.getString("username"));
+            }      
             
             rs = dash.getApplication().getAssignedProgrammers(projId);
             while(rs.next()) {
+                programmers.remove(rs.getString("username"));
                 assignProject.getComboProgTask().addItem(rs.getString("username"));
+            }
+            
+            for(String programmer: programmers) {
+                assignProject.getAssignTo().addItem(programmer);
             }
             
             rs = dash.getApplication().getIncompleteTasks(projId);

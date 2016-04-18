@@ -80,19 +80,19 @@ public class ListTeam extends javax.swing.JPanel implements View {
 
         tableMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Programmer ID", "Programmer name", "Programmer salary", "Project(s) worked"
+                "Programmer ID", "Programmer name", "Programmer salary"
             }
         ) {
             public boolean isCellEditable(int row, int col) {
