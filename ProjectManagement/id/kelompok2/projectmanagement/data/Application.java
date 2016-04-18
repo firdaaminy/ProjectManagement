@@ -41,7 +41,6 @@ public class Application {
         String uname = "select * from user where username= '" + username + "'";
         resultSet = database.getData(uname);
         if(resultSet.next()) {
-            System.out.println("DEBUG");
             String temp=resultSet.getString("password");
             if(password.equals(temp)) {
                 if(resultSet.getInt("tipeUser") == 99) {
