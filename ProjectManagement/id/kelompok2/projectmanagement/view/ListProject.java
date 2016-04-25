@@ -34,18 +34,16 @@ public class ListProject extends javax.swing.JPanel implements View {
 
         jPanel5 = new javax.swing.JPanel();
         txSearch = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProjects = new javax.swing.JTable();
         btnSearchYP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
 
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         txSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txSearch.setText("You can search your project by its client or name...");
+        txSearch.setText("You can search your project by its client or name");
         txSearch.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txSearchFocusGained(evt);
@@ -54,14 +52,6 @@ public class ListProject extends javax.swing.JPanel implements View {
                 txSearchFocusLost(evt);
             }
         });
-
-        jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Richie Norton");
-
-        jLabel8.setFont(new java.awt.Font("Sitka Text", 2, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("“Don't wait to be compelled to do great work.” ");
 
         tableProjects.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,6 +79,7 @@ public class ListProject extends javax.swing.JPanel implements View {
         btnSearchYP.setText("Search");
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 2, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Double click on a row to assign tasks");
 
@@ -99,16 +90,12 @@ public class ListProject extends javax.swing.JPanel implements View {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(txSearch)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSearchYP, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addComponent(txSearch)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchYP, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,11 +112,7 @@ public class ListProject extends javax.swing.JPanel implements View {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -161,8 +144,6 @@ public class ListProject extends javax.swing.JPanel implements View {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearchYP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableProjects;

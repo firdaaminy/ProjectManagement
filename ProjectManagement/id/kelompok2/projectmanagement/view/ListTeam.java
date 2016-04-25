@@ -46,15 +46,14 @@ public class ListTeam extends javax.swing.JPanel implements View {
 
         jLabel7 = new javax.swing.JLabel();
         jxSearchId = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableMember = new javax.swing.JTable();
         BtnSearchYT = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Your team members");
 
@@ -69,14 +68,6 @@ public class ListTeam extends javax.swing.JPanel implements View {
                 jxSearchIdFocusLost(evt);
             }
         });
-
-        jLabel14.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Helen Keller");
-
-        jLabel15.setFont(new java.awt.Font("Sitka Text", 2, 12)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("\"Alone we can do so little, together we can do so much.\"");
 
         tableMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,12 +110,7 @@ public class ListTeam extends javax.swing.JPanel implements View {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(10, 10, 10))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addGap(10, 10, 10))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,11 +123,7 @@ public class ListTeam extends javax.swing.JPanel implements View {
                     .addComponent(BtnSearchYT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel14)
-                .addContainerGap())
+                .addGap(60, 60, 60))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,8 +143,6 @@ public class ListTeam extends javax.swing.JPanel implements View {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSearchYT;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jxSearchId;
