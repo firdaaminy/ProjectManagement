@@ -60,9 +60,10 @@ public class NewProject extends javax.swing.JPanel implements View {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Starting a new project is easy with these 3 steps");
 
@@ -109,10 +110,12 @@ public class NewProject extends javax.swing.JPanel implements View {
         btnCreate.setText("Create");
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Nelson Mandela");
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 2, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("“It always seems impossible until it’s done.”");
 

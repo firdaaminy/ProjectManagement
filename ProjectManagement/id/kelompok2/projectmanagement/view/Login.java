@@ -86,9 +86,9 @@ public class Login extends javax.swing.JFrame implements View {
         btnSignUp = new javax.swing.JButton();
         radioMale = new javax.swing.JRadioButton();
         radioFemale = new javax.swing.JRadioButton();
-        comboMonth = new javax.swing.JComboBox<>();
-        comboYear = new javax.swing.JComboBox<>();
-        comboDay = new javax.swing.JComboBox<>();
+        comboMonth = new javax.swing.JComboBox<String>();
+        comboYear = new javax.swing.JComboBox<String>();
+        comboDay = new javax.swing.JComboBox<String>();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,15 +97,16 @@ public class Login extends javax.swing.JFrame implements View {
         setSize(new java.awt.Dimension(1000, 687));
         getContentPane().setLayout(null);
 
+        lblTitle.setBackground(new java.awt.Color(204, 204, 204));
         lblTitle.setFont(new java.awt.Font("Sitka Text", 0, 45)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 255, 153));
+        lblTitle.setForeground(new java.awt.Color(204, 204, 204));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("ON-BOARD");
         getContentPane().add(lblTitle);
         lblTitle.setBounds(160, 0, 247, 70);
 
         lblMotto.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        lblMotto.setForeground(new java.awt.Color(255, 255, 153));
+        lblMotto.setForeground(new java.awt.Color(204, 204, 204));
         lblMotto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMotto.setText("Nobody's left behind with ON-BOARD");
         getContentPane().add(lblMotto);
@@ -134,8 +135,9 @@ public class Login extends javax.swing.JFrame implements View {
         getContentPane().add(btnLogin);
         btnLogin.setBounds(850, 40, 113, 30);
 
+        lblSignUp.setBackground(new java.awt.Color(204, 204, 204));
         lblSignUp.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        lblSignUp.setForeground(new java.awt.Color(255, 255, 153));
+        lblSignUp.setForeground(new java.awt.Color(204, 204, 204));
         lblSignUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSignUp.setText("OR SIGN UP FOR FREE");
         getContentPane().add(lblSignUp);
@@ -231,15 +233,17 @@ public class Login extends javax.swing.JFrame implements View {
         getContentPane().add(passwordSignUp);
         passwordSignUp.setBounds(570, 310, 400, 30);
 
+        lblTerms.setBackground(new java.awt.Color(204, 204, 204));
         lblTerms.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lblTerms.setForeground(new java.awt.Color(255, 255, 255));
+        lblTerms.setForeground(new java.awt.Color(204, 204, 204));
         lblTerms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTerms.setText("By clicking Sign In, you agree to our Terms");
+        lblTerms.setText("By clicking Sign Up, you agree to our Terms");
         getContentPane().add(lblTerms);
         lblTerms.setBounds(620, 520, 320, 20);
 
+        lblPolicy.setBackground(new java.awt.Color(204, 204, 204));
         lblPolicy.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lblPolicy.setForeground(new java.awt.Color(255, 255, 255));
+        lblPolicy.setForeground(new java.awt.Color(204, 204, 204));
         lblPolicy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPolicy.setText(" and that you have read our Data Policy");
         getContentPane().add(lblPolicy);
@@ -263,7 +267,7 @@ public class Login extends javax.swing.JFrame implements View {
         radioFemale.setBounds(810, 460, 85, 31);
 
         comboMonth.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        comboMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboMonthActionPerformed(evt);
@@ -273,7 +277,7 @@ public class Login extends javax.swing.JFrame implements View {
         comboMonth.setBounds(690, 380, 140, 30);
 
         comboYear.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        comboYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboYearActionPerformed(evt);
@@ -283,7 +287,7 @@ public class Login extends javax.swing.JFrame implements View {
         comboYear.setBounds(840, 380, 130, 30);
 
         comboDay.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        comboDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
+        comboDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1" }));
         getContentPane().add(comboDay);
         comboDay.setBounds(570, 380, 110, 30);
 

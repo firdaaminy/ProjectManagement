@@ -39,20 +39,23 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         jProgressBar = new javax.swing.JProgressBar();
         txProjectDeadline = new javax.swing.JTextField();
         txProjectName = new javax.swing.JTextField();
-        projectSelector = new javax.swing.JComboBox<>();
+        projectSelector = new javax.swing.JComboBox<String>();
         labelPilih = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel23.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
         jLabel23.setText("Deadline:");
 
         jLabel24.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(204, 204, 204));
         jLabel24.setText("Progress");
 
         jLabel25.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(204, 204, 204));
         jLabel25.setText("Name:");
 
         jProgressBar.setStringPainted(true);
@@ -66,22 +69,15 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txProjectDeadline)
                     .addComponent(txProjectName)
-                    .addComponent(jProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(txProjectDeadline)
+                    .addComponent(jProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,25 +97,24 @@ public class CheckProgress extends javax.swing.JPanel implements View {
                 .addGap(22, 22, 22))
         );
 
-        projectSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        projectSelector.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         labelPilih.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        labelPilih.setForeground(new java.awt.Color(204, 204, 204));
         labelPilih.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPilih.setText("Pilih Project Anda!");
+        labelPilih.setText("Choose Your Project");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addComponent(labelPilih, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(projectSelector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(projectSelector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

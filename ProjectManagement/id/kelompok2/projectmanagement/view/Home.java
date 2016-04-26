@@ -40,13 +40,15 @@ public class Home extends javax.swing.JPanel {
         lblFullname3 = new javax.swing.JLabel();
         txSince = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(0, 0, 0));
 
         labelName.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        labelName.setForeground(new java.awt.Color(204, 204, 204));
         labelName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelName.setText("jLabel1");
 
         lblFullname.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname.setForeground(new java.awt.Color(204, 204, 204));
         lblFullname.setText("Name");
 
         txFullname.setEditable(false);
@@ -55,6 +57,7 @@ public class Home extends javax.swing.JPanel {
         txFullname.setText("jTextField1");
 
         lblFullname1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname1.setForeground(new java.awt.Color(204, 204, 204));
         lblFullname1.setText("Username");
 
         txUsername.setEditable(false);
@@ -63,6 +66,7 @@ public class Home extends javax.swing.JPanel {
         txUsername.setText("jTextField1");
 
         lblFullname2.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname2.setForeground(new java.awt.Color(204, 204, 204));
         lblFullname2.setText("Position");
 
         txPosition.setEditable(false);
@@ -70,7 +74,8 @@ public class Home extends javax.swing.JPanel {
         txPosition.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txPosition.setText("jTextField1");
 
-        lblFullname3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        lblFullname3.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        lblFullname3.setForeground(new java.awt.Color(204, 204, 204));
         lblFullname3.setText("Member since");
 
         txSince.setEditable(false);
@@ -95,7 +100,7 @@ public class Home extends javax.swing.JPanel {
                     .addComponent(txFullname)
                     .addComponent(txUsername)
                     .addComponent(txSince)
-                    .addComponent(txPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
+                    .addComponent(txPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

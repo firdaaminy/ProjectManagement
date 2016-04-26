@@ -43,9 +43,10 @@ public class EditProfile extends javax.swing.JPanel implements View {
         btnCancel = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Edit your profile");
 
@@ -56,20 +57,24 @@ public class EditProfile extends javax.swing.JPanel implements View {
         txEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Enter your first and your last name");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Enter your new e-mail");
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Enter your old password");
 
         txOldPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Enter your new password");
 
