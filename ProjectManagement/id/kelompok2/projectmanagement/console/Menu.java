@@ -34,11 +34,12 @@ public class Menu {
     }
     
     public void showAllMenu() {
+        Console.clearScreen();
         Person user = Application.getUser();
         if(user instanceof Programmer) {
             System.out.println("1. Active Projects");
             System.out.println("2. User Details");
-            switch(Integer.parseInt("Pilihan")) {
+            switch(Integer.parseInt(Console.inputQuestion("Pilihan"))) {
                 case 1:
                     console.showMyProjects();
                     break;
@@ -61,7 +62,7 @@ public class Menu {
             System.out.println("*               2. Show all projects          		*");
             System.out.println("*               3. Create your team an account          *");
             System.out.println("*               4. Show available programmers           *");
-            System.out.println("*               5. Log-out                              *");
+            System.out.println("*               0. Log-out                              *");
             System.out.println("*********************************************************");
             switch(Integer.parseInt(Console.inputQuestion("Pilihan"))) {
                 case 1:
@@ -76,7 +77,7 @@ public class Menu {
                 case 4:
                     console.showProgrammers();
                     break;
-                case 5:
+                case 0:
                     System.exit(0);
                     break;
                 default:

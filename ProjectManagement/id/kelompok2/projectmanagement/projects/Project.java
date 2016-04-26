@@ -23,39 +23,49 @@ public class Project implements Serializable {
 	private int projectId;
     private String projectName;
     private String projectClient;
+    private String projectDesc;
     private ArrayList<Programmer> programmers;
     private ArrayList<Task> tasks;
         
-    public Project(int projectId, String projectName, String projectClient){
+    public Project(int projectId, String projectName, String projectClient, String projectDesc){
         this.projectId=projectId;
         this.projectName=projectName;
         this.projectClient=projectClient;
+        this.projectDesc = projectDesc;
         programmers = new ArrayList<>();
         tasks = new ArrayList<>();
     }
-    
-    public int getId(){
+
+    public int getProjectId() {
         return projectId;
     }
-    
-    public String getName(){
+
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getProjectName() {
         return projectName;
     }
-    
-    public String getClient(){
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getProjectClient() {
         return projectClient;
     }
-    
-    public void setId(int projectId){
-        this.projectId=projectId;
+
+    public void setProjectClient(String projectClient) {
+        this.projectClient = projectClient;
     }
-    
-    public void setName(String projectName){
-        this.projectName=projectName;
+
+    public String getProjectDesc() {
+        return projectDesc;
     }
-    
-    public void setClient(String projectClient){
-        this.projectClient=projectClient;
+
+    public void setProjectDesc(String projectDesc) {
+        this.projectDesc = projectDesc;
     }
     
     public ArrayList<Programmer> getProgrammers(){

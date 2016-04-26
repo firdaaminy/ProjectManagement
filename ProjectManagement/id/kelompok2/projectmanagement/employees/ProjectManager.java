@@ -31,7 +31,7 @@ public class ProjectManager extends Person {
     }
 
     public void createProject(int projectId, String projectName, String projectClient) {
-            projects.add(new Project(projectId, projectName, projectClient));
+            projects.add(new Project(projectId, projectName, projectClient, ""));
             try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Projects.txt", true)))) {
             	out.println(this.getName()+" "+projectId+" "+projectName+" "+projectClient);
             } catch (IOException e) {
@@ -40,7 +40,7 @@ public class ProjectManager extends Person {
     }
     
     public void recreateProject(int projectId, String projectName, String projectClient) {
-    	projects.add(new Project(projectId, projectName, projectClient));
+    	projects.add(new Project(projectId, projectName, projectClient, ""));
     }
 
     public int findProject(Project project){
@@ -63,7 +63,7 @@ public class ProjectManager extends Person {
     public Project findProject(int projectId) {
         for(Project project: projects) {
             if(project != null) {
-                if(project.getId() == projectId) {
+                if(project.getProjectId() == projectId) {
                     return project;
                 }
             }

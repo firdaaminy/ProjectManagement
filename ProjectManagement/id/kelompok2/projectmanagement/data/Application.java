@@ -254,6 +254,18 @@ public class Application {
         }
         return 0;
     }
+    
+    public ResultSet getAllTasks(int projectId) {
+        ResultSet rs = null;
+        String query = "select * from tasks left join user on tasks.programmerid"
+                + " = user.id where projectid = '"+ projectId +"'";
+        try {
+            rs = database.getData(query);
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;        
+    }
 
     public ResultSet getMyTasks(int projectId) {
         ResultSet rs = null;
@@ -278,7 +290,33 @@ public class Application {
         prepare.executeUpdate();
         System.out.println(prepare.toString());
     }
-
+    
+    // For console
+    public void toggleDoneTask(int projId, int taskId) throws SQLException {
+        String done = null;
+        ResultSet rs = null;
+        try {
+            rs = database.getData("select done from tasks where id = '"+ taskId +"'");
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(rs.next()) {
+            int ok = rs.getInt("done");
+            System.out.println("OK: "+ok);
+            if(ok == 1) done = "Done";
+            else done = "Not done";
+        }
+                
+        String query = "update tasks set done = ? where projectid = ? and id = ?";
+        PreparedStatement prepare = database.getConnection().prepareStatement(query);
+        if(done.equals("Done"))
+            prepare.setBoolean(1, false);
+        else prepare.setBoolean(1, true);
+        prepare.setInt(2, projId);
+        prepare.setInt(3, taskId);
+        prepare.executeUpdate();
+    }
+    
     public ResultSet getAssignedProgrammers(int projId) {
         ResultSet rs = null;
         String query = "select * from projects_assignment left join user on user.id = projects_assignment.programmerid"
@@ -315,10 +353,6 @@ public class Application {
         prepare.executeUpdate();
     }
 
-    public void searchUser(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void searchUser(ControllerSettings cSettings, String search) {
         try {
             String query = "select * from user where id = '"+ search +"' or username = '"+ search +"'";
@@ -333,7 +367,20 @@ public class Application {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    public ResultSet searchUser(String search) {
+        try {
+            String query = "select * from user where id = '"+ search +"' or username = '"+ search +"'";
+            ResultSet rs = database.getData(query);
+            if(rs.next()) {
+                return rs;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     public void updateUserSalary(int searchedId, String salary) throws SQLException {
         String query = "update user set salary = ? where id = ?";
         PreparedStatement prepare = database.getConnection().prepareStatement(query);
