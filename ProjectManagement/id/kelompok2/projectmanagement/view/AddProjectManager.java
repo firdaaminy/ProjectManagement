@@ -39,7 +39,7 @@ public class AddProjectManager extends javax.swing.JPanel implements View {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(0, 102, 102));
 
         jxProgrammerName.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jxProgrammerName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -82,9 +82,9 @@ public class AddProjectManager extends javax.swing.JPanel implements View {
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setBackground(new java.awt.Color(204, 255, 255));
         jLabel2.setFont(new java.awt.Font("Sitka Text", 2, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("\"Coming together is a beginning. Keeping together is progress. Working together is success.\"");
 
@@ -94,14 +94,15 @@ public class AddProjectManager extends javax.swing.JPanel implements View {
         jbCreate.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jbCreate.setText("Create");
 
+        jLabel3.setBackground(new java.awt.Color(204, 255, 255));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText(" Henry Ford");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create an account for a project manager");
 

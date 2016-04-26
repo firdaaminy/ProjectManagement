@@ -37,13 +37,15 @@ public class AssignedTask extends javax.swing.JPanel implements View {
         tableTasks = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Assigned Task");
 
         labelProject.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
+        labelProject.setForeground(new java.awt.Color(204, 255, 255));
         labelProject.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelProject.setText("jLabel2");
 
@@ -65,6 +67,7 @@ public class AssignedTask extends javax.swing.JPanel implements View {
         jScrollPane1.setViewportView(tableTasks);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 2, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setText("Double click on a row to toggle done status");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

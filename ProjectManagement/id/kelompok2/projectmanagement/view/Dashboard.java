@@ -80,7 +80,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
         setTitle("On-Board");
         setResizable(false);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setForeground(new java.awt.Color(255, 255, 153));
 
@@ -144,28 +144,28 @@ public class Dashboard extends javax.swing.JFrame implements View {
                         .addGap(13, 13, 13))))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setMaximumSize(new java.awt.Dimension(161, 105));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
 
         jLabel12.setFont(new java.awt.Font("Sitka Text", 0, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setForeground(new java.awt.Color(204, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Developer");
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Abby Setyo");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Firda Aminy Ma'ruf");
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setForeground(new java.awt.Color(204, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Adam Geraldy");
 
@@ -201,16 +201,16 @@ public class Dashboard extends javax.swing.JFrame implements View {
                     .addContainerGap(429, Short.MAX_VALUE)))
         );
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         greetingLabel.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        greetingLabel.setForeground(new java.awt.Color(204, 204, 204));
+        greetingLabel.setForeground(new java.awt.Color(204, 255, 255));
         greetingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         greetingLabel.setText("Hello, Adam Geraldy");
 
         lblPosition.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lblPosition.setForeground(new java.awt.Color(204, 204, 204));
+        lblPosition.setForeground(new java.awt.Color(204, 255, 255));
         lblPosition.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPosition.setText("Project Manager");
 
@@ -244,7 +244,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addContainerGap())
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnNewMember.setBackground(new java.awt.Color(255, 255, 255));
@@ -252,7 +252,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setLabelFor(btnNewMember);
         jLabel2.setText("New project manager");
 
@@ -260,21 +260,23 @@ public class Dashboard extends javax.swing.JFrame implements View {
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
         jLabel3.setLabelFor(btnNewProject);
         jLabel3.setText("New project");
 
+        btnYourProject.setBackground(new java.awt.Color(0, 102, 102));
+        btnYourProject.setForeground(new java.awt.Color(0, 102, 102));
         btnYourProject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/three.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setLabelFor(btnYourProject);
         jLabel5.setText("Your project(s)");
 
         btnYourTeam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/networking.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setForeground(new java.awt.Color(204, 255, 255));
         jLabel6.setLabelFor(btnYourTeam);
         jLabel6.setText("Your team");
 
@@ -325,7 +327,7 @@ public class Dashboard extends javax.swing.JFrame implements View {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        contentPanel.setBackground(new java.awt.Color(0, 0, 0));
+        contentPanel.setBackground(new java.awt.Color(0, 102, 102));
         contentPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         contentPanel.setLayout(new java.awt.CardLayout());
 

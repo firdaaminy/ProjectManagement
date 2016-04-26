@@ -39,7 +39,7 @@ public class ListProject extends javax.swing.JPanel implements View {
         btnSearchYP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
 
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         txSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -79,7 +79,7 @@ public class ListProject extends javax.swing.JPanel implements View {
         btnSearchYP.setText("Search");
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 2, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Double click on a row to assign tasks");
 
