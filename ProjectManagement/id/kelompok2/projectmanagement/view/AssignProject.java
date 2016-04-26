@@ -54,23 +54,23 @@ public class AssignProject extends javax.swing.JPanel implements View {
         comboProgTask = new javax.swing.JComboBox<String>();
         btnSubmitAssTask = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 102, 102));
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel6.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setForeground(new java.awt.Color(204, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Assign project to your team member");
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setForeground(new java.awt.Color(204, 255, 255));
         jLabel8.setText("Project Name (ID)");
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setForeground(new java.awt.Color(204, 255, 255));
         jLabel9.setText("Assign to");
 
         jcSendto.setToolTipText("");
@@ -133,16 +133,16 @@ public class AssignProject extends javax.swing.JPanel implements View {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create new task");
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setText("Task Description");
         jLabel2.setToolTipText("");
 
@@ -188,23 +188,23 @@ public class AssignProject extends javax.swing.JPanel implements View {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Assign Task");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
         jLabel4.setText("Task");
 
         comboTask.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
         comboTask.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setText("Programmer");
 
         comboProgTask.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N

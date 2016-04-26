@@ -42,7 +42,8 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         projectSelector = new javax.swing.JComboBox<String>();
         labelPilih = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(0, 102, 102));
+        setForeground(new java.awt.Color(0, 102, 102));
 
         jPanel9.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -100,7 +101,7 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         projectSelector.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         labelPilih.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        labelPilih.setForeground(new java.awt.Color(204, 204, 204));
+        labelPilih.setForeground(new java.awt.Color(204, 255, 255));
         labelPilih.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPilih.setText("Choose Your Project");
 

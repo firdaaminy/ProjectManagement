@@ -288,6 +288,11 @@ public class Login extends javax.swing.JFrame implements View {
 
         comboDay.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         comboDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1" }));
+        comboDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboDayActionPerformed(evt);
+            }
+        });
         getContentPane().add(comboDay);
         comboDay.setBounds(570, 380, 110, 30);
 
@@ -372,6 +377,10 @@ public class Login extends javax.swing.JFrame implements View {
     private void comboYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboYearActionPerformed
         populateComboDay();
     }//GEN-LAST:event_comboYearActionPerformed
+
+    private void comboDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboDayActionPerformed
 
     private void populateBirthCombo() {
         List<String> year = new ArrayList<>();

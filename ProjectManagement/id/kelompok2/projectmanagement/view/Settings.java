@@ -77,17 +77,17 @@ public class Settings extends javax.swing.JPanel implements View {
         btnSaveUser = new javax.swing.JButton();
         btnSaveSalary = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Admin Settings");
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Search:");
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setText("Search");
 
         txSearch.setFont(new java.awt.Font("Sitka Text", 0, 11)); // NOI18N
         txSearch.setText("(By ID/Username)");
@@ -103,15 +103,15 @@ public class Settings extends javax.swing.JPanel implements View {
         btnSubmit.setText("Submit");
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
         jLabel3.setText("Username");
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
         jLabel4.setText("Password");
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setText("Salary");
 
         btnSavePass.setText("Save");
