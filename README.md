@@ -13,3 +13,4 @@ A software to manage your projects, where you can hire employees, create dynamic
 ## JAR File:
 This page will always provide the lates version to this application in the form of an executable JAR file:
 - [Link to jarfile](http://geraldy.id/ProjectManagement.jar)
+- [Link to jarfile (Console)] (http://geraldy.id/ProjectManagementConsole.jar)
