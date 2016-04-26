@@ -28,7 +28,9 @@ public class Menu {
     }
     
     public final void run() {
-        showAllMenu();
+        while(true) {
+            showAllMenu();
+        }
     }
     
     public void showAllMenu() {
