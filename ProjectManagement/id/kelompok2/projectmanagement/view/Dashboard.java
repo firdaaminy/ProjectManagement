@@ -264,8 +264,6 @@ public class Dashboard extends javax.swing.JFrame implements View {
         jLabel3.setLabelFor(btnNewProject);
         jLabel3.setText("New project");
 
-        btnYourProject.setBackground(new java.awt.Color(0, 102, 102));
-        btnYourProject.setForeground(new java.awt.Color(0, 102, 102));
         btnYourProject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/three.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
