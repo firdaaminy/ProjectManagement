@@ -5,6 +5,7 @@
  */
 package id.kelompok2.projectmanagement.data;
 
+import id.kelompok2.projectmanagement.console.Console;
 import id.kelompok2.projectmanagement.controller.ControllerDashboard;
 import id.kelompok2.projectmanagement.database.Database;
 import id.kelompok2.projectmanagement.controller.ControllerLogin;
@@ -52,8 +53,13 @@ public class Application {
                             temp);
                 }
                 user.setFullName(resultSet.getString("fullName"));
-                login.dispose();
-                ControllerDashboard dash = new ControllerDashboard(this);
+                if(login != null) {
+                    login.dispose();
+                    ControllerDashboard dash = new ControllerDashboard(this);
+                }
+                else {
+                    new Console(this);
+                }
             }
             else {
                 throw new Exception("Passwor salah!");
