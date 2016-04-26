@@ -123,7 +123,7 @@ public class Application {
         ResultSet rs = null;
         if(user instanceof ProjectManager) {
             try {
-                rs=database.getData("select * from projects where (name= '"+searchText+"' or client= '"+searchText+"' or id = '"+ searchText+"') and managerid = '"
+                rs=database.getData("select * from projects where (name = '"+searchText+"' or client= '"+searchText+"' or id = '"+ searchText+"') and managerid = '"
                         + user.getId() +"'");
             } catch (Exception ex) {
                 Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
@@ -235,7 +235,8 @@ public class Application {
         try {
             String query = "select * from projects left join tasks on projects.id = tasks.projectid where projects.id = '"
                     +projId+"'";
-            ResultSet rs = database.getData(query);
+            ResultSet rs = database.getConnection().createStatement().executeQuery(query);
+//            ResultSet rs = database.getData(query);
             int difficulties = 0, donedifficulties = 0;
             while(rs.next()) {
                 if(rs.getBoolean("tasks.done")) {

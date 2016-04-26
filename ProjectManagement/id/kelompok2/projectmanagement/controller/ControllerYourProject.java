@@ -71,8 +71,12 @@ public class ControllerYourProject implements ActionListener{
             try {
                 ResultSet rs = dash.getApplication().searchProject(YP.getSearchText());
                 DefaultTableModel modelTable=(DefaultTableModel) this.YP.getTableYourProject().getModel();
-                while(rs.next()){
-                    modelTable.addRow(new Object[]{rs.getInt("id"), rs.getString(2), rs.getString(3), rs.getString(6)});
+                while(rs.next()){                    
+                    int projId = rs.getInt("id");
+                    String projName = rs.getString("name");
+                    String client = rs.getString("client");
+                    int progress = dash.getApplication().getProgress(projId);
+                    modelTable.addRow(new Object[]{projId, projName, client, progress+"%"}); 
                 }
             } catch (Exception ex) {
                 Logger.getLogger(ControllerYourProject.class.getName()).log(Level.SEVERE, null, ex);
@@ -91,7 +95,12 @@ public class ControllerYourProject implements ActionListener{
             ResultSet rs = dash.getApplication().getAllProjects();
             DefaultTableModel tableModel = (DefaultTableModel) YP.getTableYourProject().getModel();
             while(rs.next()) {
-                tableModel.addRow(new Object[]{rs.getInt("id"), rs.getString("name"),rs.getString("client"), "", (rs.getBoolean("done")? "Done": "Not done")});        
+                int projId = rs.getInt("id");
+                String projName = rs.getString("name");
+                String client = rs.getString("client");
+                int progress = dash.getApplication().getProgress(projId);
+//                int progress = 0;
+                tableModel.addRow(new Object[]{projId, projName, client, progress+"%"});        
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControllerYourTeam.class.getName()).log(Level.SEVERE, null, ex);
