@@ -45,7 +45,7 @@ public class CheckProgress extends javax.swing.JPanel implements View {
         setBackground(new java.awt.Color(0, 102, 102));
         setForeground(new java.awt.Color(0, 102, 102));
 
-        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel23.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(204, 204, 204));
