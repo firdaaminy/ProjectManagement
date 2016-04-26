@@ -78,6 +78,7 @@ public class Menu {
                     console.showProgrammers();
                     break;
                 case 0:
+                    Console.clearScreen();
                     System.exit(0);
                     break;
                 default:
